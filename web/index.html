@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Military GPS Dashboard</title>
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+
+<!-- Firebase (compat for simplicity) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --sidebar-width: 35%;
+  --bg: #0a0f17;
+  --panel: rgba(13, 20, 35, 0.85);
+  --muted: #7a8ca0;
+  --accent: #00e6ff;
+  --accent-glow: rgba(0, 230, 255, 0.3);
+  --success: #00ff9d;
+  --warning: #ffb300;
+  --danger: #ff3d71;
+  --text: #e6f7ff;
+  --border: rgba(0, 230, 255, 0.2);
+  --cyber-green: #00ff9d;
+  --cyber-blue: #00e6ff;
+  --cyber-purple: #9d4dff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Exo 2', 'Arial', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  padding: 10px;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 230, 255, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(0, 255, 157, 0.05) 0%, transparent 20%);
+}
+
+/* Dashboard layout */
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+
+/* Sidebar styling */
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
+  background: var(--panel);
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+/* Custom scrollbar */
+#sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--success);
+}
+
+/* Header styling */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent-glow);
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.dashboard-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* Search input */
+.search {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 15px;
+  background: rgba(10, 20, 35, 0.7);
+  color: var(--text);
+  font-size: 13px;
+  transition: all 0.3s ease;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.search::placeholder {
+  color: var(--muted);
+}
+
+/* Device list */
+#deviceList {
+  max-height: 300px;
+  min-height: 180px;
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(90, 212, 20, 0.082);
+  padding: 8px;
+}
+
+#deviceList::-webkit-scrollbar {
+  width: 4px;
+}
+
+#deviceList::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+#deviceList::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 2px;
+}
+
+/* Device items */
+.device {
+  background: rgba(15, 25, 45, 0.7);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.device::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 230, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.device:hover::before {
+  left: 100%;
+}
+
+.device:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.device.offline {
+  opacity: 0.5;
+  filter: grayscale(70%);
+}
+
+.device.active {
+  border-color: var(--success);
+  background: rgba(15, 25, 45, 0.9);
+}
+
+.device .meta {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.device strong {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.device .status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  margin-right: 6px;
+  display: inline-block;
+  box-shadow: 0 0 3px var(--success);
+}
+
+.device.offline .status-indicator {
+  background: var(--muted);
+  box-shadow: none;
+}
+
+/* Controls section */
+.controls {
+  margin-top: auto;
+  padding: 12px;
+  background: rgba(10, 20, 35, 0.7);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* Panel styling */
+.panel {
+  background: rgba(15, 25, 45, 0.7);
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--success));
+  border-radius: 10px 10px 0 0;
+}
+
+.panel-title {
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.panel-title::before {
+  content: "⚙️";
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: rgba(10, 20, 35, 0.8);
+  color: var(--text);
+  margin-bottom: 10px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  font-family: 'Exo 2', sans-serif;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+/* Button styling */
+button {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--cyber-purple) 100%);
+  color: #001a33;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#clearSelection {
+  background: linear-gradient(135deg, var(--muted) 0%, #5a6b7c 100%);
+}
+
+/* Charts container */
+.charts {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.chart-container {
+  flex: 1;
+  background: rgba(10, 20, 35, 0.7);
+  border-radius: 6px;
+  padding: 8px;
+  border: 1px solid var(--border);
+}
+
+canvas {
+  width: 100% !important;
+  height: 120px !important;
+}
+
+/* Info panel */
+.info {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+  background: rgba(10, 20, 35, 0.5);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.info div {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info b {
+  color: var(--accent);
+}
+
+.small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Map container styling */
+.map-container {
+  flex: 1;
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.1);
+  position: relative;
+}
+
+/* Map styling */
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+}
+
+/* Map title and info bar */
+.map-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 15, 26, 0.85);
+  backdrop-filter: blur(5px);
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.map-title::before {
+  content: "🛰️";
+  font-size: 18px;
+}
+
+.map-info {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+}
+
+.map-info div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Real flag icon CSS */
+.flag-icon {
+  width: 16px;
+  height: 20px;
+  background: #ff3d71;
+  position: relative;
+  border-radius: 2px 2px 0 0;
+}
+
+.flag-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 6px 0 0;
+  border-color: #ff3d71 transparent transparent transparent;
+}
+
+.flag-icon::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 2px;
+  height: 12px;
+  background: #aa2a4d;
+}
+
+/* Custom marker styling */
+.custom-marker {
+  background: var(--accent);
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  :root {
+    --sidebar-width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  
+  #sidebar, .map-container {
+    width: 100%;
+    height: 50%;
+  }
+  
+  .map-header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .map-info {
+    gap: 10px;
+    font-size: 11px;
+  }
+}
+
+/* Cyber grid background effect */
+.cyber-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 230, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 230, 255, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Device list header */
+.device-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.device-count {
+  font-weight: 600;
+  color: var(--accent);
+}
+</style>
+</head>
+<body>
+<div class="cyber-grid"></div>
+
+<div class="dashboard-container">
+  <div id="sidebar">
+    <div class="dashboard-header">
+      <h1>MILITARY GPS DASHBOARD</h1>
+    </div>
+
+    <input id="search" class="search" placeholder="Search devices...">
+    
+    <div class="device-list-header">
+      <span>ACTIVE DEVICES</span>
+      <span class="device-count">COUNT: <span id="deviceCount">0</span></span>
+    </div>
+    
+    <div id="deviceList">
+      <!-- Devices will be listed here -->
+    </div>
+
+    <div class="controls">
+      <div class="input-group">
+        <input id="selectedDevice" type="text" placeholder="Selected device" style="flex:1;" readonly>
+        <button id="clearSelection">Clear</button>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Flag (add marker manually)</div>
+        <input id="flagLat" type="number" placeholder="Latitude" step="0.000001">
+        <input id="flagLng" type="number" placeholder="Longitude" step="0.000001">
+        <input id="flagLabel" type="text" placeholder="Label (optional)">
+        <button id="addFlag">Add Flag</button>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Charts (last <span id="maxPointsLabel">60</span> points)</div>
+        <div class="charts">
+          <div class="chart-container">
+            <canvas id="altChart" width="280" height="160"></canvas>
+          </div>
+          <div class="chart-container">
+            <canvas id="speedChart" width="280" height="160"></canvas>
+          </div>
+        </div>
+        <div class="info" id="deviceInfo">
+          <div><b>Satellites:</b> --</div>
+          <div><b>HDOP:</b> --</div>
+          <div><b>Time (UTC):</b> --</div>
+          <div><b>Lat / Lng:</b> --</div>
+          <div><b>Speed:</b> -- km/h</div>
+          <div><b>Altitude:</b> -- m</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-container">
+    <div class="map-header">
+      <div class="map-title">OPERATIONAL AREA MAP</div>
+      <div class="map-info">
+        <div id="localTime">Local: <span id="timeDisplay">--:--:--</span></div>
+        <div>Flags: <span id="flagCount">0</span></div>
+      </div>
+    </div>
+    <div id="map"></div>
+  </div>
+</div>
+
+<script>
+// Update local time display
+function updateLocalTime() {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  document.getElementById('timeDisplay').textContent = timeString;
+}
+
+setInterval(updateLocalTime, 1000);
+updateLocalTime();
+
+/* ============ CONFIG - REPLACE WITH YOUR FIREBASE CONFIG ============ */
+const firebaseConfig = {
+  apiKey: "AIzaSyBqgUJGP2orVBT-jLzcGtkG_d_JK0qNNh8",
+  authDomain: "tracker-6c988.firebaseapp.com",
+  databaseURL: "https://tracker-6c988-default-rtdb.firebaseio.com",
+  projectId: "tracker-6c988",
+  storageBucket: "tracker-6c988.appspot.com",
+  messagingSenderId: "339384342086",
+  appId: "1:339384342086:web:89e763dbc43a85d3ab5c47",
+  measurementId: "G-WEFZ7RXYE1"
+};
+/* =================================================================== */
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+const OFFLINE_MS = 30_000;    // mark offline after 30s
+const MAX_POINTS = 60;        // buffer for charts
+document.getElementById('maxPointsLabel').textContent = MAX_POINTS;
+
+const map = L.map('map').setView([-2.0, 30.1], 13);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19}).addTo(map);
+
+const devices = {}; // { name: { marker, polyline, buffer:[], lastSeen, data } }
+const flags = {};
+const deviceListEl = document.getElementById('deviceList');
+let selectedDevice = null;
+
+// ----- Charts -----
+const altCtx = document.getElementById('altChart').getContext('2d');
+const speedCtx = document.getElementById('speedChart').getContext('2d');
+const altChart = new Chart(altCtx,{type:'line',
+  data:{labels:[],datasets:[{label:'Altitude (m)',data:[],borderColor:'#00e6ff',backgroundColor:'rgba(0, 230, 255, 0.08)',tension:0.2, borderWidth: 2}]},
+  options:{animation:false,scales:{x:{display:false},y:{beginAtZero:false}}}
+});
+const speedChart = new Chart(speedCtx,{type:'line',
+  data:{labels:[],datasets:[{label:'Speed (km/h)',data:[],borderColor:'#00ff9d',backgroundColor:'rgba(0, 255, 157, 0.06)',tension:0.2, borderWidth: 2}]},
+  options:{animation:false,scales:{x:{display:false},y:{beginAtZero:true}}}
+});
+
+// ----- Utilities -----
+function clampArray(arr,max){while(arr.length>max)arr.shift();}
+function randomColor(){const c=['#00e6ff','#00ff9d','#9d4dff','#ffb300','#ff3d71','#00ccff','#00e676','#7c4dff','#ff9100','#ff1744'];return c[Math.floor(Math.random()*c.length)];}
+
+// Create custom flag icon
+function createFlagIcon() {
+  return L.divIcon({
+    className: 'custom-flag-marker',
+    html: '<div class="flag-icon"></div>',
+    iconSize: [16, 24],
+    iconAnchor: [8, 24]
+  });
+}
+
+// ----- Device list search -----
+document.getElementById('search').addEventListener('input',e=>{
+  renderDeviceList(e.target.value.trim().toLowerCase());
+});
+
+// ----- Manual Flag adding -----
+document.getElementById('addFlag').addEventListener('click',()=>{
+  const lat=parseFloat(document.getElementById('flagLat').value);
+  const lng=parseFloat(document.getElementById('flagLng').value);
+  const label=document.getElementById('flagLabel').value||'Flag';
+  if(isNaN(lat)||isNaN(lng)){alert('Please enter valid coordinates');return;}
+  db.ref('flags').push({lat,lng,label});
+});
+
+// ----- Clear selection -----
+document.getElementById('clearSelection').addEventListener('click',()=>{
+  selectedDevice=null;
+  document.getElementById('selectedDevice').value='';
+  clearCharts();
+  updateInfoPanel(null);
+  
+  // Remove active class from all devices
+  document.querySelectorAll('.device').forEach(device => {
+    device.classList.remove('active');
+  });
+});
+
+// ----- Firebase listeners -----
+db.ref('devices').on('value',snapshot=>{
+  const all=snapshot.val()||{};
+  for(const name in all) handleDeviceUpdate(name,all[name]);
+  for(const name in devices){
+    if(!all[name]){
+      try{map.removeLayer(devices[name].marker);map.removeLayer(devices[name].polyline);}catch(e){}
+      delete devices[name];
+    }
+  }
+  renderDeviceList(document.getElementById('search').value.trim().toLowerCase());
+  document.getElementById('deviceCount').textContent = Object.keys(devices).length;
+});
+
+// Flags
+db.ref('flags').on('child_added',snap=>{
+  const f=snap.val();const id=snap.key;
+  // Use custom flag icon instead of default marker
+  const flagIcon = createFlagIcon();
+  const m = L.marker([f.lat, f.lng], {icon: flagIcon, title: f.label||'Flag'}).addTo(map);
+  m.bindPopup(`<b>${f.label||'Flag'}</b><br>${f.lat.toFixed(6)}, ${f.lng.toFixed(6)}`);
+  m.on('contextmenu',()=>{if(confirm('Remove this flag?')) db.ref(`flags/${id}`).remove();});
+  flags[id]=m;
+  document.getElementById('flagCount').textContent = Object.keys(flags).length;
+});
+db.ref('flags').on('child_removed',snap=>{
+  const id=snap.key;
+  if(flags[id]){map.removeLayer(flags[id]);delete flags[id];}
+  document.getElementById('flagCount').textContent = Object.keys(flags).length;
+});
+
+// ----- Handle device update -----
+function handleDeviceUpdate(name,d){
+  const now=Date.now();
+  if(!devices[name]){
+    const marker=L.marker([d.lat,d.lng]).addTo(map);
+    marker.bindPopup(`<b>${name}</b>`);
+    const polyline=L.polyline([], {color:randomColor(),weight:3}).addTo(map);
+    devices[name]={marker,polyline,lastSeen:now,buffer:[],data:d};
+    marker.on('click',()=>selectDevice(name));
+    // Right-click tracker => reset path
+    marker.on('contextmenu',()=>{
+      if(confirm(`Reset path for ${name}?`)){
+        db.ref(`history/${name}`).remove();
+        polyline.setLatLngs([]);
+      }
+    });
+    loadHistory(name); // load stored polyline
+  } else {
+    devices[name].marker.setLatLng([d.lat,d.lng]);
+    devices[name].lastSeen=now;
+    devices[name].data=d;
+  }
+
+  // update buffer & charts
+  const buf=devices[name].buffer;
+  const timeLabel=d.time && typeof d.time==='string'? d.time : new Date().toISOString();
+  buf.push({t:now,timeLabel,lat:d.lat,lng:d.lng,alt:d.alt,speed:d.speed,sats:d.sats,hdop:d.hdop});
+  clampArray(buf,MAX_POINTS);
+  if(selectedDevice===name){updateChartsFromBuffer(buf);updateInfoPanel(d);}
+}
+
+// ----- Load existing history -----
+function loadHistory(name){
+  const histRef=db.ref(`history/${name}`).limitToLast(1000);
+  histRef.once('value').then(snap=>{
+    const pts=snap.val();
+    if(pts && devices[name]){
+      const arr=Object.values(pts).map(p=>[p.lat,p.lng]);
+      devices[name].polyline.setLatLngs(arr);
+    }
+  });
+  // listen for new history points
+  histRef.on('child_added',snap=>{
+    const p=snap.val();
+    if(devices[name]) devices[name].polyline.addLatLng([p.lat,p.lng]);
+  });
+}
+
+// ----- UI helpers -----
+function renderDeviceList(filter=''){
+  deviceListEl.innerHTML='';
+  const now=Date.now();
+  Object.keys(devices).sort().forEach(name=>{
+    if(filter && !name.toLowerCase().includes(filter)) return;
+    const dev=devices[name];
+    const ageSec=Math.round((now-dev.lastSeen)/1000);
+    const offline=(now-dev.lastSeen)>OFFLINE_MS;
+    const isActive = selectedDevice === name;
+    
+    const div=document.createElement('div');
+    div.className='device'+(offline?' offline':'') + (isActive ? ' active' : '');
+    div.innerHTML=`<div>
+        <span class="status-indicator"></span>
+        <strong>${name}</strong>
+        <div class="meta">${dev.data?.speed?.toFixed(1)||''} km/h • ${dev.data?.alt?.toFixed(1)||''} m</div>
+      </div><div class="meta">${ageSec}s</div>`;
+    div.onclick=()=>{selectDevice(name);map.setView([dev.data.lat,dev.data.lng],16);dev.marker.openPopup();};
+    deviceListEl.appendChild(div);
+  });
+}
+
+function selectDevice(name){
+  selectedDevice=name;
+  document.getElementById('selectedDevice').value=name;
+  const buf=devices[name]?devices[name].buffer:[];
+  updateChartsFromBuffer(buf);
+  updateInfoPanel(devices[name]?devices[name].data:null);
+  
+  // Update active state in device list
+  document.querySelectorAll('.device').forEach(device => {
+    device.classList.remove('active');
+  });
+  
+  // Find and activate the selected device
+  const deviceElements = document.querySelectorAll('.device');
+  for (let i = 0; i < deviceElements.length; i++) {
+    const deviceName = deviceElements[i].querySelector('strong').textContent;
+    if (deviceName === name) {
+      deviceElements[i].classList.add('active');
+      break;
+    }
+  }
+}
+
+function updateChartsFromBuffer(buf){
+  const labels=buf.map(p=>new Date(p.t).toLocaleTimeString());
+  altChart.data.labels=labels;
+  altChart.data.datasets[0].data=buf.map(p=>p.alt??null);
+  altChart.update();
+  speedChart.data.labels=labels;
+  speedChart.data.datasets[0].data=buf.map(p=>p.speed??null);
+  speedChart.update();
+}
+
+function clearCharts(){
+  altChart.data.labels=[];altChart.data.datasets[0].data=[];altChart.update();
+  speedChart.data.labels=[];speedChart.data.datasets[0].data=[];speedChart.update();
+}
+
+function updateInfoPanel(d){
+  const el=document.getElementById('deviceInfo');
+  if(!d){
+    el.innerHTML=`<div><b>Satellites:</b> --</div>
+      <div><b>HDOP:</b> --</div>
+      <div><b>Time (UTC):</b> --</div>
+      <div><b>Lat / Lng:</b> --</div>
+      <div><b>Speed:</b> -- km/h</div>
+      <div><b>Altitude:</b> -- m</div>`;
+    return;
+  }
+  el.innerHTML=`<div><b>Satellites:</b> ${d.sats ?? '--'}</div>
+    <div><b>HDOP:</b> ${d.hdop!=null?d.hdop.toFixed(2):'--'}</div>
+    <div><b>Time (UTC):</b> ${d.time ?? '--'}</div>
+    <div><b>Lat / Lng:</b> ${d.lat?.toFixed(6) ?? '--'} / ${d.lng?.toFixed(6) ?? '--'}</div>
+    <div><b>Speed:</b> ${d.speed!=null?d.speed.toFixed(1):'--'} km/h</div>
+    <div><b>Altitude:</b> ${d.alt!=null?d.alt.toFixed(1):'--'} m</div>`;
+}
+
+// periodic offline visuals
+setInterval(()=>{
+  const now=Date.now();
+  for(const name in devices){
+    const dev=devices[name];
+    const offline=(now-dev.lastSeen)>OFFLINE_MS;
+    dev.marker.setOpacity(offline?0.45:1.0);
+    dev.polyline.setStyle({opacity:offline?0.35:1.0});
+  }
+  renderDeviceList(document.getElementById('search').value.trim().toLowerCase());
+},3000);
+
+// Right-click map => Add Flag quick
+map.on('contextmenu',e=>{
+  const label=prompt('Flag label (optional):')||'';
+  db.ref('flags').push({lat:e.latlng.lat,lng:e.latlng.lng,label});
+});
+</script>
+
+</body>
+</html>
