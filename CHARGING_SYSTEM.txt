@@ -1,0 +1,49 @@
+## Stand‑Alone ESP32 + GPS Power Circuit
+
+This canvas describes a simple, field‑ready power solution using a single‑cell 3.7 V Li‑ion/LiPo battery, a TP4056 charging board, a boost converter, and an ON/OFF slider switch.
+
+### Components
+
+* **Li‑ion/LiPo battery** (3.7 V nominal)
+* **TP4056 module** with protection (IN+/IN‑, OUT+/OUT‑)
+* **Boost converter** (3.7 V → 5 V, e.g. MT3608 or similar)
+* **Slider switch** (SPDT or SPST, used as ON/OFF)
+* **ESP32 board** (powered via 5 V pin)
+* **GPS module** (powered from ESP32 3.3 V output)
+
+### Wiring Steps
+
+1. **Battery to TP4056**
+
+   * Battery **+** → TP4056 **B+**
+   * Battery **–** → TP4056 **B-**
+
+2. **TP4056 Output to Switch**
+
+   * TP4056 **OUT+** → Switch input
+   * TP4056 **OUT–** → Boost converter GND
+
+3. **Switch to Boost Converter**
+
+   * Switch output → Boost converter **VIN+**
+   * Boost converter GND already tied to **OUT–**
+
+4. **Boost Converter to ESP32**
+
+   * Boost converter **VOUT+ (5 V)** → ESP32 **5V** pin
+   * Boost converter GND → ESP32 **GND**
+
+5. **GPS Module**
+
+   * Connect to ESP32 3.3 V pin and GND as usual.
+
+### Operation
+
+* **Charging**: Plug micro‑USB into TP4056. Battery charges while the system can remain ON or OFF.
+* **Power ON/OFF**: Slider switch isolates the boost converter, fully cutting power to ESP32 when OFF.
+
+### Notes
+
+* Adjust boost converter to **5.0 V output** before connecting ESP32.
+* TP4056 with protection prevents over‑charge/over‑discharge.
+* Ensure battery capacity is adequate for GPS + ESP32 current draw (~200‑400 mA typical).
