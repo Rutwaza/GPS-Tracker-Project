@@ -18,7 +18,7 @@ const char* FIREBASE_HOST = "tracker-6c988-default-rtdb.firebaseio.com";
 const char* FIREBASE_AUTH = "cCCMHSdfL6dF16rvOEzPqcFuetkm9GXi2F4TEr6U";
 
 // Set a friendly manual device name (must be unique per device)
-const char* TRACKER_NAME  = "tracker1";  // change per device
+const char* TRACKER_NAME  = "syndicate1";  // change per device
 
 // Upload timing (ms)
 const unsigned long UPLOAD_INTERVAL = 10000; // 10 seconds
