@@ -1,64 +1,84 @@
 /*
   ESP32 GPS Tracker -> Firebase (devices + persistent history)
-  - Sends JSON snapshot to: https://<FIREBASE_HOST>/devices/<TRACKER_NAME>.json?auth=<AUTH>  (PUT)
-  - Appends persistent point to: https://<FIREBASE_HOST>/history/<TRACKER_NAME>.json?auth=<AUTH> (POST)
+  with LED connection indicator
+
+  - Sends JSON snapshot to: /devices/<TRACKER_NAME>
+  - Appends persistent point to: /history/<TRACKER_NAME>
   - Fields: lat, lng, alt, hdop, sats, speed, time
-  - Requires TinyGPSPlus library
+  - LED Behavior:
+      * Blinking  = trying to connect Wi-Fi
+      * Solid ON  = connected and uploading OK
+      * OFF       = lost Wi-Fi connection
 */
 
-#include <WiFi.h>
-#include <HTTPClient.h>
-#include <TinyGPSPlus.h>
+// RELIES ON INTERNET CONNECTION FOR TIME SYNC AND FIREBASE HTTPS
 
-// ---------------- USER CONFIG ----------------
-const char* WIFI_SSID     = "Gako_RMA_Student";
-const char* WIFI_PASSWORD = "GakoHuawei@123";
+#include <TinyGPSPlus.h>
+#include <HardwareSerial.h>
+#include <WiFi.h>
+#include <HTTPClient.h
+
+// ================= USER CONFIG =================
+const char* WIFI_SSID     = "nexon";
+const char* WIFI_PASSWORD = "nexon0101";
 
 const char* FIREBASE_HOST = "tracker-6c988-default-rtdb.firebaseio.com";
 const char* FIREBASE_AUTH = "cCCMHSdfL6dF16rvOEzPqcFuetkm9GXi2F4TEr6U";
 
-// Set a friendly manual device name (must be unique per device)
-const char* TRACKER_NAME  = "syndicate1";  // change per device
-
-// Upload timing (ms)
+const char* TRACKER_NAME  = "syndicate1";  // device name in Firebase
 const unsigned long UPLOAD_INTERVAL = 10000; // 10 seconds
-// ---------------------------------------------
+// ===============================================
 
-// GPS serial pins (change if needed)
-#define GPS_RX 16   // ESP32 RX (connect to GPS TX)
-#define GPS_TX 17   // ESP32 TX (connect to GPS RX)
+// GPS serial pins
+#define GPS_RX 16
+#define GPS_TX 17
 HardwareSerial neogps(2);
 TinyGPSPlus gps;
 
-unsigned long lastUpload = 0;
-unsigned long lastFixMillis = 0;
+// LED indicator pin (built-in LED = GPIO 2)
+#define LED_PIN 2
 
-// helper: build HTTPS URL for firebase path
-String firebaseUrl(const String & pathAndFile) {
-  // pathAndFile should start with '/' e.g. "/devices/tracker1.json"
-  String url = "https://" + String(FIREBASE_HOST) + pathAndFile + "?auth=" + String(FIREBASE_AUTH);
-  return url;
+unsigned long lastUpload = 0;
+
+// helper to build firebase URL
+String firebaseUrl(const String &pathAndFile) {
+  return "https://" + String(FIREBASE_HOST) + pathAndFile + "?auth=" + String(FIREBASE_AUTH);
 }
 
-// small helper to format hh:mm:ss from TinyGPS time
+// format time from GPS
 String gpsTimeString() {
   if (!gps.time.isValid()) return String("");
   char buf[16];
-  snprintf(buf, sizeof(buf), "%02d:%02d:%02d",
-           gps.time.hour(), gps.time.minute(), gps.time.second());
+  snprintf(buf, sizeof(buf), "%02d:%02d:%02d", gps.time.hour(), gps.time.minute(), gps.time.second());
   return String(buf);
 }
 
-// ensure WiFi connected (blocks until connected, with serial feedback)
+// Blink LED while connecting
+void blinkWhileConnecting() {
+  static unsigned long lastBlink = 0;
+  static bool state = false;
+  if (millis() - lastBlink >= 400) {
+    lastBlink = millis();
+    state = !state;
+    digitalWrite(LED_PIN, state ? HIGH : LOW);
+  }
+}
+
+// Wi-Fi connection manager
 void ensureWiFi() {
-  if (WiFi.status() == WL_CONNECTED) return;
+  if (WiFi.status() == WL_CONNECTED) {
+    digitalWrite(LED_PIN, HIGH);
+    return;
+  }
+
   Serial.print("Connecting to Wi-Fi");
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+
   unsigned long start = millis();
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
+    blinkWhileConnecting();
+    delay(200);
     Serial.print(".");
-    // after long wait, try to restart WiFi
     if (millis() - start > 20000) {
       Serial.println("\nRetrying Wi-Fi...");
       WiFi.disconnect();
@@ -66,13 +86,15 @@ void ensureWiFi() {
       start = millis();
     }
   }
+
   Serial.println("\nWi-Fi connected: " + WiFi.localIP().toString());
+  digitalWrite(LED_PIN, HIGH);  // connected
 }
 
-// send HTTP request with HTTPClient; return HTTP response code or negative error
-int httpPutJson(const String & url, const String & json) {
+// HTTP helpers
+int httpPutJson(const String &url, const String &json) {
   HTTPClient http;
-  http.begin(url);                 // uses built-in WiFiClient with HTTPS support on ESP32
+  http.begin(url);
   http.addHeader("Content-Type", "application/json");
   int code = http.PUT(json);
   if (code > 0) {
@@ -84,7 +106,7 @@ int httpPutJson(const String & url, const String & json) {
   return code;
 }
 
-int httpPostJson(const String & url, const String & json) {
+int httpPostJson(const String &url, const String &json) {
   HTTPClient http;
   http.begin(url);
   http.addHeader("Content-Type", "application/json");
@@ -98,22 +120,22 @@ int httpPostJson(const String & url, const String & json) {
   return code;
 }
 
-// sync time via NTP (helps HTTPS certificate validation)
+// Sync NTP time for HTTPS validation
 void syncTime() {
   configTime(0, 0, "pool.ntp.org", "time.google.com");
   Serial.print("Waiting for time sync");
   time_t now = time(nullptr);
   unsigned long start = millis();
-  while (now < 1609459200) { // until Jan 1 2021
+  while (now < 1609459200) { // before Jan 1 2021 = invalid
     delay(500);
     Serial.print(".");
     now = time(nullptr);
-    if (millis() - start > 10000) break; // don't block too long
+    if (millis() - start > 10000) break;
   }
   Serial.println();
   struct tm tminfo;
   gmtime_r(&now, &tminfo);
-  Serial.printf("Time: %04d-%02d-%02d %02d:%02d:%02d UTC\n",
+  Serial.printf("Time synced: %04d-%02d-%02d %02d:%02d:%02d UTC\n",
                 tminfo.tm_year + 1900, tminfo.tm_mon + 1, tminfo.tm_mday,
                 tminfo.tm_hour, tminfo.tm_min, tminfo.tm_sec);
 }
@@ -121,21 +143,20 @@ void syncTime() {
 void setup() {
   Serial.begin(115200);
   delay(500);
-  Serial.println("\n=== ESP32 GPS -> Firebase (devices + history) ===");
+  Serial.println("\n=== ESP32 GPS Tracker with LED Status ===");
 
-  // start GPS serial
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+
   neogps.begin(9600, SERIAL_8N1, GPS_RX, GPS_TX);
   Serial.println("GPS serial started");
 
-  // connect WiFi & sync time
   ensureWiFi();
   syncTime();
-
-  // small delay to allow GPS to warm up
-  delay(500);
+  delay(1000);
 }
 
-// Build JSON string for a reading (fields required)
+// Build JSON
 String buildJsonPayload() {
   String payload = "{";
   payload += "\"lat\":"   + String(gps.location.lat(), 6) + ",";
@@ -150,46 +171,37 @@ String buildJsonPayload() {
 }
 
 void loop() {
-  // feed GPS characters
+  // Read GPS
   while (neogps.available()) {
     gps.encode(neogps.read());
   }
 
-  // Upload timer
+  // LED OFF if lost Wi-Fi
+  if (WiFi.status() != WL_CONNECTED) {
+    digitalWrite(LED_PIN, LOW);
+    ensureWiFi();
+  }
+
+  // upload interval
   if (millis() - lastUpload < UPLOAD_INTERVAL) return;
   lastUpload = millis();
 
-  // If no valid fix, still optionally upload (here we skip until we have a fix)
   if (!gps.location.isValid()) {
-    Serial.println("No valid GPS fix yet -> skipping upload");
+    Serial.println("No valid GPS fix yet...");
     return;
   }
 
-  // Build JSON payload
   String payload = buildJsonPayload();
 
-  // Show quick status locally
-  Serial.println("---- Uploading reading ----");
+  Serial.println("---- Uploading ----");
   Serial.println(payload);
 
-  // Ensure WiFi (reconnect if needed)
-  ensureWiFi();
-
-  // Snapshot PUT to /devices/<TRACKER_NAME>.json
   String snapshotPath = "/devices/" + String(TRACKER_NAME) + ".json";
-  String snapshotUrl = firebaseUrl(snapshotPath);
-  int putCode = httpPutJson(snapshotUrl, payload);
-  if (putCode <= 0) {
-    Serial.println("Snapshot PUT failed, code: " + String(putCode));
-  }
+  httpPutJson(firebaseUrl(snapshotPath), payload);
 
-  // Append to history via POST to /history/<TRACKER_NAME>.json
   String historyPath = "/history/" + String(TRACKER_NAME) + ".json";
-  String historyUrl = firebaseUrl(historyPath);
-  int postCode = httpPostJson(historyUrl, payload);
-  if (postCode <= 0) {
-    Serial.println("History POST failed, code: " + String(postCode));
-  }
+  httpPostJson(firebaseUrl(historyPath), payload);
 
-  Serial.println("---------------------------");
+  digitalWrite(LED_PIN, HIGH); // confirm success
+  Serial.println("-------------------");
 }

@@ -1,3 +1,45 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -227,77 +269,17 @@
   <div class="map-btn" onclick="showAllDevices()" title="Show all devices">
     <span>👁️</span>
   </div>
-  <div class="map-btn" onclick="focusOnSelectedDevice()" title="Focus selected device">
-    <span>🎯</span>
-  </div>
-  <div class="map-btn" onclick="openReportModal()" title="Mission Report">
-    <span>📄</span>
-  </div>
 </div>
 
 <!-- ============ LEFT SIDEBAR - DEVICE DISTANCES ============ -->
 <div class="left-sidebar collapsed" id="distanceSidebar">
   <div class="sidebar-header" onclick="toggleSidebar('distanceSidebar')">
-    <div class="sidebar-title">🧭 DISTANCES</div>
+    <div class="sidebar-title">📏 DISTANCES</div>
     <button class="toggle-btn">▶</button>
   </div>
   <div class="sidebar-content">
-    <div class="search-box">
-      <input type="text" class="search-input" id="distanceSearch" placeholder="Search distances...">
-    </div>
     <div class="distance-list" id="distanceList">
       <!-- Devices with distances will be populated here -->
-    </div>
-  </div>
-</div>
-
-<!-- ============ LEFT SIDEBAR - MISSION TIMELINE ============ -->
-<div class="left-sidebar collapsed timeline-panel" id="timelinePanel">
-  <div class="sidebar-header" onclick="toggleSidebar('timelinePanel')">
-    <div class="sidebar-title">🧾 TIMELINE</div>
-    <button class="toggle-btn">▶</button>
-  </div>
-  <div class="sidebar-content">
-    <div class="search-box">
-      <input type="text" class="search-input" id="timelineSearch" placeholder="Search timeline...">
-    </div>
-    <div class="timeline-list" id="timelineList"></div>
-  </div>
-</div>
-
-<!-- ============ LEFT SIDEBAR - MAP LAYERS ============ -->
-<div class="left-sidebar collapsed layers-panel" id="layersSidebar">
-  <div class="sidebar-header" onclick="toggleSidebar('layersSidebar')">
-    <div class="sidebar-title">🛰️ MAP LAYERS</div>
-    <button class="toggle-btn">▶</button>
-  </div>
-  <div class="sidebar-content">
-    <div class="layers-group">
-      <button class="layer-btn active" data-layer="Satellite" onclick="setBaseLayer('Satellite')">Satellite</button>
-      <button class="layer-btn" data-layer="Terrain" onclick="setBaseLayer('Terrain')">Terrain</button>
-      <button class="layer-btn" data-layer="Night Ops" onclick="setBaseLayer('Night Ops')">Night Ops</button>
-    </div>
-    <label class="layer-toggle">
-      <input type="checkbox" onchange="toggleGridOverlay(this.checked)">
-      <span>Grid Overlay</span>
-    </label>
-  </div>
-</div>
-
-<!-- ============ REPORT MODAL ============ -->
-<div class="report-modal" id="reportModal" style="display:none;">
-  <div class="report-modal-content">
-    <div class="report-modal-header">
-      <div class="report-modal-title">MISSION SUMMARY</div>
-      <button class="report-close" onclick="closeReportModal()">Close</button>
-    </div>
-    <div class="report-modal-body" id="reportContent">
-      <!-- Report preview injected here -->
-    </div>
-    <div class="report-modal-footer">
-      <button class="btn btn-secondary" onclick="closeReportModal()">Cancel</button>
-      <button class="btn btn-secondary" onclick="exportFirebaseJson()">Export DB (JSON)</button>
-      <button class="btn btn-primary" onclick="downloadReportPdf()">Download Report (PDF)</button>
     </div>
   </div>
 </div>
@@ -309,7 +291,6 @@ let selectedDevice = null;
 const devices = {};
 const flags = {};
 let lastClickTime = 0;
-let reportWindow = null;
 
 // Diagnostic function to check Firebase connection
 function checkFirebaseStatus() {
@@ -335,52 +316,10 @@ window.checkFirebaseStatus = checkFirebaseStatus;
 
 // Initialize map
 const map = L.map('map').setView([-2.0, 30.1], 13);
-
-const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   maxZoom: 19,
   attribution: 'Tiles © Esri'
-});
-
-const terrainLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-  maxZoom: 17,
-  attribution: 'Tiles © OpenTopoMap (CC-BY-SA)'
-});
-
-const nightOpsLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  maxZoom: 19,
-  attribution: 'Tiles © CARTO'
-});
-
-const gridOverlay = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-lines/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: 'Lines © Stamen'
-});
-
-const baseLayers = {
-  Satellite: satelliteLayer,
-  Terrain: terrainLayer,
-  'Night Ops': nightOpsLayer
-};
-
-let currentBaseLayer = 'Satellite';
-satelliteLayer.addTo(map);
-
-function setBaseLayer(name) {
-  if (!baseLayers[name]) return;
-  if (currentBaseLayer && baseLayers[currentBaseLayer]) {
-    map.removeLayer(baseLayers[currentBaseLayer]);
-  }
-  currentBaseLayer = name;
-  baseLayers[name].addTo(map);
-  document.querySelectorAll('.layer-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.layer === name);
-  });
-}
-
-function toggleGridOverlay(checked) {
-  if (checked) gridOverlay.addTo(map);
-  else map.removeLayer(gridOverlay);
-}
+}).addTo(map);
 
 // ============ FIREBASE CONFIG ============
 const firebaseConfig = {
@@ -827,12 +766,10 @@ function calculateDistance(lat1, lng1, lat2, lng2) {
 function updateDistanceDisplay() {
   const distanceList = document.getElementById('distanceList');
   if (!distanceList) return;
-  const q = (document.getElementById('distanceSearch')?.value || '').toLowerCase();
   
   distanceList.innerHTML = '';
   
   for (const deviceName in devices) {
-    if (q && !deviceName.toLowerCase().includes(q)) continue;
     const dev = devices[deviceName];
     if (!dev || !dev.polyline) continue;
     
@@ -910,24 +847,11 @@ async function updateStats() {
   // debounce: wait 500ms before running to let all routes load
   updateStatsTimeout = setTimeout(async () => {
     const now = Date.now();
-    const deviceEntriesArray = Object.entries(devices);
+    const deviceEntriesArray = Object.values(devices);
 
     const activeDevices = deviceEntriesArray.length;
-    let onlineDevices = 0;
-    let offlineDevices = 0;
-
-    for (const [devName, dev] of deviceEntriesArray) {
-      const offline = (now - dev.lastSeen) > OFFLINE_MS;
-      if (offline) offlineDevices += 1;
-      else onlineDevices += 1;
-
-      if (dev.isOffline === undefined) {
-        dev.isOffline = offline;
-      } else if (dev.isOffline !== offline) {
-        dev.isOffline = offline;
-        addTimelineEvent(offline ? 'Signal Lost' : 'Signal Restored', offline ? 'No updates' : 'Updates resumed', devName);
-      }
-    }
+    const onlineDevices = deviceEntriesArray.filter(dev => (now - dev.lastSeen) <= OFFLINE_MS).length;
+    const offlineDevices = activeDevices - onlineDevices;
 
     // total checkpoints: sum from routesCache
     let totalCheckpoints = 0;
@@ -1072,23 +996,6 @@ db.ref('devices').on('value', snapshot => {
       devices[name].buffer.push({ time: now, lat: latest.lat, lng: latest.lng, alt: latest.alt, speed: latest.spd ?? latest.speed });
       if (devices[name].buffer.length > 100) devices[name].buffer.shift();
     }
-
-    // Timeline events: geofence transitions + speed spikes
-    const currentGeofence = getGeofenceName(latest.lat, latest.lng);
-    if (devices[name].lastGeofence && devices[name].lastGeofence !== currentGeofence) {
-      const type = currentGeofence === 'Out of any' ? 'Geofence Exit' : 'Geofence Enter';
-      addTimelineEvent(type, `${devices[name].lastGeofence} → ${currentGeofence}`, name);
-    } else if (!devices[name].lastGeofence && currentGeofence !== 'Out of any') {
-      addTimelineEvent('Geofence Enter', currentGeofence, name);
-    }
-    devices[name].lastGeofence = currentGeofence;
-
-    const currentSpeed = Number(latest.spd ?? latest.speed ?? 0);
-    const prevSpeed = Number(devices[name].lastSpeed ?? 0);
-    if (prevSpeed <= SPEED_SPIKE_KMH && currentSpeed > SPEED_SPIKE_KMH) {
-      addTimelineEvent('Speed Spike', `${currentSpeed.toFixed(1)} km/h`, name);
-    }
-    devices[name].lastSpeed = currentSpeed;
 
     // keep popup content in sync with latest data
     updateDevicePopup(name, latest);
@@ -1276,81 +1183,6 @@ function pointInPolygon(lat, lng, polygon) {
   return inside;
 }
 
-// Search listeners for left panels
-document.getElementById('distanceSearch')?.addEventListener('input', updateDistanceDisplay);
-document.getElementById('timelineSearch')?.addEventListener('input', renderTimeline);
-
-// ============ TIMELINE + SIGNAL HELPERS ============
-const timelineEvents = [];
-const TIMELINE_MAX = 60;
-const SPEED_SPIKE_KMH = 15;
-
-function formatAge(ms) {
-  if (ms < 1000) return '0s';
-  const s = Math.floor(ms / 1000);
-  if (s < 60) return `${s}s`;
-  const m = Math.floor(s / 60);
-  const r = s % 60;
-  return `${m}m ${r}s`;
-}
-
-function getFixStatus(hdop) {
-  if (hdop === null || hdop === undefined || Number.isNaN(Number(hdop))) return { label: 'Unknown', cls: 'fix-unknown' };
-  const v = Number(hdop);
-  if (v <= 1.5) return { label: 'Good', cls: 'fix-good' };
-  if (v <= 3) return { label: 'Degraded', cls: 'fix-warn' };
-  return { label: 'Poor', cls: 'fix-bad' };
-}
-
-function addTimelineEvent(type, message, deviceName) {
-  const now = new Date();
-  const time = now.toLocaleTimeString();
-  timelineEvents.unshift({ time, type, message, deviceName });
-  if (timelineEvents.length > TIMELINE_MAX) timelineEvents.pop();
-  renderTimeline();
-}
-
-function renderTimeline() {
-  const list = document.getElementById('timelineList');
-  if (!list) return;
-  const q = (document.getElementById('timelineSearch')?.value || '').toLowerCase();
-  const filtered = q
-    ? timelineEvents.filter(ev =>
-        (ev.message || '').toLowerCase().includes(q) ||
-        (ev.type || '').toLowerCase().includes(q) ||
-        (ev.deviceName || '').toLowerCase().includes(q)
-      )
-    : timelineEvents;
-
-  list.innerHTML = filtered.map(ev => `
-    <div class="timeline-item">
-      <div class="timeline-time">${ev.time}</div>
-      <div class="timeline-body">
-        <div class="timeline-type">${ev.type}</div>
-        <div class="timeline-msg">${ev.deviceName ? `[${ev.deviceName}] ` : ''}${ev.message}</div>
-      </div>
-    </div>
-  `).join('');
-}
-
-function buildSparkline(values, width = 220, height = 40) {
-  if (!values || values.length < 2) return '';
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const span = max - min || 1;
-  const step = width / (values.length - 1);
-  const points = values.map((v, i) => {
-    const x = (i * step).toFixed(1);
-    const y = (height - ((v - min) / span) * height).toFixed(1);
-    return `${x},${y}`;
-  }).join(' ');
-  return `
-    <svg class="dp-sparkline" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
-      <polyline points="${points}" />
-    </svg>
-  `;
-}
-
 async function updateDevicePopup(name, latest) {
   const dev = devices[name];
   if (!dev || !latest) return;
@@ -1361,8 +1193,6 @@ async function updateDevicePopup(name, latest) {
   const altVal = latest.alt ?? 0;
   const hdopVal = latest.hdop ?? 'N/A';
   const geofenceName = getGeofenceName(lat, lng);
-  const fix = getFixStatus(latest.hdop);
-  const age = formatAge(Date.now() - dev.lastSeen);
 
   let counts = { total: 0, completed: 0, remaining: 0 };
   try {
@@ -1371,8 +1201,6 @@ async function updateDevicePopup(name, latest) {
     console.warn('updateDevicePopup checkpoints failed', e);
   }
   const pct = counts.total > 0 ? Math.round((counts.completed / counts.total) * 100) : 0;
-  const speeds = dev.buffer.slice(-30).map(p => Number(p.speed ?? p.spd ?? 0));
-  const sparkline = buildSparkline(speeds);
 
   dev.marker.setPopupContent(`
     <div class="device-popup">
@@ -1391,20 +1219,12 @@ async function updateDevicePopup(name, latest) {
         </div>
       </div>
 
-      <div class="dp-fix">
-        <span>Fix</span>
-        <strong class="${fix.cls}">${fix.label}</strong>
-        <em>• ${age} ago</em>
-      </div>
-
       <div class="dp-grid">
         <div class="dp-item"><span>Speed</span><strong>${Number(speedVal).toFixed(1)} km/h</strong></div>
         <div class="dp-item"><span>Alt</span><strong>${Number(altVal).toFixed(1)} m</strong></div>
         <div class="dp-item"><span>HDOP</span><strong>${hdopVal}</strong></div>
         <div class="dp-item"><span>Checkpoints</span><strong>${counts.completed}/${counts.total}</strong></div>
       </div>
-
-      ${sparkline ? `<div class="dp-sparkline-wrap">${sparkline}</div>` : ''}
 
       <div class="dp-coords">
         <div><span>Lat</span><strong>${lat.toFixed(6)}</strong></div>
@@ -1585,7 +1405,6 @@ async function renderDeviceList(filter = '') {
     const ageSec = Math.round((now - dev.lastSeen) / 1000);
     const offline = (now - dev.lastSeen) > OFFLINE_MS;
     const isActive = selectedDevice === name;
-    const fix = getFixStatus(dev.data?.hdop);
 
     // add to select options
     const option = new Option(name, name);
@@ -1613,10 +1432,6 @@ async function renderDeviceList(filter = '') {
         <div class="stat-row">
           <span class="stat-label">Altitude:</span>
           <span class="stat-value">${dev.data?.alt?.toFixed ? dev.data.alt.toFixed(1) : '0'} m</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">Fix:</span>
-          <span class="stat-value ${fix.cls}">${fix.label}</span>
         </div>
         <div class="stat-row">
           <span class="stat-label">Completed:</span>
@@ -1720,10 +1535,6 @@ function markCheckpointCompleted(deviceId, cpId, marker) {
   });
   marker.setIcon(checkmarkIcon);
   marker.setOpacity(0.6);
-
-  const cp = routesCache[deviceId]?.checkpoints?.[cpId];
-  const label = cp?.label || 'Checkpoint';
-  addTimelineEvent('Checkpoint Reached', label, deviceId);
 }
 
 // Update completed checkpoints based on device proximity
@@ -1878,10 +1689,10 @@ db.ref('geofences').on('child_added', snap => {
   });
 
   poly.bindPopup(`
-    <div class="geofence-popup">
-      <div class="geofence-title">${g.name || 'Geofence'}</div>
-      <div class="geofence-meta">Created: ${g.timestamp || 'N/A'}</div>
-      <button onclick="deleteGeofence('${gfId}')" class="geofence-delete">Delete Geofence</button>
+    <div style="min-width:200px;">
+      <b>${g.name || 'Geofence'}</b><br>
+      <small>Created: ${g.timestamp || 'N/A'}</small><br>
+      <button onclick="deleteGeofence('${gfId}')" style="margin-top:8px;padding:6px 12px;background:#ff3d71;color:white;border:none;border-radius:4px;cursor:pointer;width:100%;">Delete Geofence</button>
     </div>
   `);
 
@@ -1942,253 +1753,12 @@ function centerOnSelectedDevice() {
   selectDevice(selectedDevice);
 }
 
-function focusOnSelectedDevice() {
-  if (!selectedDevice || !devices[selectedDevice]) {
-    alert('No device selected');
-    return;
-  }
-  const dev = devices[selectedDevice];
-  if (dev?.polyline) {
-    map.fitBounds(dev.polyline.getBounds(), { padding: [60, 60], maxZoom: 18 });
-  } else if (dev?.marker) {
-    map.setView(dev.marker.getLatLng(), 16);
-  }
-  updateDevicePopup(selectedDevice, dev.data);
-  dev.marker?.openPopup();
-}
-
 function showAllDevices() {
   const group = new L.featureGroup(Object.values(devices).map(d => d.marker));
   if (group.getLayers().length > 0) {
     map.fitBounds(group.getBounds(), { padding: [50, 50] });
   }
 }
-
-// ============ REPORT GENERATION ============
-function openReportModal() {
-  const modal = document.getElementById('reportModal');
-  const content = document.getElementById('reportContent');
-  if (!modal || !content) return;
-  content.innerHTML = buildReportHtml();
-  modal.style.display = 'flex';
-}
-
-function closeReportModal() {
-  const modal = document.getElementById('reportModal');
-  if (modal) modal.style.display = 'none';
-}
-
-function exportFirebaseJson() {
-  db.ref('/').once('value').then(snap => {
-    const data = snap.val() || {};
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `gps-tracker-export-${Date.now()}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }).catch(err => {
-    console.error('Export failed', err);
-    alert('Export failed. Check console for details.');
-  });
-}
-
-function getDeviceSummaryRows() {
-  const rows = [];
-  for (const [name, dev] of Object.entries(devices)) {
-    const lat = dev.data?.lat;
-    const lng = dev.data?.lng;
-    const speed = dev.data?.spd ?? dev.data?.speed ?? 0;
-    const alt = dev.data?.alt ?? 0;
-    const hdop = dev.data?.hdop ?? 'N/A';
-    const age = formatAge(Date.now() - dev.lastSeen);
-    const fix = getFixStatus(dev.data?.hdop).label;
-    const distanceKm = dev.distanceCovered?.toFixed ? dev.distanceCovered.toFixed(2) : '0.00';
-
-    rows.push(`
-      <tr>
-        <td>${name}</td>
-        <td>${fix}</td>
-        <td>${age}</td>
-        <td>${Number(speed).toFixed(1)} km/h</td>
-        <td>${Number(alt).toFixed(1)} m</td>
-        <td>${hdop}</td>
-        <td>${distanceKm} km</td>
-        <td>${typeof lat === 'number' ? lat.toFixed(6) : '—'}</td>
-        <td>${typeof lng === 'number' ? lng.toFixed(6) : '—'}</td>
-      </tr>
-    `);
-  }
-  return rows.join('');
-}
-
-function getCheckpointSummaryRows() {
-  const rows = [];
-  for (const deviceId in routesCache) {
-    const cps = routesCache[deviceId]?.checkpoints || {};
-    const total = Object.keys(cps).length;
-    let completed = 0;
-    for (const cpId in cps) {
-      if (completedCheckpoints.has(`${deviceId}_${cpId}`)) completed++;
-    }
-    const remaining = total - completed;
-    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
-    rows.push(`
-      <tr>
-        <td>${deviceId}</td>
-        <td>${completed}</td>
-        <td>${remaining}</td>
-        <td>${total}</td>
-        <td>${pct}%</td>
-      </tr>
-    `);
-  }
-  return rows.join('');
-}
-
-function getTimelineRows() {
-  return timelineEvents.slice(0, 20).map(ev => `
-    <tr>
-      <td>${ev.time}</td>
-      <td>${ev.type}</td>
-      <td>${ev.deviceName || '—'}</td>
-      <td>${ev.message}</td>
-    </tr>
-  `).join('');
-}
-
-function buildReportHtml() {
-  const now = new Date();
-  const deviceCount = Object.keys(devices).length;
-  const geofenceCount = Object.keys(geofencesCache).length;
-  let totalCheckpoints = 0;
-  for (const devId in routesCache) totalCheckpoints += Object.keys(routesCache[devId].checkpoints || {}).length;
-
-  return `
-    <div class="report">
-      <div class="report-header">
-        <div>
-          <div class="report-title">MISSION SUMMARY REPORT</div>
-          <div class="report-subtitle">Generated ${now.toLocaleString()}</div>
-        </div>
-        <div class="report-badge">CONFIDENTIAL</div>
-      </div>
-
-      <div class="report-section">
-        <div class="report-section-title">Mission Overview</div>
-        <div class="report-grid">
-          <div><span>Devices</span><strong>${deviceCount}</strong></div>
-          <div><span>Checkpoints</span><strong>${totalCheckpoints}</strong></div>
-          <div><span>Geofences</span><strong>${geofenceCount}</strong></div>
-          <div><span>Timeline Events</span><strong>${timelineEvents.length}</strong></div>
-        </div>
-      </div>
-
-      <div class="report-section">
-        <div class="report-section-title">Device Status</div>
-        <table class="report-table">
-          <thead>
-            <tr>
-              <th>Device</th>
-              <th>Fix</th>
-              <th>Last Seen</th>
-              <th>Speed</th>
-              <th>Alt</th>
-              <th>HDOP</th>
-              <th>Distance</th>
-              <th>Lat</th>
-              <th>Lng</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${getDeviceSummaryRows() || '<tr><td colspan="9">No device data</td></tr>'}
-          </tbody>
-        </table>
-      </div>
-
-      <div class="report-section">
-        <div class="report-section-title">Checkpoint Summary</div>
-        <table class="report-table">
-          <thead>
-            <tr>
-              <th>Device</th>
-              <th>Completed</th>
-              <th>Remaining</th>
-              <th>Total</th>
-              <th>Marks</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${getCheckpointSummaryRows() || '<tr><td colspan="5">No checkpoints</td></tr>'}
-          </tbody>
-        </table>
-      </div>
-
-      <div class="report-section">
-        <div class="report-section-title">Recent Timeline Events</div>
-        <table class="report-table">
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Event</th>
-              <th>Device</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${getTimelineRows() || '<tr><td colspan="4">No events</td></tr>'}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  `;
-}
-
-function downloadReportPdf() {
-  const html = buildReportHtml();
-  const css = document.querySelector('style') ? document.querySelector('style').innerHTML : '';
-
-  reportWindow = window.open('', '_blank');
-  if (!reportWindow) return;
-
-  const page = `
-    <html>
-      <head>
-        <title>Mission Summary Report</title>
-        <style>
-          ${css}
-          body { background: #0b111a; color: #e6f7ff; font-family: 'Exo 2', Arial, sans-serif; padding: 24px; }
-          .report { max-width: 1000px; margin: 0 auto; }
-          .report-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-          .report-table th, .report-table td { border: 1px solid rgba(120,150,180,0.35); padding: 8px; font-size: 12px; }
-          .report-header { display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; }
-          .report-title { font-family:'Orbitron', sans-serif; font-size: 18px; letter-spacing: 1px; }
-          .report-subtitle { font-size: 12px; opacity: 0.8; }
-          .report-badge { border:1px solid rgba(120,150,180,0.6); padding:4px 10px; font-size:10px; letter-spacing:1px; }
-          .report-section { margin: 18px 0; }
-          .report-section-title { font-family:'Orbitron', sans-serif; font-size: 13px; letter-spacing: 0.8px; margin-bottom: 6px; }
-          .report-grid { display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
-          .report-grid span { display:block; font-size: 11px; opacity: 0.7; }
-          .report-grid strong { font-size: 14px; }
-          @media print { body { background: #fff; color: #000; } }
-        </style>
-      </head>
-      <body>
-        ${html}
-      </body>
-    </html>
-  `;
-
-  reportWindow.document.open();
-  reportWindow.document.write(page);
-  reportWindow.document.close();
-  reportWindow.onload = () => reportWindow.print();
-}
 </script>
-
 </body>
 </html>
-

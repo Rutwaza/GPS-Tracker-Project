@@ -1,0 +1,286 @@
+{
+  "devices": {
+    "syndicate1": {
+      "-OkalHxe_HYoGAb6Q6u8": {
+        "alt": 1437.9,
+        "hdop": 1.8,
+        "lat": -2.234854,
+        "lng": 30.181554,
+        "spd": 0.1
+      },
+      "-OkalPOaQ4LyNOWjL4UO": {
+        "alt": 1437.6,
+        "hdop": 2.2,
+        "lat": -2.23482,
+        "lng": 30.181567,
+        "spd": 0.2
+      },
+      "-OkalWnDeGXIWs2Qlk8f": {
+        "alt": 1437.5,
+        "hdop": 1,
+        "lat": -2.234829,
+        "lng": 30.181557,
+        "spd": 0.2
+      },
+      "-Okalm630FPXiZoerwqt": {
+        "alt": 1437.2,
+        "hdop": 1,
+        "lat": -2.23484,
+        "lng": 30.181556,
+        "spd": 0.7
+      },
+      "-Okan1mGJEk4UIL_r6VO": {
+        "alt": 1448.1,
+        "hdop": 2.9,
+        "lat": -2.234717,
+        "lng": 30.182053,
+        "spd": 0.6
+      },
+      "-Okan8YE9KJpU5TRq30t": {
+        "alt": 1439.8,
+        "hdop": 3.4,
+        "lat": -2.234712,
+        "lng": 30.181941,
+        "spd": 1.4
+      },
+      "-OkanFvzDhANW-Tw14oH": {
+        "alt": 1427.1,
+        "hdop": 2.9,
+        "lat": -2.234509,
+        "lng": 30.182002,
+        "spd": 2.7
+      },
+      "-OkanMMsLRWLXRuAwK07": {
+        "alt": 1427.4,
+        "hdop": 2.9,
+        "lat": -2.234522,
+        "lng": 30.181999,
+        "spd": 0.8
+      },
+      "-OkanSoysJJB49zesJAr": {
+        "alt": 1436.3,
+        "hdop": 9,
+        "lat": -2.234413,
+        "lng": 30.181762,
+        "spd": 3.9
+      },
+      "-OkdW31cgJreQyhqAMON": {
+        "alt": 1437.8,
+        "hdop": 2.4,
+        "lat": -2.234663,
+        "lng": 30.181923,
+        "spd": 2.5
+      },
+      "-OkdWAJ8LdrVMNtVwmfl": {
+        "alt": 1448.4,
+        "hdop": 2.4,
+        "lat": -2.234579,
+        "lng": 30.181977,
+        "spd": 3.5
+      },
+      "-OkdWHie8pepYIaImz0N": {
+        "alt": 1459.8,
+        "hdop": 2.4,
+        "lat": -2.234425,
+        "lng": 30.181898,
+        "spd": 3.4
+      },
+      "-OkdWP9A2jG97ZDHG0yf": {
+        "alt": 1450,
+        "hdop": 2.2,
+        "lat": -2.234331,
+        "lng": 30.181615,
+        "spd": 3.9
+      },
+      "-OkdWW_KXDz_hSkdo7_e": {
+        "alt": 1451.8,
+        "hdop": 1.9,
+        "lat": -2.234289,
+        "lng": 30.181564,
+        "spd": 1.5
+      },
+      "-OkdWc0fn1b4duH5IIln": {
+        "alt": 1450.3,
+        "hdop": 1.9,
+        "lat": -2.234089,
+        "lng": 30.181661,
+        "spd": 1.9
+      },
+      "-OkdWjSBHr8kmjnQAyx6": {
+        "alt": 1459.8,
+        "hdop": 1.9,
+        "lat": -2.234171,
+        "lng": 30.18194,
+        "spd": 3.3
+      },
+      "-OkdWqt0w-sAS1iK8ilu": {
+        "alt": 1462,
+        "hdop": 9.4,
+        "lat": -2.234286,
+        "lng": 30.182262,
+        "spd": 4.3
+      },
+      "-OkdWyJSoAQdO4PqarPT": {
+        "alt": 1455.4,
+        "hdop": 1.9,
+        "lat": -2.234567,
+        "lng": 30.182468,
+        "spd": 3.9
+      },
+      "-OkdX3lKeIT8Qa9sbvhR": {
+        "alt": 1455.3,
+        "hdop": 1.9,
+        "lat": -2.234579,
+        "lng": 30.182466,
+        "spd": 3.8
+      },
+      "-OkdXAB6erwX0gNA6f5X": {
+        "alt": 1451.8,
+        "hdop": 2,
+        "lat": -2.234742,
+        "lng": 30.182375,
+        "spd": 2.9
+      },
+      "-OkdXHakJubXtVrYPsPa": {
+        "alt": 1441.9,
+        "hdop": 100,
+        "lat": -2.234889,
+        "lng": 30.181928,
+        "spd": 4.2
+      },
+      "-OkdXO25tasSypu3jxBw": {
+        "alt": 1441,
+        "hdop": 2,
+        "lat": -2.234875,
+        "lng": 30.181942,
+        "spd": 3.5
+      }
+    },
+    "syndicate2": {
+      "alt": 1400,
+      "hdop": 1,
+      "lat": -2.123322,
+      "lng": 30.1816,
+      "sats": 4,
+      "speed": 1,
+      "time": "12:30:25"
+    }
+  },
+  "geofences": {
+    "-OgW1o3I9_USuHLQSNhG": {
+      "coords": [
+        [
+          -2.098605918709876,
+          30.160217285156254
+        ],
+        [
+          -2.073045320709606,
+          30.17601013183594
+        ],
+        [
+          -2.0824804891074877,
+          30.251884460449222
+        ],
+        [
+          -2.123479925034227,
+          30.244331359863285
+        ],
+        [
+          -2.1358310072836844,
+          30.171718597412113
+        ]
+      ],
+      "name": "North Zone",
+      "timestamp": "2025-12-15T08:05:45.360Z"
+    },
+    "-OkbQ-fkQ1ngK6h4qVOW": {
+      "coords": [
+        [
+          -2.2191981865395434,
+          30.21197319030762
+        ],
+        [
+          -2.2551338335639097,
+          30.208196640014652
+        ],
+        [
+          -2.2520463185908683,
+          30.150432586669925
+        ],
+        [
+          -2.2185978222108536,
+          30.15377998352051
+        ]
+      ],
+      "name": "Gako Zone",
+      "timestamp": "2026-02-04T06:51:57.784Z"
+    }
+  },
+  "routes": {
+    "syndicate1": {
+      "default": {
+        "checkpoints": {
+          "-OkCyItxppwHb4nNcE9A": {
+            "label": "CHECK 2",
+            "lat": -2.246895,
+            "lng": 30.17049027777778,
+            "seq": 1769760964934,
+            "timestamp": "2026-01-30T08:16:04.934Z"
+          },
+          "-OkZrUoA-JkPTux_vZWn": {
+            "label": "TESTING",
+            "lat": -2.246471666666667,
+            "lng": 30.18905638888889,
+            "seq": 1770145053216,
+            "timestamp": "2026-02-03T18:57:33.216Z"
+          },
+          "-OkhCiPX1HRHTBn5hZtk": {
+            "label": "Checkpoint",
+            "lat": -2.0663549999999997,
+            "lng": 30.25360111111111,
+            "seq": 1770285097637,
+            "timestamp": "2026-02-05T09:51:37.637Z"
+          }
+        }
+      }
+    },
+    "syndicate2": {
+      "default": {
+        "checkpoints": {
+          "-OgVtWqDyUoijsn-Fl_5": {
+            "label": "Mission_S2",
+            "lat": -2.1233222222222223,
+            "lng": 30.181630555555557,
+            "seq": 1765783511436,
+            "timestamp": "2025-12-15T07:25:11.436Z"
+          },
+          "-OgW-T2lbIQF-Ca5AH5f": {
+            "label": "Mission2_S2",
+            "lat": -2.097405,
+            "lng": 30.180988333333335,
+            "seq": 1765785330919,
+            "timestamp": "2025-12-15T07:55:30.919Z"
+          },
+          "-OgW-jFe736gMhvcRO8Z": {
+            "label": "Mission5_S2",
+            "lat": -2.097748055555556,
+            "lng": 30.19909861111111,
+            "seq": 1765785401376,
+            "timestamp": "2025-12-15T07:56:41.376Z"
+          }
+        }
+      }
+    }
+  },
+  "security": {
+    "pass": "Navigate01@RMA"
+  },
+  "test": {
+    "-OjocWxfFgNnyGhtkdkb": {
+      "apn": "internet",
+      "device": "a7670c",
+      "test": true,
+      "timestamp": "2024-01-20T12:00:00Z"
+    }
+  }
+}

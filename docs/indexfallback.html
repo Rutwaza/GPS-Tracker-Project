@@ -227,8 +227,8 @@
   <div class="map-btn" onclick="showAllDevices()" title="Show all devices">
     <span>👁️</span>
   </div>
-  <div class="map-btn" onclick="focusOnSelectedDevice()" title="Focus selected device">
-    <span>🎯</span>
+  <div class="map-btn" id="focusBtn" onclick="focusOnSelectedDevice()" title="Focus selected device">
+    <span id="focusBtnIcon">🎯</span>
   </div>
   <div class="map-btn" onclick="openReportModal()" title="Mission Report">
     <span>📄</span>
@@ -310,6 +310,8 @@ const devices = {};
 const flags = {};
 let lastClickTime = 0;
 let reportWindow = null;
+let focusMode = false;
+let focusedDevice = null;
 
 // Diagnostic function to check Firebase connection
 function checkFirebaseStatus() {
@@ -1942,12 +1944,57 @@ function centerOnSelectedDevice() {
   selectDevice(selectedDevice);
 }
 
+function setDeviceVisibility(name, visible) {
+  const dev = devices[name];
+  if (!dev) return;
+  const action = visible ? map.addLayer.bind(map) : map.removeLayer.bind(map);
+  if (dev.marker) action(dev.marker);
+  if (dev.polyline) action(dev.polyline);
+  if (dev.trackLayer) action(dev.trackLayer);
+}
+
+function setRouteVisibility(deviceId, visible) {
+  const route = routes[deviceId];
+  if (!route) return;
+  const action = visible ? map.addLayer.bind(map) : map.removeLayer.bind(map);
+  if (route.poly) action(route.poly);
+  Object.values(route.markers || {}).forEach(m => action(m));
+}
+
 function focusOnSelectedDevice() {
   if (!selectedDevice || !devices[selectedDevice]) {
     alert('No device selected');
     return;
   }
   const dev = devices[selectedDevice];
+  const focusBtn = document.getElementById('focusBtn');
+  const focusIcon = document.getElementById('focusBtnIcon');
+
+  // Toggle focus mode on/off
+  if (focusMode && focusedDevice === selectedDevice) {
+    // restore all
+    for (const name in devices) setDeviceVisibility(name, true);
+    for (const deviceId in routes) setRouteVisibility(deviceId, true);
+    focusMode = false;
+    focusedDevice = null;
+    if (focusBtn) focusBtn.classList.remove('active');
+    if (focusIcon) focusIcon.textContent = '🎯';
+    showAllDevices();
+    return;
+  }
+
+  // enable focus mode
+  for (const name in devices) {
+    setDeviceVisibility(name, name === selectedDevice);
+  }
+  for (const deviceId in routes) {
+    setRouteVisibility(deviceId, deviceId === selectedDevice);
+  }
+  focusMode = true;
+  focusedDevice = selectedDevice;
+  if (focusBtn) focusBtn.classList.add('active');
+  if (focusIcon) focusIcon.textContent = '🧭';
+
   if (dev?.polyline) {
     map.fitBounds(dev.polyline.getBounds(), { padding: [60, 60], maxZoom: 18 });
   } else if (dev?.marker) {
@@ -2191,4 +2238,3 @@ function downloadReportPdf() {
 
 </body>
 </html>
-
