@@ -21,6 +21,18 @@
 </head>
 <body>
 
+<!-- ============ ACCESS GATE ============ -->
+<div id="authGate" class="auth-gate">
+  <div class="auth-card">
+    <img src="image.png" alt="Logo" class="auth-logo">
+    <div class="auth-title">SECURE ACCESS</div>
+    <div class="auth-sub">Enter authorization passcode</div>
+    <input type="password" id="authPass" class="auth-input" placeholder="Passcode">
+    <button class="auth-btn" onclick="submitAuth()">Unlock</button>
+    <div id="authError" class="auth-error"></div>
+  </div>
+</div>
+
 <!-- ============ FULL SCREEN MAP ============ -->
 <div id="map"></div>
 
@@ -312,6 +324,41 @@ let lastClickTime = 0;
 let reportWindow = null;
 let focusMode = false;
 let focusedDevice = null;
+
+// ============ ACCESS GATE ============
+const ACCESS_CODE = 'Navigate01@RMA';
+
+function submitAuth() {
+  const input = document.getElementById('authPass');
+  const error = document.getElementById('authError');
+  const value = input ? input.value.trim() : '';
+  if (value === ACCESS_CODE) {
+    sessionStorage.setItem('gps_auth_ok', '1');
+    const gate = document.getElementById('authGate');
+    if (gate) gate.style.display = 'none';
+  } else {
+    if (error) error.textContent = 'Invalid passcode';
+  }
+}
+
+function initAuthGate() {
+  const gate = document.getElementById('authGate');
+  if (!gate) return;
+  if (sessionStorage.getItem('gps_auth_ok') === '1') {
+    gate.style.display = 'none';
+  } else {
+    gate.style.display = 'flex';
+  }
+
+  const input = document.getElementById('authPass');
+  if (input) {
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') submitAuth();
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initAuthGate);
 
 // Diagnostic function to check Firebase connection
 function checkFirebaseStatus() {
