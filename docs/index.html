@@ -13,10 +13,85 @@
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link rel="stylesheet" href="style.css"/>
+
+<!-- Military Checkpoint Styles -->
+<style>
+  /* Military-themed checkpoint labels */
+  .flag-label {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.95), rgba(178, 34, 34, 0.9))!important;
+    border: 2px solid #ff6b6b!important;
+    border-radius: 4px!important;
+    color: #e6f7ff!important;
+    font-family: 'Orbitron', monospace!important;
+    font-weight: 700!important;
+    font-size: 12px!important;
+    padding: 4px 8px!important;
+    box-shadow: 0 0 12px rgba(220, 53, 69, 0.4), inset 0 0 8px rgba(255, 255, 255, 0.1)!important;
+    letter-spacing: 0.8px!important;
+    text-transform: uppercase!important;
+    opacity: 1!important;
+    z-index: 999!important;
+  }
+  
+  .flag-label.completed {
+    background: linear-gradient(135deg, rgba(0, 230, 117, 0.98), rgba(34, 139, 34, 0.95))!important;
+    border-color: #4ade80!important;
+    box-shadow: 0 0 16px rgba(74, 222, 128, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.15)!important;
+  }
+  
+  .flag-label.hidden {
+    display: none!important;
+  }
+  
+  /* Exercise selection overlay */
+  #exerciseOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+  }
+  
+  .overlay-message {
+    text-align: center;
+    background: rgba(15, 23, 42, 0.95);
+    border: 2px solid #4ade80;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .overlay-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+  }
+  
+  .overlay-text {
+    font-size: 24px;
+    color: #4ade80;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.6;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+</style>
 
 </head>
 <body>
@@ -33,13 +108,65 @@
   </div>
 </div>
 
+<!-- ============ EXERCISE TOP BAR ============ -->
+<div class="exercise-topbar">
+  <div class="exercise-header">
+    <div class="exercise-title" id="exerciseTopTitle">Not set</div>
+    <div class="exercise-actions">
+      <button class="exercise-btn settings-btn" onclick="openExerciseSettings()">Exercise Settings</button>
+    </div>
+  </div>
+</div>
+
+<div id="exerciseSettingsModal" class="exercise-modal" style="display:none;">
+  <div class="exercise-modal-card">
+    <div class="exercise-modal-head">
+      <div class="exercise-modal-title">Exercise Settings</div>
+      <button class="exercise-btn" onclick="closeExerciseSettings()">Close</button>
+    </div>
+    <div class="exercise-crud">
+      <select id="exerciseSelect" class="exercise-input">
+        <option value="">Select Exercise</option>
+      </select>
+      <input id="exerciseNameInput" class="exercise-input" type="text" placeholder="Exercise Name">
+      <input id="exerciseDateInput" class="exercise-input" type="date">
+      <input id="exerciseStartInput" class="exercise-input" type="time">
+      <input id="exerciseAllowedInput" class="exercise-input" type="text" placeholder="Allowed HH:MM:SS">
+      <button class="exercise-btn" onclick="newExercise()">New</button>
+      <button class="exercise-btn" onclick="saveExercise()">Save</button>
+      <button class="exercise-btn" onclick="deleteExercise()">Delete</button>
+      <button class="exercise-btn btn-start" onclick="startExerciseTimer()">Start</button>
+      <button class="exercise-btn btn-stop" onclick="stopExerciseTimer()">Stop</button>
+    </div>
+    <div class="exercise-assign-panel">
+      <div class="exercise-assign-title">Assigned Devices</div>
+      <div class="exercise-assign-list" id="exerciseDeviceAssignments"></div>
+    </div>
+    <div class="exercise-meta settings-meta">
+      <div class="meta-item"><span>Exercise Name</span><strong id="exerciseNameDisplay">Not set</strong></div>
+      <div class="meta-item"><span>Date</span><strong id="exerciseDateDisplay">--</strong></div>
+      <div class="meta-item"><span>Start Time</span><strong id="exerciseStartDisplay">--</strong></div>
+      <div class="meta-item"><span>Allowed Time</span><strong id="exerciseAllowedDisplay">00:00:00</strong></div>
+      <div class="meta-item"><span>Elapsed</span><strong id="exerciseElapsedDisplay">00:00:00</strong></div>
+    </div>
+  </div>
+</div>
+
 <!-- ============ FULL SCREEN MAP ============ -->
 <div id="map"></div>
+<div id="exerciseOverlay" class="exercise-overlay">
+  <div class="overlay-message">
+    <div class="overlay-icon">🎯</div>
+    <div class="overlay-text">SELECT AN EXERCISE<br/>TO MONITOR</div>
+  </div>
+</div>
 
 <!-- ============ TIME DISPLAY ============ -->
 <div class="time-display">
   <div class="time-label">LOCAL TIME</div>
   <div class="time-value" id="currentTime">--:--:--</div>
+  <div class="time-label">ELAPSED</div>
+  <div class="time-value elapsed-time-value" id="timeElapsedDisplay">00:00:00</div>
 </div>
 
 <!-- ============ TOP CONTROL CARDS ============ -->
@@ -239,10 +366,10 @@
   <div class="map-btn" onclick="showAllDevices()" title="Show all devices">
     <span>👁️</span>
   </div>
-  <div class="map-btn" id="focusBtn" onclick="focusOnSelectedDevice()" title="Focus selected device">
-    <span id="focusBtnIcon">🎯</span>
+  <div class="map-btn" onclick="focusOnSelectedDevice()" title="Focus selected device">
+    <span>🎯</span>
   </div>
-  <div class="map-btn" onclick="openReportModal()" title="Mission Report">
+  <div class="map-btn" onclick="openReportModal()" title="Navigation Report">
     <span>📄</span>
   </div>
 </div>
@@ -296,11 +423,25 @@
   </div>
 </div>
 
+<!-- ============ LEFT SIDEBAR - PLACES ============ -->
+<div class="left-sidebar collapsed places-panel" id="placesSidebar">
+  <div class="sidebar-header" onclick="toggleSidebar('placesSidebar')">
+    <div class="sidebar-title">📌 PLACES</div>
+    <button class="toggle-btn">▶</button>
+  </div>
+  <div class="sidebar-content">
+    <div class="search-box">
+      <input type="text" class="search-input" id="placeSearch" placeholder="Search places...">
+    </div>
+    <div class="places-list" id="placesList"></div>
+  </div>
+</div>
+
 <!-- ============ REPORT MODAL ============ -->
 <div class="report-modal" id="reportModal" style="display:none;">
   <div class="report-modal-content">
     <div class="report-modal-header">
-      <div class="report-modal-title">MISSION SUMMARY</div>
+      <div class="report-modal-title">NAVIGATION SUMMARY</div>
       <button class="report-close" onclick="closeReportModal()">Close</button>
     </div>
     <div class="report-modal-body" id="reportContent">
@@ -316,8 +457,9 @@
 
 <script>
 // ============ INITIALIZATION ============
-const OFFLINE_MS = 30000;
+const OFFLINE_MS = 60000;
 let selectedDevice = null;
+let focusedDeviceOnly = null;
 const devices = {};
 
 // ============ ACCESS GATE ============
@@ -355,10 +497,405 @@ function initAuthGate() {
 
 document.addEventListener('DOMContentLoaded', initAuthGate);
 const flags = {};
+const placesCache = {};
+const placeMarkers = {};
 let lastClickTime = 0;
 let reportWindow = null;
-let focusMode = false;
-let focusedDevice = null;
+
+const EXERCISE_STORAGE_KEY = 'gako_exercises_v1';
+let exerciseTimerInterval = null;
+const SYNDICATE_NAV_STATE_KEY = 'gako_syndicate_nav_state_v1';
+const exercisesCache = {}; // { exerciseId: exercise } - synced with Firebase
+let currentEditingExerciseId = null; // Track the exercise being edited (across saves)
+
+function openExerciseSettings() {
+  const modal = document.getElementById('exerciseSettingsModal');
+  if (modal) modal.style.display = 'flex';
+}
+
+function closeExerciseSettings() {
+  const modal = document.getElementById('exerciseSettingsModal');
+  if (modal) modal.style.display = 'none';
+}
+
+function getExerciseStore() {
+  // Return exercises from Firebase cache, fall back to localStorage if cache empty
+  const cached = Object.values(exercisesCache);
+  if (cached.length > 0) return cached;
+  try {
+    const raw = localStorage.getItem(EXERCISE_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function setExerciseStore(items) {
+  // Save to localStorage for offline fallback
+  localStorage.setItem(EXERCISE_STORAGE_KEY, JSON.stringify(items));
+  // Push each exercise to Firebase
+  if (!items || items.length === 0) {
+    // Clear all exercises if empty array
+    db.ref('exercises').remove().catch(err => console.warn('Error clearing exercises', err));
+  } else {
+    // Update each exercise in Firebase
+    items.forEach(item => {
+      if (item.id) {
+        db.ref(`exercises/${item.id}`).set(item).catch(err => console.error('Failed to save exercise', err));
+      }
+    });
+  }
+}
+
+function pad2(n) {
+  return String(n).padStart(2, '0');
+}
+
+function formatMsToClock(ms) {
+  const total = Math.max(0, Math.floor(ms / 1000));
+  const h = Math.floor(total / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  return `${pad2(h)}:${pad2(m)}:${pad2(s)}`;
+}
+
+function parseAllowedTimeToMs(value) {
+  if (!value) return 0;
+  const parts = String(value).split(':').map(Number);
+  if (parts.some(v => Number.isNaN(v))) return 0;
+  const [hh = 0, mm = 0, ss = 0] = parts;
+  return (((hh * 60) + mm) * 60 + ss) * 1000;
+}
+
+function populateExerciseSelect(selectedId = '') {
+  const select = document.getElementById('exerciseSelect');
+  if (!select) return;
+  const data = getExerciseStore();
+  select.innerHTML = '<option value="">Select Exercise</option>' + data.map(item =>
+    `<option value="${item.id}" ${item.id === selectedId ? 'selected' : ''}>${item.name || 'Untitled'} (${item.date || '--'})</option>`
+  ).join('');
+}
+
+function normalizeAssignedDevices(list) {
+  if (!Array.isArray(list)) return [];
+  const seen = new Set();
+  const out = [];
+  for (const id of list) {
+    const v = String(id || '').trim();
+    if (!v || seen.has(v)) continue;
+    seen.add(v);
+    out.push(v);
+  }
+  return out;
+}
+
+function getCheckedAssignedDevicesFromForm() {
+  const nodes = document.querySelectorAll('#exerciseDeviceAssignments input[type="checkbox"]:checked');
+  return Array.from(nodes).map(n => String(n.value || '').trim()).filter(Boolean);
+}
+
+function renderExerciseDeviceAssignments(item) {
+  const container = document.getElementById('exerciseDeviceAssignments');
+  if (!container) return;
+
+  const assigned = new Set(normalizeAssignedDevices(item?.assignedDevices));
+  const deviceIds = Object.keys(devices).sort((a, b) => a.localeCompare(b));
+  if (deviceIds.length === 0) {
+    container.innerHTML = '<div class="exercise-assign-empty">No devices available yet.</div>';
+    return;
+  }
+
+  container.innerHTML = deviceIds.map(id => `
+    <label class="exercise-assign-item">
+      <input type="checkbox" value="${id}" ${assigned.has(id) ? 'checked' : ''}>
+      <span>${id}</span>
+    </label>
+  `).join('');
+}
+
+function getSelectedExerciseDeviceSet() {
+  const exercise = getSelectedExercise();
+  if (!exercise) return null;
+  if (!Object.prototype.hasOwnProperty.call(exercise, 'assignedDevices')) return null;
+  return new Set(normalizeAssignedDevices(exercise.assignedDevices));
+}
+
+function setExerciseForm(item) {
+  document.getElementById('exerciseNameInput').value = item?.name || '';
+  document.getElementById('exerciseDateInput').value = item?.date || '';
+  document.getElementById('exerciseStartInput').value = item?.startTime || '';
+  document.getElementById('exerciseAllowedInput').value = item?.allowedTime || '00:00:00';
+  renderExerciseDeviceAssignments(item);
+}
+
+function renderExerciseDisplay(item) {
+  document.getElementById('exerciseNameDisplay').textContent = item?.name || 'Not set';
+  document.getElementById('exerciseDateDisplay').textContent = item?.date || '--';
+  document.getElementById('exerciseStartDisplay').textContent = item?.startTime || '--';
+  document.getElementById('exerciseAllowedDisplay').textContent = item?.allowedTime || '00:00:00';
+  const titleEl = document.getElementById('exerciseTopTitle');
+  if (titleEl) titleEl.textContent = item?.name || 'Not set';
+  
+  // Show/hide overlay based on exercise selection
+  const overlay = document.getElementById('exerciseOverlay');
+  if (overlay) {
+    overlay.style.display = item ? 'none' : 'flex';
+  }
+}
+
+function getSelectedExerciseId() {
+  const select = document.getElementById('exerciseSelect');
+  return select ? select.value : '';
+}
+
+function getSelectedExercise() {
+  const id = getSelectedExerciseId();
+  if (!id) return null;
+  return getExerciseStore().find(x => x.id === id) || null;
+}
+
+function getCurrentExerciseElapsedMs(exercise) {
+  if (!exercise) return 0;
+  const base = Number(exercise.elapsedBeforeMs || 0);
+  if (!exercise.running || !exercise.startedAtMs) return base;
+  return base + (Date.now() - Number(exercise.startedAtMs));
+}
+
+function updateExerciseElapsedDisplay() {
+  const exercise = getSelectedExercise();
+  const elapsedEl = document.getElementById('exerciseElapsedDisplay');
+  const elapsedTopEl = document.getElementById('timeElapsedDisplay');
+  if (!elapsedEl) return;
+
+  if (!exercise) {
+    elapsedEl.textContent = '00:00:00';
+    elapsedEl.style.color = 'var(--success)';
+    if (elapsedTopEl) elapsedTopEl.textContent = '00:00:00';
+    return;
+  }
+
+  const elapsedMs = getCurrentExerciseElapsedMs(exercise);
+  const allowedMs = parseAllowedTimeToMs(exercise.allowedTime || '00:00:00');
+  const elapsedText = formatMsToClock(elapsedMs);
+  elapsedEl.textContent = elapsedText;
+  if (elapsedTopEl) elapsedTopEl.textContent = elapsedText;
+  elapsedEl.style.color = allowedMs > 0 && elapsedMs > allowedMs ? 'var(--danger)' : 'var(--success)';
+}
+
+function persistAndRefreshExercise(selectedId = '') {
+  populateExerciseSelect(selectedId);
+  const selected = getSelectedExercise();
+  renderExerciseDisplay(selected);
+  updateExerciseElapsedDisplay();
+}
+
+function newExercise() {
+  const select = document.getElementById('exerciseSelect');
+  if (select) select.value = '';
+  currentEditingExerciseId = null; // Reset editing state when creating new
+  setExerciseForm(null);
+  renderExerciseDisplay(null);
+  updateExerciseElapsedDisplay();
+  applyMapFocusMode();
+}
+
+function saveExercise() {
+  const name = document.getElementById('exerciseNameInput').value.trim();
+  const date = document.getElementById('exerciseDateInput').value;
+  const startTime = document.getElementById('exerciseStartInput').value;
+  const allowedTime = document.getElementById('exerciseAllowedInput').value.trim() || '00:00:00';
+  const assignedDevices = normalizeAssignedDevices(getCheckedAssignedDevicesFromForm());
+
+  if (!name) {
+    alert('Enter exercise name');
+    return;
+  }
+
+  const store = getExerciseStore();
+  // Use previously editing ID if available, otherwise get from dropdown
+  let id = currentEditingExerciseId || getSelectedExerciseId();
+  const existing = id ? store.find(x => x.id === id) : null;
+
+  if (!id) id = `ex_${Date.now()}`;
+
+  const nextItem = {
+    id,
+    name,
+    date,
+    startTime,
+    allowedTime,
+    assignedDevices,
+    running: existing?.running || false,
+    startedAtMs: existing?.startedAtMs || null,
+    elapsedBeforeMs: Number(existing?.elapsedBeforeMs || 0)
+  };
+
+  const idx = store.findIndex(x => x.id === id);
+  if (idx >= 0) store[idx] = nextItem;
+  else store.push(nextItem);
+
+  setExerciseStore(store);
+  currentEditingExerciseId = id; // Remember this exercise is being edited
+  persistAndRefreshExercise(id);
+  applyMapFocusMode();
+}
+
+function deleteExercise() {
+  const id = getSelectedExerciseId();
+  if (!id) return;
+  if (!confirm('Delete selected exercise?')) return;
+  const filtered = getExerciseStore().filter(x => x.id !== id);
+  setExerciseStore(filtered);
+  // Also remove from Firebase
+  db.ref(`exercises/${id}`).remove().catch(err => console.error('Failed to delete exercise from Firebase', err));
+  newExercise();
+  populateExerciseSelect('');
+  applyMapFocusMode();
+}
+
+function startExerciseTimer() {
+  const id = getSelectedExerciseId();
+  if (!id) {
+    alert('Save or select an exercise first.');
+    return;
+  }
+  const store = getExerciseStore();
+  const idx = store.findIndex(x => x.id === id);
+  if (idx < 0) return;
+  if (!store[idx].running) {
+    store[idx].running = true;
+    store[idx].startedAtMs = Date.now();
+    setExerciseStore(store);
+  }
+  updateExerciseElapsedDisplay();
+}
+
+function stopExerciseTimer() {
+  const id = getSelectedExerciseId();
+  if (!id) return;
+  const store = getExerciseStore();
+  const idx = store.findIndex(x => x.id === id);
+  if (idx < 0) return;
+  const item = store[idx];
+  if (item.running && item.startedAtMs) {
+    item.elapsedBeforeMs = Number(item.elapsedBeforeMs || 0) + (Date.now() - Number(item.startedAtMs));
+  }
+  item.running = false;
+  item.startedAtMs = null;
+  setExerciseStore(store);
+  updateExerciseElapsedDisplay();
+}
+
+function initExerciseTopBar() {
+  populateExerciseSelect('');
+  newExercise();
+
+  const select = document.getElementById('exerciseSelect');
+  if (select) {
+    select.addEventListener('change', () => {
+      const selected = getSelectedExercise();
+      setExerciseForm(selected);
+      renderExerciseDisplay(selected);
+      updateExerciseElapsedDisplay();
+      applyMapFocusMode();
+    });
+  }
+
+  if (exerciseTimerInterval) clearInterval(exerciseTimerInterval);
+  exerciseTimerInterval = setInterval(updateExerciseElapsedDisplay, 1000);
+
+  const modal = document.getElementById('exerciseSettingsModal');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeExerciseSettings();
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initExerciseTopBar);
+
+function getSyndicateNavStore() {
+  try {
+    const raw = localStorage.getItem(SYNDICATE_NAV_STATE_KEY);
+    const parsed = raw ? JSON.parse(raw) : {};
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function setSyndicateNavStore(store) {
+  try {
+    localStorage.setItem(SYNDICATE_NAV_STATE_KEY, JSON.stringify(store || {}));
+  } catch (e) {}
+}
+
+function getSyndicateNavState(deviceId) {
+  const store = getSyndicateNavStore();
+  const cur = store[deviceId] || {};
+  return {
+    running: Boolean(cur.running),
+    startedAtMs: Number(cur.startedAtMs || 0),
+    elapsedBeforeMs: Number(cur.elapsedBeforeMs || 0)
+  };
+}
+
+function getSyndicateNavElapsedMs(deviceId) {
+  const st = getSyndicateNavState(deviceId);
+  if (st.running && st.startedAtMs) {
+    return st.elapsedBeforeMs + (Date.now() - st.startedAtMs);
+  }
+  return st.elapsedBeforeMs;
+}
+
+function getSyndicateNavStatus(deviceId) {
+  return getSyndicateNavState(deviceId).running ? 'START' : 'STOP';
+}
+
+function startSyndicateNavigation(deviceId) {
+  const store = getSyndicateNavStore();
+  const cur = getSyndicateNavState(deviceId);
+  if (!cur.running) {
+    store[deviceId] = {
+      running: true,
+      startedAtMs: Date.now(),
+      elapsedBeforeMs: cur.elapsedBeforeMs
+    };
+    setSyndicateNavStore(store);
+    addTimelineEvent('Navigation Start', 'Syndicate started navigation', deviceId);
+  }
+  renderDeviceList(document.getElementById('deviceSearch').value);
+}
+
+function stopSyndicateNavigation(deviceId) {
+  const store = getSyndicateNavStore();
+  const cur = getSyndicateNavState(deviceId);
+  if (cur.running) {
+    const elapsedBeforeMs = cur.elapsedBeforeMs + (Date.now() - cur.startedAtMs);
+    store[deviceId] = {
+      running: false,
+      startedAtMs: 0,
+      elapsedBeforeMs
+    };
+    setSyndicateNavStore(store);
+    addTimelineEvent('Navigation Stop', 'Syndicate stopped navigation', deviceId);
+  }
+  renderDeviceList(document.getElementById('deviceSearch').value);
+}
+
+function getDeviceDistanceCoveredKm(dev) {
+  if (!dev || !dev.polyline) return 0;
+  const latLngs = dev.polyline.getLatLngs();
+  if (!Array.isArray(latLngs) || latLngs.length < 2) return 0;
+  let total = 0;
+  for (let i = 1; i < latLngs.length; i++) {
+    const prev = latLngs[i - 1];
+    const curr = latLngs[i];
+    total += calculateDistance(prev.lat, prev.lng, curr.lat, curr.lng);
+  }
+  return total;
+}
 
 // Diagnostic function to check Firebase connection
 function checkFirebaseStatus() {
@@ -384,6 +921,35 @@ window.checkFirebaseStatus = checkFirebaseStatus;
 
 // Initialize map
 const map = L.map('map').setView([-2.0, 30.1], 13);
+
+let openPopupCount = 0;
+map.on('popupopen', () => {
+  openPopupCount += 1;
+  document.body.classList.add('popup-priority');
+});
+map.on('popupclose', () => {
+  openPopupCount = Math.max(0, openPopupCount - 1);
+  if (openPopupCount === 0) {
+    document.body.classList.remove('popup-priority');
+  }
+});
+
+// Keyboard shortcut: B = back (close popup and restore normal layering)
+document.addEventListener('keydown', (e) => {
+  const target = e.target;
+  const typing =
+    target &&
+    (target.tagName === 'INPUT' ||
+     target.tagName === 'TEXTAREA' ||
+     target.tagName === 'SELECT' ||
+     target.isContentEditable);
+  if (typing) return;
+  if (e.key?.toLowerCase() !== 'b') return;
+
+  map.closePopup();
+  openPopupCount = 0;
+  document.body.classList.remove('popup-priority');
+});
 
 const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   maxZoom: 19,
@@ -551,7 +1117,8 @@ function addCheckpoint() {
     lng: lng,
     label: label,
     seq: Date.now(),
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    completed: false // will be set when device comes close
   };
   
   if (!deviceId) {
@@ -571,6 +1138,13 @@ function addCheckpoint() {
       document.getElementById('lngMin').value = '';
       document.getElementById('lngSec').value = '';
       updateStats();
+      // Clear cached histories so new checkpoint gets checked against fresh device history
+      try {
+        Object.keys(historiesCache).forEach(k => delete historiesCache[k]);
+      } catch (e) { /* ignore */ }
+      // Immediately evaluate completions (live + history) so recently-added checkpoint
+      // near existing polylines/histories will be marked without waiting for interval.
+      setTimeout(() => updateCompletedCheckpoints(), 250);
     })
     .catch(err => console.error('Failed to add checkpoint', err));
 }
@@ -605,6 +1179,7 @@ function addAtMapCenter() {
 let drawingGeofence = false;
 let gfCoords = [];
 let gfLayer = null;
+let showCheckpointLabels = true; // Track checkpoint label visibility
 
 // create finish/cancel UI buttons
 (function createGeofenceControls(){
@@ -616,6 +1191,7 @@ let gfLayer = null;
     <button id="cancelGeofenceBtn" style="display:none;padding:8px 10px;background:#ff3d71;color:white;border:none;border-radius:6px;cursor:pointer;font-weight:600;box-shadow:0 0 10px rgba(255,61,113,0.35);">Cancel</button>
     <button id="pickCPBtn" style="padding:8px 12px;background:linear-gradient(90deg,rgba(0,230,255,0.28),rgba(0,255,157,0.18));border:1px solid var(--accent);color:var(--accent);border-radius:6px;cursor:pointer;font-weight:700;letter-spacing:0.3px;box-shadow:0 0 12px rgba(0,230,255,0.25);">🗺️ Draw Geofence</button>
     <button id="toggleGeofenceBtn" style="padding:8px 12px;background:rgba(10,20,35,0.85);border:1px solid rgba(0,230,255,0.35);color:#9fefff;border-radius:6px;cursor:pointer;font-weight:600;letter-spacing:0.2px;">Hide Geofences</button>
+    <button id="toggleCheckpointLabelsBtn" style="padding:8px 12px;background:rgba(10,20,35,0.85);border:1px solid rgba(0,200,83,0.5);color:#00ff9d;border-radius:6px;cursor:pointer;font-weight:600;letter-spacing:0.2px;box-shadow:0 0 8px rgba(0,200,83,0.2);">Hide Checkpoints</button>
   `;
   document.body.appendChild(container);
   
@@ -656,6 +1232,13 @@ let gfLayer = null;
     const btn = e.currentTarget;
     setGeofenceVisibility(!showGeofences);
     btn.textContent = showGeofences ? 'Hide Geofences' : 'Show Geofences';
+  });
+
+  document.getElementById('toggleCheckpointLabelsBtn').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    showCheckpointLabels = !showCheckpointLabels;
+    setCheckpointLabelsVisibility(showCheckpointLabels);
+    btn.textContent = showCheckpointLabels ? 'Hide Checkpoints' : 'Show Checkpoints';
   });
 })();
 
@@ -702,6 +1285,110 @@ map.on('contextmenu', function(e) {
   }
 });
 
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function createPlaceAt(lat, lng) {
+  const nameInput = prompt('Place name:');
+  if (nameInput === null) return;
+  const name = nameInput.trim();
+  if (!name) {
+    alert('Place name is required.');
+    return;
+  }
+  db.ref('places').push({
+    name,
+    lat,
+    lng,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  }).catch(err => {
+    console.error('Failed to create place', err);
+    alert('Failed to create place.');
+  });
+}
+
+function renderPlacesList() {
+  const list = document.getElementById('placesList');
+  if (!list) return;
+  const q = (document.getElementById('placeSearch')?.value || '').trim().toLowerCase();
+  const places = Object.entries(placesCache)
+    .filter(([, p]) => {
+      if (!q) return true;
+      const n = String(p?.name || '').toLowerCase();
+      return n.includes(q);
+    })
+    .sort((a, b) => String(a[1]?.name || '').localeCompare(String(b[1]?.name || '')));
+
+  if (places.length === 0) {
+    list.innerHTML = '<div class="places-empty">No places</div>';
+    return;
+  }
+
+  list.innerHTML = places.map(([id, p]) => `
+    <div class="place-item">
+      <div class="place-item-main" onclick="zoomToPlace('${id}')">
+        <div class="place-item-name">${escapeHtml(p.name || 'Place')}</div>
+        <div class="place-item-coords">${Number(p.lat).toFixed(5)}, ${Number(p.lng).toFixed(5)}</div>
+      </div>
+      <div class="place-item-actions">
+        <button class="place-btn" onclick="editPlace('${id}')">Edit</button>
+        <button class="place-btn danger" onclick="deletePlace('${id}')">Delete</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function zoomToPlace(id) {
+  const marker = placeMarkers[id];
+  if (!marker) return;
+  map.setView(marker.getLatLng(), 16);
+  marker.openPopup();
+}
+
+function editPlace(id) {
+  const place = placesCache[id];
+  if (!place) return;
+  const nameInput = prompt('Edit place name:', place.name || '');
+  if (nameInput === null) return;
+  const name = nameInput.trim();
+  if (!name) {
+    alert('Place name is required.');
+    return;
+  }
+  db.ref(`places/${id}`).update({
+    name,
+    updatedAt: new Date().toISOString()
+  }).catch(err => {
+    console.error('Failed to edit place', err);
+    alert('Failed to edit place.');
+  });
+}
+
+function deletePlace(id) {
+  const place = placesCache[id];
+  if (!place) return;
+  if (!confirm(`Delete place "${place.name || 'Place'}"?`)) return;
+  db.ref(`places/${id}`).remove().catch(err => {
+    console.error('Failed to delete place', err);
+    alert('Failed to delete place.');
+  });
+}
+
+// Left-click on map creates a named place.
+map.on('click', function(e) {
+  if (drawingGeofence) return;
+  createPlaceAt(e.latlng.lat, e.latlng.lng);
+});
+
+document.getElementById('placeSearch')?.addEventListener('input', renderPlacesList);
+
 
 // --- caches for quick lookup ---
 const geofencesCache = {};    // { gfId: { name, coords } }
@@ -716,6 +1403,93 @@ function toNumber(value) {
   return Number.isFinite(n) ? n : null;
 }
 
+function parseBatteryNumber(value) {
+  if (value === null || value === undefined) return null;
+  if (typeof value === 'string') {
+    const s = value.trim();
+    if (!s) return null;
+    const cleaned = s.replace(/[^0-9.\-]/g, '');
+    if (!cleaned) return null;
+    const n = Number(cleaned);
+    return Number.isFinite(n) ? n : null;
+  }
+  return toNumber(value);
+}
+
+function normalizeBatteryVoltage(voltageRaw) {
+  const v = parseBatteryNumber(voltageRaw);
+  if (v === null) return null;
+  // Support millivolts from firmware (e.g. 3950 -> 3.95V)
+  if (v > 20 && v < 10000) return v / 1000;
+  return v;
+}
+
+function getValueByPath(obj, path) {
+  if (!obj || typeof obj !== 'object') return undefined;
+  const parts = path.split('.');
+  let cur = obj;
+  for (const p of parts) {
+    if (!cur || typeof cur !== 'object' || !(p in cur)) return undefined;
+    cur = cur[p];
+  }
+  return cur;
+}
+
+function firstDefinedValue(obj, paths) {
+  for (const p of paths) {
+    const v = getValueByPath(obj, p);
+    if (v !== undefined && v !== null) return v;
+  }
+  return null;
+}
+
+function getBatteryVoltageFromRaw(raw) {
+  const candidate = firstDefinedValue(raw, [
+    'bat',
+    'batteryVoltage',
+    'battery_voltage',
+    'voltage',
+    'vbat',
+    'vbatt',
+    'batV',
+    'bat_v',
+    'battery.voltage',
+    'battery.v',
+    'power.voltage',
+    'power.vbat'
+  ]);
+  return normalizeBatteryVoltage(candidate);
+}
+
+function getBatteryPercentFromRaw(raw) {
+  const voltage = getBatteryVoltageFromRaw(raw);
+  return mapBatteryPercentFromVoltage(voltage);
+}
+
+function mapBatteryPercentFromVoltage(voltage) {
+  const v = toNumber(voltage);
+  if (v === null) return null;
+  const points = [
+    [4.20, 100],
+    [4.00, 80],
+    [3.85, 60],
+    [3.70, 40],
+    [3.30, 10],
+    [3.00, 0]
+  ];
+  if (v >= points[0][0]) return points[0][1];
+  if (v <= points[points.length - 1][0]) return points[points.length - 1][1];
+  for (let i = 0; i < points.length - 1; i++) {
+    const [vHigh, pHigh] = points[i];
+    const [vLow, pLow] = points[i + 1];
+    if (v <= vHigh && v >= vLow) {
+      const ratio = (v - vLow) / (vHigh - vLow);
+      return Math.round(pLow + ratio * (pHigh - pLow));
+    }
+  }
+  return null;
+}
+
 function coerceCoord(raw) {
   if (!raw) return null;
   const lat = toNumber(raw.lat);
@@ -725,6 +1499,8 @@ function coerceCoord(raw) {
   const spd = toNumber(raw.spd ?? raw.speed);
   const hdop = toNumber(raw.hdop);
   const alt = toNumber(raw.alt);
+  const batteryVoltage = getBatteryVoltageFromRaw(raw);
+  const batteryPercent = mapBatteryPercentFromVoltage(batteryVoltage);
   return {
     lat,
     lng,
@@ -733,6 +1509,8 @@ function coerceCoord(raw) {
     speed: spd,
     hdop,
     alt,
+    batteryPercent,
+    batteryVoltage,
     timestamp: raw.timestamp
   };
 }
@@ -781,7 +1559,7 @@ async function fetchHistory(deviceName) {
 
 // Compute global completion across all checkpoints.
 // Completed = any device currently within radius OR any device history contains proximity within radius.
-async function computeGlobalCompletion(radiusM = 10) {
+async function computeGlobalCompletion(radiusM = 100) {
   // collect all checkpoints
   const cps = []; // { cpId, deviceRouteId, lat, lng }
   for (const deviceId in routesCache) {
@@ -794,8 +1572,13 @@ async function computeGlobalCompletion(radiusM = 10) {
   const total = cps.length;
   if (total === 0) return { total: 0, completed: 0, remaining: 0, pct: 0 };
 
-  // quick check against current device positions
+  // quick check against stored completion state or current device positions
   const completedSet = new Set();
+  for (let i = 0; i < cps.length; i++) {
+    if (cps[i].completed) {
+      completedSet.add(i);
+    }
+  }
   for (const deviceName in devices) {
     const dev = devices[deviceName];
     const dLat = dev.data?.lat;
@@ -881,7 +1664,14 @@ function updateDistanceDisplay() {
   distanceList.innerHTML = '';
   
   for (const deviceName in devices) {
-    if (q && !deviceName.toLowerCase().includes(q)) continue;
+    const syndicateNo = getSyndicateNumber(deviceName);
+    const syndicateLabel = `Syndicate ${syndicateNo}`;
+    if (
+      q &&
+      !deviceName.toLowerCase().includes(q) &&
+      !syndicateLabel.toLowerCase().includes(q) &&
+      !syndicateNo.toLowerCase().includes(q)
+    ) continue;
     const dev = devices[deviceName];
     if (!dev || !dev.polyline) continue;
     
@@ -904,9 +1694,13 @@ function updateDistanceDisplay() {
     
     // Create distance item
     const item = document.createElement('div');
+    const syndicateColor = getColorForDevice(deviceName);
     item.className = 'distance-item';
     item.innerHTML = `
-      <div class="distance-item-name">${deviceName}</div>
+      <div class="distance-item-name">
+        <span class="distance-syndicate-chip" style="--syndicate-color:${syndicateColor};">${syndicateNo}</span>
+        <span class="distance-syndicate-label" style="color:${syndicateColor};">${syndicateLabel}</span>
+      </div>
       <div>
         <span class="distance-item-value">${totalDistance.toFixed(2)}</span>
         <span class="distance-item-unit">km</span>
@@ -987,7 +1781,7 @@ async function updateStats() {
     // compute GLOBAL completed/remaining/progress across ALL devices and checkpoints
     let completed = 0, remaining = 0, pct = 0;
     try {
-      const res = await computeGlobalCompletion(10);
+      const res = await computeGlobalCompletion(100);
       completed = res.completed;
       remaining = res.remaining;
       pct = res.pct;
@@ -1032,6 +1826,100 @@ function createFlagIcon() {
     html: '<div class="flag-icon"></div>',
     iconSize: [16, 24],
     iconAnchor: [8, 24]
+  });
+}
+
+function createPlaceIcon() {
+  return L.divIcon({
+    className: 'place-marker-wrap',
+    html: '<div class="place-marker"><span>✦</span></div>',
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+    popupAnchor: [0, -14]
+  });
+}
+
+// Completed flag icon (green full flag)
+// NOTE: completed UI uses label tick instead of separate green icon
+
+// Lightweight toast notifications
+function ensureToastContainer() {
+  if (window.__toastContainer) return window.__toastContainer;
+  const container = document.createElement('div');
+  container.id = 'toastContainer';
+  container.style.position = 'fixed';
+  container.style.right = '20px';
+  container.style.top = '20px';
+  container.style.zIndex = 1200;
+  container.style.display = 'flex';
+  container.style.flexDirection = 'column';
+  container.style.gap = '8px';
+  document.body.appendChild(container);
+  window.__toastContainer = container;
+  return container;
+}
+
+function showToast(message, type = 'success', ttl = 4500) {
+  try {
+    const c = ensureToastContainer();
+    const t = document.createElement('div');
+    t.className = `toast toast-${type}`;
+    t.style.background = type === 'success' ? 'linear-gradient(90deg,#0b3  #00c853)' : 'rgba(10,20,35,0.95)';
+    t.style.color = '#fff';
+    t.style.padding = '8px 12px';
+    t.style.borderRadius = '6px';
+    t.style.boxShadow = '0 6px 18px rgba(2,8,18,0.6)';
+    t.style.fontWeight = '700';
+    t.style.opacity = '0';
+    t.style.transform = 'translateY(-6px)';
+    t.style.transition = 'opacity .25s ease, transform .25s ease';
+    t.textContent = message;
+    c.appendChild(t);
+    // enter
+    requestAnimationFrame(() => {
+      t.style.opacity = '1';
+      t.style.transform = 'translateY(0)';
+    });
+    // remove after ttl
+    setTimeout(() => {
+      t.style.opacity = '0';
+      t.style.transform = 'translateY(-6px)';
+      setTimeout(() => t.remove(), 300);
+    }, ttl);
+  } catch (e) {
+    console.warn('showToast error', e);
+  }
+}
+
+const syndicateNumbers = {};
+function hashString(value) {
+  let hash = 0;
+  const str = String(value || '');
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash);
+}
+
+function getSyndicateNumber(deviceId) {
+  const parsed = String(deviceId).match(/\d+/);
+  if (parsed) return parsed[0];
+  if (!syndicateNumbers[deviceId]) {
+    syndicateNumbers[deviceId] = String(Object.keys(syndicateNumbers).length + 1);
+  }
+  return syndicateNumbers[deviceId];
+}
+
+function createSyndicateIcon(deviceId) {
+  const color = getColorForDevice(deviceId);
+  const syndicateNo = getSyndicateNumber(deviceId);
+  return L.divIcon({
+    className: 'syndicate-marker-wrap',
+    html: `<div class="syndicate-marker" style="--syndicate-color:${color};"><span>${syndicateNo}</span></div>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -18]
   });
 }
 
@@ -1081,7 +1969,10 @@ db.ref('devices').on('value', snapshot => {
 
     if (!devices[name]) {
       console.log(`✅ Creating new device marker for: ${name}`);
-      const marker = L.marker([latest.lat, latest.lng]).addTo(map);
+      const marker = L.marker([latest.lat, latest.lng], {
+        icon: createSyndicateIcon(name),
+        title: `Syndicate ${getSyndicateNumber(name)}`
+      }).addTo(map);
       marker.bindPopup(`<b>${name}</b><br>Loading...`);
 
       const polyline = L.polyline(points, {
@@ -1115,6 +2006,7 @@ db.ref('devices').on('value', snapshot => {
     } else {
       // update
       devices[name].marker.setLatLng([latest.lat, latest.lng]);
+      devices[name].marker.setIcon(createSyndicateIcon(name));
       devices[name].lastSeen = now;
       devices[name].data = latest;
       devices[name].polyline.setLatLngs(points);
@@ -1162,8 +2054,10 @@ db.ref('devices').on('value', snapshot => {
 
   console.log(`📊 Total devices in memory: ${Object.keys(devices).length}`);
   renderDeviceList(document.getElementById('deviceSearch').value);
+  renderExerciseDeviceAssignments(getSelectedExercise());
   updateDistanceDisplay();
   updateStats();
+  applyMapFocusMode();
 }, error => { console.error('❌ Firebase devices listener error:', error); });
 
 // Flags listener
@@ -1171,8 +2065,9 @@ db.ref('flags').on('value', snapshot => {
   const all = snapshot.val() || {};
   
   // Clear existing flags
-  Object.values(flags).forEach(flag => {
-    map.removeLayer(flag);
+  Object.values(flags).forEach(entry => {
+    const marker = entry?.marker || entry;
+    if (map.hasLayer(marker)) map.removeLayer(marker);
   });
   Object.keys(flags).forEach(key => delete flags[key]);
   
@@ -1203,10 +2098,59 @@ db.ref('flags').on('value', snapshot => {
       }
     });
     
-    flags[id] = marker;
+    flags[id] = { marker, assignedTo: f.assignedTo || '' };
   }
   
+  applyMapFocusMode();
   updateStats();
+});
+
+// Places listener
+db.ref('places').on('value', snapshot => {
+  const all = snapshot.val() || {};
+
+  // Clear existing place markers
+  Object.values(placeMarkers).forEach(marker => {
+    if (map.hasLayer(marker)) map.removeLayer(marker);
+  });
+  Object.keys(placeMarkers).forEach(id => delete placeMarkers[id]);
+  Object.keys(placesCache).forEach(id => delete placesCache[id]);
+
+  for (const id in all) {
+    const p = all[id] || {};
+    const lat = Number(p.lat);
+    const lng = Number(p.lng);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+    const name = String(p.name || 'Place');
+
+    const marker = L.marker([lat, lng], {
+      title: name,
+      icon: createPlaceIcon()
+    }).addTo(map);
+    marker.bindTooltip(name, {
+      permanent: true,
+      direction: 'top',
+      offset: [0, -12],
+      className: 'place-label'
+    }).openTooltip();
+    marker.bindPopup(`
+      <div class="place-popup">
+        <div class="place-popup-name">${escapeHtml(name)}</div>
+        <div class="place-popup-coords">${lat.toFixed(6)}, ${lng.toFixed(6)}</div>
+        <div class="place-popup-actions">
+          <button class="place-btn" onclick="editPlace('${id}')">Edit</button>
+          <button class="place-btn danger" onclick="deletePlace('${id}')">Delete</button>
+        </div>
+      </div>
+    `);
+    marker.on('click', () => zoomToPlace(id));
+    marker.on('contextmenu', () => editPlace(id));
+
+    placeMarkers[id] = marker;
+    placesCache[id] = { ...p, lat, lng, name };
+  }
+
+  renderPlacesList();
 });
 
 // ROUTES rendering: dashed polyline per device
@@ -1214,9 +2158,61 @@ const routes = {};
 const routeColors = {};
 function getColorForDevice(id){
   if(routeColors[id]) return routeColors[id];
-  const palette = ['#00e6ff','#00ff9d','#9d4dff','#ffb300','#ff3d71','#00ccff','#00e676','#7c4dff'];
-  routeColors[id] = palette[Object.keys(routeColors).length % palette.length];
+  const hue = hashString(id) % 360;
+  routeColors[id] = `hsl(${hue}, 82%, 58%)`;
   return routeColors[id];
+}
+
+function setLayerVisibility(layer, visible) {
+  if (!layer) return;
+  if (visible) {
+    if (!map.hasLayer(layer)) layer.addTo(map);
+  } else if (map.hasLayer(layer)) {
+    map.removeLayer(layer);
+  }
+}
+
+function applyMapFocusMode() {
+  const focusId = focusedDeviceOnly;
+  const focusKey = focusId ? String(focusId).trim().toLowerCase() : '';
+  const exerciseDeviceSet = getSelectedExerciseDeviceSet();
+
+  const matchesAssignedDevice = (deviceId, assignedRaw) => {
+    const raw = String(assignedRaw || '').trim().toLowerCase();
+    if (!raw) return false;
+    const deviceKey = String(deviceId || '').trim().toLowerCase();
+    const syndicateNo = String(getSyndicateNumber(deviceId)).trim().toLowerCase();
+    const assignedNumber = (raw.match(/\d+/) || [''])[0];
+    return raw === deviceKey || raw === syndicateNo || assignedNumber === syndicateNo;
+  };
+
+  for (const [deviceId, dev] of Object.entries(devices)) {
+    const inExercise = !exerciseDeviceSet || exerciseDeviceSet.has(deviceId);
+    const visible = inExercise && (!focusId || deviceId === focusId);
+    setLayerVisibility(dev.marker, visible);
+    setLayerVisibility(dev.polyline, visible);
+  }
+
+  for (const [deviceId, route] of Object.entries(routes)) {
+    const inExercise = !exerciseDeviceSet || exerciseDeviceSet.has(deviceId);
+    const visible = inExercise && (!focusId || deviceId === focusId);
+    setLayerVisibility(route.poly, visible);
+    for (const m of Object.values(route.markers || {})) {
+      setLayerVisibility(m, visible);
+    }
+  }
+
+  for (const entry of Object.values(flags)) {
+    const marker = entry?.marker || entry;
+    const assignedRaw = String(entry?.assignedTo || '').trim().toLowerCase();
+    let visible = true;
+    if (focusId || exerciseDeviceSet) {
+      const focusMatch = !focusId || matchesAssignedDevice(focusId, assignedRaw) || assignedRaw === focusKey;
+      const exerciseMatch = !exerciseDeviceSet || Array.from(exerciseDeviceSet).some(id => matchesAssignedDevice(id, assignedRaw));
+      visible = Boolean(assignedRaw) && focusMatch && exerciseMatch;
+    }
+    setLayerVisibility(marker, visible);
+  }
 }
 
 // Listen for devices' routes
@@ -1247,10 +2243,14 @@ db.ref('routes').on('child_added', deviceSnap => {
       title: cp.label || 'Checkpoint'
     }).addTo(map);
 
-    marker.bindTooltip(cp.label || 'Checkpoint', {
+    // display label — append tick if checkpoint already completed
+    const displayLabel = (cp && cp.label ? cp.label : 'Checkpoint') + (cp && cp.completed ? ' ✓' : '');
+    marker.options.title = displayLabel;
+    const tooltipClass = 'flag-label' + (cp && cp.completed ? ' completed' : '');
+    marker.bindTooltip(displayLabel, {
       permanent: true,
       direction: 'right',
-      className: 'flag-label'
+      className: tooltipClass
     }).openTooltip();
 
     marker.on('contextmenu', () => {
@@ -1260,6 +2260,7 @@ db.ref('routes').on('child_added', deviceSnap => {
     });
 
     routes[deviceId].markers[id] = marker;
+    applyMapFocusMode();
   });
 
   // when one checkpoint removed - remove marker and rebuild polyline
@@ -1273,6 +2274,7 @@ db.ref('routes').on('child_added', deviceSnap => {
       const pts = [];
       s.forEach(c => pts.push([c.val().lat, c.val().lng]));
       routes[deviceId].poly.setLatLngs(pts);
+      applyMapFocusMode();
     });
   });
 });
@@ -1285,6 +2287,7 @@ db.ref('routes').on('child_removed', deviceSnap => {
     Object.values(routes[deviceId].markers).forEach(m => { try { map.removeLayer(m); } catch(e){} });
     delete routes[deviceId];
   }
+  applyMapFocusMode();
 });
 
 // Populate geofencesCache from DB
@@ -1341,6 +2344,14 @@ function formatAge(ms) {
   const m = Math.floor(s / 60);
   const r = s % 60;
   return `${m}m ${r}s`;
+}
+
+function getActivityStatus(lastSeen) {
+  const active = (Date.now() - Number(lastSeen || 0)) <= OFFLINE_MS;
+  return {
+    label: active ? 'ACTIVE' : 'INACTIVE',
+    cls: active ? 'activity-active' : 'activity-inactive'
+  };
 }
 
 function getFixStatus(hdop) {
@@ -1409,9 +2420,19 @@ async function updateDevicePopup(name, latest) {
   const speedVal = latest.spd ?? latest.speed ?? 0;
   const altVal = latest.alt ?? 0;
   const hdopVal = latest.hdop ?? 'N/A';
+  const voltage = normalizeBatteryVoltage(
+    latest.bat ??
+    latest.batteryVoltage ??
+    latest.battery_voltage ??
+    latest.voltage ??
+    latest.vbat ??
+    latest.vbatt
+  );
+  const batteryPercent = mapBatteryPercentFromVoltage(voltage);
   const geofenceName = getGeofenceName(lat, lng);
   const fix = getFixStatus(latest.hdop);
   const age = formatAge(Date.now() - dev.lastSeen);
+  const activity = getActivityStatus(dev.lastSeen);
 
   let counts = { total: 0, completed: 0, remaining: 0 };
   try {
@@ -1422,12 +2443,14 @@ async function updateDevicePopup(name, latest) {
   const pct = counts.total > 0 ? Math.round((counts.completed / counts.total) * 100) : 0;
   const speeds = dev.buffer.slice(-30).map(p => Number(p.speed ?? p.spd ?? 0));
   const sparkline = buildSparkline(speeds);
+  const battPct = batteryPercent === null ? 'N/A' : `${Math.max(0, Math.min(100, Math.round(batteryPercent)))} %`;
+  const battV = voltage === null ? 'N/A' : `${Number(voltage).toFixed(2)} V`;
 
   dev.marker.setPopupContent(`
     <div class="device-popup">
       <div class="dp-header">
         <span class="dp-title">${name}</span>
-        <span class="dp-status">LIVE</span>
+        <span class="dp-status ${activity.cls}">${activity.label}</span>
       </div>
 
       <div class="dp-progress">
@@ -1464,9 +2487,34 @@ async function updateDevicePopup(name, latest) {
         <span>Geofence</span>
         <strong>${geofenceName}</strong>
       </div>
+
+      <div class="dp-battery">
+        <div class="dp-battery-row">
+          <span class="dp-b-label">Battery Level</span>
+          <strong>${battPct}</strong>
+        </div>
+        <div class="dp-battery-row">
+          <span class="dp-b-label">Battery Voltage</span>
+          <strong>${battV}</strong>
+        </div>
+      </div>
     </div>
   `);
 }
+
+function getBatteryFromDeviceData(data) {
+  const voltage = normalizeBatteryVoltage(
+    data?.bat ??
+    data?.batteryVoltage ??
+    data?.battery_voltage ??
+    data?.voltage ??
+    data?.vbat ??
+    data?.vbatt
+  );
+  const pct = mapBatteryPercentFromVoltage(voltage);
+  return { voltage, pct };
+}
+
 function clearDeviceData(deviceName, keepLatest) {
   return db.ref(`devices/${deviceName}`).once('value').then(snap => {
     const coordsObj = snap.val() || {};
@@ -1529,6 +2577,12 @@ db.ref('routes').on('child_added', deviceSnap => {
     cpsRef.once('value', s => {
       const val = s.val() || {};
       routesCache[deviceId].checkpoints = val;
+      // mark any already-completed checkpoints so UI state is correct
+      Object.entries(val).forEach(([cpId, cp]) => {
+        if (cp && cp.completed) {
+          completedCheckpoints.add(`${deviceId}_${cpId}`);
+        }
+      });
       console.log(`Loaded ${Object.keys(val).length} checkpoints for ${deviceId}`);
       updateStats();
       renderDeviceList(document.getElementById('deviceSearch').value);
@@ -1536,13 +2590,36 @@ db.ref('routes').on('child_added', deviceSnap => {
     
     // Listen for new/changed checkpoints after initial load
     cpsRef.on('child_added', cpSnap => {
-      routesCache[deviceId].checkpoints[cpSnap.key] = cpSnap.val();
+      const cp = cpSnap.val();
+      routesCache[deviceId].checkpoints[cpSnap.key] = cp;
+      // if this checkpoint was already completed in the database, remember it and style later
+      if (cp && cp.completed) {
+        completedCheckpoints.add(`${deviceId}_${cpSnap.key}`);
+      }
       updateStats();
       renderDeviceList(document.getElementById('deviceSearch').value);
     });
     
     cpsRef.on('child_changed', cpSnap => {
-      routesCache[deviceId].checkpoints[cpSnap.key] = cpSnap.val();
+      const cp = cpSnap.val();
+      routesCache[deviceId].checkpoints[cpSnap.key] = cp;
+      // if completion status changed to true, reflect in UI by updating label
+      if (cp && cp.completed) {
+        completedCheckpoints.add(`${deviceId}_${cpSnap.key}`);
+        const marker = routes[deviceId]?.markers?.[cpSnap.key];
+        if (marker) {
+          const lbl = (cp.label || 'Checkpoint') + ' ✓';
+          try {
+            if (marker.getTooltip && marker.getTooltip()) {
+              marker.getTooltip().setContent(lbl);
+              marker.getTooltip()._container?.classList.add('completed');
+            } else {
+              marker.bindTooltip(lbl, { permanent: true, direction: 'right', className: 'flag-label completed' }).openTooltip();
+            }
+            marker.options.title = lbl;
+          } catch (e) { console.warn('apply completed label failed', e); }
+        }
+      }
       updateStats();
     });
     
@@ -1562,7 +2639,7 @@ db.ref('routes').on('child_removed', deviceSnap => {
 });
 
 // --- per-device checkpoint computation ---
-async function computeCheckpointCounts(deviceName, deviceLat, deviceLng, radiusM = 10) {
+async function computeCheckpointCounts(deviceName, deviceLat, deviceLng, radiusM = 100) {
   const result = { total: 0, completed: 0, remaining: 0, completedList: {} };
   const routeNode = routesCache[deviceName];
   if (!routeNode || !routeNode.checkpoints) return result;
@@ -1570,9 +2647,14 @@ async function computeCheckpointCounts(deviceName, deviceLat, deviceLng, radiusM
   result.total = cpsEntries.length;
   if (result.total === 0) return result;
 
-  // check current proximity
+  // check current proximity or stored completion
   for (const [id, cp] of cpsEntries) {
     if (!cp || typeof cp.lat !== 'number' || typeof cp.lng !== 'number') continue;
+    if (cp.completed) {
+      result.completed++;
+      result.completedList[id] = true;
+      continue;
+    }
     if (distanceMeters(deviceLat, deviceLng, cp.lat, cp.lng) <= radiusM) {
       result.completed++;
       result.completedList[id] = true;
@@ -1632,9 +2714,20 @@ async function renderDeviceList(filter = '') {
     
     matchCount++;
     const ageSec = Math.round((now - dev.lastSeen) / 1000);
-    const offline = (now - dev.lastSeen) > OFFLINE_MS;
+    const activity = getActivityStatus(dev.lastSeen);
+    const offline = activity.label === 'INACTIVE';
     const isActive = selectedDevice === name;
     const fix = getFixStatus(dev.data?.hdop);
+    const batt = getBatteryFromDeviceData(dev.data);
+    const battPctText = batt.pct === null ? 'N/A' : `${Math.round(batt.pct)} %`;
+    const battVoltText = batt.voltage === null ? 'N/A' : `${Number(batt.voltage).toFixed(2)} V`;
+    const battColor = batt.pct === null ? '#9fefff' : (batt.pct > 60 ? '#00ff9d' : (batt.pct >= 30 ? '#ffb300' : '#ff3d71'));
+    const distanceKm = getDeviceDistanceCoveredKm(dev);
+    dev.distanceCovered = distanceKm;
+    const navElapsed = getSyndicateNavElapsedMs(name);
+    const navStatusRaw = getSyndicateNavStatus(name);
+    const navStatus = navStatusRaw === 'START' ? 'ONGOING' : 'ON REST';
+    const navStatusColor = navStatusRaw === 'START' ? '#00ff9d' : '#ff3d71';
 
     // add to select options
     const option = new Option(name, name);
@@ -1668,6 +2761,30 @@ async function renderDeviceList(filter = '') {
           <span class="stat-value ${fix.cls}">${fix.label}</span>
         </div>
         <div class="stat-row">
+          <span class="stat-label">Activity:</span>
+          <span class="stat-value ${activity.cls}" style="font-weight:700;">${activity.label}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Battery:</span>
+          <span class="stat-value" style="color:${battColor};">${battPctText}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Voltage:</span>
+          <span class="stat-value" style="color:${battColor};">${battVoltText}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Distance:</span>
+          <span class="stat-value">${distanceKm.toFixed(2)} km</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Time Used:</span>
+          <span class="stat-value" id="nav-time-${name}">${formatMsToClock(navElapsed)}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Navigation:</span>
+          <span class="stat-value" id="nav-status-${name}" style="color:${navStatusColor};font-weight:700;">${navStatus}</span>
+        </div>
+        <div class="stat-row">
           <span class="stat-label">Completed:</span>
           <span class="stat-value" id="completed-${name}">...</span>
         </div>
@@ -1690,6 +2807,11 @@ async function renderDeviceList(filter = '') {
           <span id="progress-text-${name}">0%</span>
         </div>
       </div>
+
+      <div class="nav-controls">
+        <button class="nav-btn start" onclick="startSyndicateNavigation('${name}')">START</button>
+        <button class="nav-btn stop" onclick="stopSyndicateNavigation('${name}')">STOP</button>
+      </div>
     `;
 
     item.addEventListener('click', () => selectDevice(name));
@@ -1707,7 +2829,7 @@ async function renderDeviceList(filter = '') {
           return;
         }
 
-        const counts = await computeCheckpointCounts(name, lat, lng, 10);
+        const counts = await computeCheckpointCounts(name, lat, lng, 100);
         document.getElementById(`completed-${name}`).textContent = counts.completed;
         document.getElementById(`remaining-${name}`).textContent = counts.remaining;
         const pct = counts.total > 0 ? Math.round((counts.completed / counts.total) * 100) : 0;
@@ -1731,6 +2853,22 @@ async function renderDeviceList(filter = '') {
   }
 }
 
+function refreshNavigationCardValues() {
+  for (const name in devices) {
+    const navTimeEl = document.getElementById(`nav-time-${name}`);
+    const navStatusEl = document.getElementById(`nav-status-${name}`);
+    if (!navTimeEl && !navStatusEl) continue;
+    const elapsed = getSyndicateNavElapsedMs(name);
+    const statusRaw = getSyndicateNavStatus(name);
+    const status = statusRaw === 'START' ? 'ONGOING' : 'ON REST';
+    if (navTimeEl) navTimeEl.textContent = formatMsToClock(elapsed);
+    if (navStatusEl) {
+      navStatusEl.textContent = status;
+      navStatusEl.style.color = statusRaw === 'START' ? '#00ff9d' : '#ff3d71';
+    }
+  }
+}
+
 // ensure device search filters
 document.getElementById('deviceSearch').addEventListener('input', (e) => {
   renderDeviceList(e.target.value);
@@ -1739,6 +2877,7 @@ document.getElementById('deviceSearch').addEventListener('input', (e) => {
 // Call renderDeviceList once at startup if devices already loaded
 console.log('🚀 Initial renderDeviceList call on page load');
 renderDeviceList();
+setInterval(refreshNavigationCardValues, 1000);
 
 // small global error handler to help debugging runtime issues
 window.addEventListener('error', (ev) => {
@@ -1750,29 +2889,87 @@ console.log('Registering Firebase listeners...');
 db.ref('devices').on('value', snapshot => console.log('devices snapshot received'));
 db.ref('routes').on('value', snapshot => console.log('routes snapshot received'));
 db.ref('geofences').on('value', snapshot => console.log('geofences snapshot received'));
+db.ref('exercises').on('value', snapshot => console.log('exercises snapshot received'));
+
+// ============ FIREBASE EXERCISES LISTENER ============
+// Load exercises from Firebase and sync in real-time
+db.ref('exercises').on('child_added', snap => {
+  const exercise = snap.val();
+  if (exercise && exercise.id) {
+    exercisesCache[exercise.id] = exercise;
+    console.log('Exercise added/loaded:', exercise.id);
+    populateExerciseSelect('');
+  }
+});
+
+db.ref('exercises').on('child_changed', snap => {
+  const exercise = snap.val();
+  if (exercise && exercise.id) {
+    exercisesCache[exercise.id] = exercise;
+    console.log('Exercise updated:', exercise.id);
+    // Refresh display if this exercise is currently selected
+    const current = getSelectedExerciseId();
+    if (current === exercise.id) {
+      populateExerciseSelect(current);
+      renderExerciseDisplay(exercise);
+    }
+    populateExerciseSelect('');
+  }
+});
+
+db.ref('exercises').on('child_removed', snap => {
+  const exercise = snap.val();
+  if (exercise && exercise.id) {
+    delete exercisesCache[exercise.id];
+    console.log('Exercise removed:', exercise.id);
+    populateExerciseSelect('');
+  }
+});
 
 // Track completed checkpoints visually
 const completedCheckpoints = new Set(); // { "deviceId_cpId" }
 
-// Mark checkpoint as completed (visual indicator)
+// Initialize exercise overlay visibility
+setTimeout(() => {
+  const overlay = document.getElementById('exerciseOverlay');
+  if (overlay && !getSelectedExercise()) {
+    overlay.style.display = 'flex';
+  }
+}, 100);
 function markCheckpointCompleted(deviceId, cpId, marker) {
   const key = `${deviceId}_${cpId}`;
   if (completedCheckpoints.has(key)) return;
   completedCheckpoints.add(key);
   
-  // Change marker appearance - add checkmark
-  const checkmarkIcon = L.divIcon({
-    className: 'custom-flag-marker',
-    html: '<div class="flag-icon" style="opacity:0.5;"></div><div style="position:absolute;top:-2px;left:2px;color:#00ff9d;font-weight:bold;font-size:14px;">✓</div>',
-    iconSize: [16, 24],
-    iconAnchor: [8, 24]
-  });
-  marker.setIcon(checkmarkIcon);
-  marker.setOpacity(0.6);
+  // store completion state in database
+  db.ref(`routes/${deviceId}/default/checkpoints/${cpId}`).update({
+    completed: true,
+    completedAt: new Date().toISOString()
+  }).catch(err => console.error('Failed to persist checkpoint completion', err));
+
+  // Update marker tooltip/title to append tick (no separate green icon)
+  if (marker) {
+    try {
+      const cp = routesCache[deviceId]?.checkpoints?.[cpId];
+      const label = (cp?.label || 'Checkpoint') + ' ✓';
+      if (marker.getTooltip && marker.getTooltip()) {
+        marker.getTooltip().setContent(label);
+        marker.getTooltip()._container?.classList.add('completed');
+      } else {
+        marker.bindTooltip(label, { permanent: true, direction: 'right', className: 'flag-label completed' }).openTooltip();
+      }
+      marker.options.title = label;
+    } catch (e) { console.warn('apply completed label failed', e); }
+  }
 
   const cp = routesCache[deviceId]?.checkpoints?.[cpId];
   const label = cp?.label || 'Checkpoint';
   addTimelineEvent('Checkpoint Reached', label, deviceId);
+  // visual toast for immediate feedback
+  showToast(`Checkpoint reached: ${label}`, 'success');
+  // refresh stats/UI since completion changed
+  updateStats();
+  renderDeviceList(document.getElementById('deviceSearch').value);
 }
 
 // Update completed checkpoints based on device proximity
@@ -1789,7 +2986,7 @@ async function updateCompletedCheckpoints() {
     // check current proximity
     for (const [cpId, cp] of Object.entries(routeNode.checkpoints)) {
       if (!cp || typeof cp.lat !== 'number' || typeof cp.lng !== 'number') continue;
-      if (distanceMeters(lat, lng, cp.lat, cp.lng) <= 10) {
+      if (distanceMeters(lat, lng, cp.lat, cp.lng) <= 100) {
         const marker = routes[deviceName]?.markers?.[cpId];
         if (marker) markCheckpointCompleted(deviceName, cpId, marker);
       }
@@ -1810,7 +3007,7 @@ async function updateCompletedCheckpoints() {
       if (completedCheckpoints.has(key)) continue;
 
       for (const hp of historyPoints) {
-        if (distanceMeters(hp.lat, hp.lng, cp.lat, cp.lng) <= 10) {
+        if (distanceMeters(hp.lat, hp.lng, cp.lat, cp.lng) <= 100) {
           const marker = routes[deviceName]?.markers?.[cpId];
           if (marker) markCheckpointCompleted(deviceName, cpId, marker);
           break;
@@ -1850,11 +3047,19 @@ db.ref('routes').on('child_added', deviceSnap => {
       title: cp.label || 'Checkpoint'
     }).addTo(map);
 
-    marker.bindTooltip(cp.label || 'Checkpoint', {
+    const displayLabel = (cp && cp.label ? cp.label : 'Checkpoint') + (cp && cp.completed ? ' ✓' : '');
+    marker.options.title = displayLabel;
+    const tooltipClass = 'flag-label' + (cp && cp.completed ? ' completed' : '');
+    marker.bindTooltip(displayLabel, {
       permanent: true,
       direction: 'right',
-      className: 'flag-label'
+      className: tooltipClass
     }).openTooltip();
+
+    // if checkpoint already completed in DB, mark it in-memory (tooltip already shows tick)
+    if (cp && cp.completed) {
+      completedCheckpoints.add(`${deviceId}_${id}`);
+    }
 
     // Right-click to delete checkpoint
     marker.on('contextmenu', () => {
@@ -1911,6 +3116,20 @@ function setGeofenceVisibility(show) {
       if (map.hasLayer(layer)) map.removeLayer(layer);
     }
   }
+}
+
+// Toggle visibility of checkpoint labels across all devices
+function setCheckpointLabelsVisibility(show) {
+  showCheckpointLabels = show;
+  // Toggle all tooltips by adding/removing 'hidden' class on leaflet-tooltip elements
+  const tooltips = document.querySelectorAll('.flag-label');
+  tooltips.forEach(tooltip => {
+    if (show) {
+      tooltip.classList.remove('hidden');
+    } else {
+      tooltip.classList.add('hidden');
+    }
+  });
 }
 
 db.ref('geofences').on('child_added', snap => {
@@ -1991,58 +3210,19 @@ function centerOnSelectedDevice() {
   selectDevice(selectedDevice);
 }
 
-function setDeviceVisibility(name, visible) {
-  const dev = devices[name];
-  if (!dev) return;
-  const action = visible ? map.addLayer.bind(map) : map.removeLayer.bind(map);
-  if (dev.marker) action(dev.marker);
-  if (dev.polyline) action(dev.polyline);
-  if (dev.trackLayer) action(dev.trackLayer);
-}
-
-function setRouteVisibility(deviceId, visible) {
-  const route = routes[deviceId];
-  if (!route) return;
-  const action = visible ? map.addLayer.bind(map) : map.removeLayer.bind(map);
-  if (route.poly) action(route.poly);
-  Object.values(route.markers || {}).forEach(m => action(m));
-}
-
 function focusOnSelectedDevice() {
   if (!selectedDevice || !devices[selectedDevice]) {
     alert('No device selected');
     return;
   }
+  focusedDeviceOnly = selectedDevice;
+  applyMapFocusMode();
+
   const dev = devices[selectedDevice];
-  const focusBtn = document.getElementById('focusBtn');
-  const focusIcon = document.getElementById('focusBtnIcon');
-
-  // Toggle focus mode on/off
-  if (focusMode && focusedDevice === selectedDevice) {
-    // restore all
-    for (const name in devices) setDeviceVisibility(name, true);
-    for (const deviceId in routes) setRouteVisibility(deviceId, true);
-    focusMode = false;
-    focusedDevice = null;
-    if (focusBtn) focusBtn.classList.remove('active');
-    if (focusIcon) focusIcon.textContent = '🎯';
-    showAllDevices();
-    return;
-  }
-
-  // enable focus mode
-  for (const name in devices) {
-    setDeviceVisibility(name, name === selectedDevice);
-  }
-  for (const deviceId in routes) {
-    setRouteVisibility(deviceId, deviceId === selectedDevice);
-  }
-  focusMode = true;
-  focusedDevice = selectedDevice;
-  if (focusBtn) focusBtn.classList.add('active');
-  if (focusIcon) focusIcon.textContent = '🧭';
-
-  if (dev?.polyline) {
+  const route = routes[selectedDevice];
+  if (route?.poly?.getLatLngs && route.poly.getLatLngs().length > 0) {
+    map.fitBounds(route.poly.getBounds(), { padding: [60, 60], maxZoom: 18 });
+  } else if (dev?.polyline) {
     map.fitBounds(dev.polyline.getBounds(), { padding: [60, 60], maxZoom: 18 });
   } else if (dev?.marker) {
     map.setView(dev.marker.getLatLng(), 16);
@@ -2052,6 +3232,8 @@ function focusOnSelectedDevice() {
 }
 
 function showAllDevices() {
+  focusedDeviceOnly = null;
+  applyMapFocusMode();
   const group = new L.featureGroup(Object.values(devices).map(d => d.marker));
   if (group.getLayers().length > 0) {
     map.fitBounds(group.getBounds(), { padding: [50, 50] });
@@ -2090,27 +3272,45 @@ function exportFirebaseJson() {
   });
 }
 
+function getReportVisibleDeviceIds() {
+  const allIds = Object.keys(devices);
+  const exerciseSet = getSelectedExerciseDeviceSet();
+  if (!exerciseSet) return allIds;
+  return allIds.filter(id => exerciseSet.has(id));
+}
+
 function getDeviceSummaryRows() {
   const rows = [];
+  const visibleIds = new Set(getReportVisibleDeviceIds());
   for (const [name, dev] of Object.entries(devices)) {
+    if (!visibleIds.has(name)) continue;
     const lat = dev.data?.lat;
     const lng = dev.data?.lng;
     const speed = dev.data?.spd ?? dev.data?.speed ?? 0;
     const alt = dev.data?.alt ?? 0;
     const hdop = dev.data?.hdop ?? 'N/A';
     const age = formatAge(Date.now() - dev.lastSeen);
+    const activity = getActivityStatus(dev.lastSeen);
     const fix = getFixStatus(dev.data?.hdop).label;
-    const distanceKm = dev.distanceCovered?.toFixed ? dev.distanceCovered.toFixed(2) : '0.00';
+    const distanceKm = getDeviceDistanceCoveredKm(dev).toFixed(2);
+    const timeUsed = formatMsToClock(getSyndicateNavElapsedMs(name));
+    const navStatus = getSyndicateNavStatus(name) === 'START' ? 'ONGOING' : 'ON REST';
+    const batt = getBatteryFromDeviceData(dev.data || {});
+    const battPct = batt.pct === null ? 'N/A' : `${Math.round(Math.max(0, Math.min(100, batt.pct)))}%`;
 
     rows.push(`
       <tr>
         <td>${name}</td>
         <td>${fix}</td>
+        <td>${activity.label}</td>
         <td>${age}</td>
         <td>${Number(speed).toFixed(1)} km/h</td>
         <td>${Number(alt).toFixed(1)} m</td>
         <td>${hdop}</td>
+        <td>${battPct}</td>
         <td>${distanceKm} km</td>
+        <td>${timeUsed}</td>
+        <td>${navStatus}</td>
         <td>${typeof lat === 'number' ? lat.toFixed(6) : '—'}</td>
         <td>${typeof lng === 'number' ? lng.toFixed(6) : '—'}</td>
       </tr>
@@ -2121,7 +3321,8 @@ function getDeviceSummaryRows() {
 
 function getCheckpointSummaryRows() {
   const rows = [];
-  for (const deviceId in routesCache) {
+  const listedDeviceIds = getReportVisibleDeviceIds();
+  for (const deviceId of listedDeviceIds) {
     const cps = routesCache[deviceId]?.checkpoints || {};
     const total = Object.keys(cps).length;
     let completed = 0;
@@ -2132,7 +3333,7 @@ function getCheckpointSummaryRows() {
     const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
     rows.push(`
       <tr>
-        <td>${deviceId}</td>
+        <td>Syndicate ${getSyndicateNumber(deviceId)}</td>
         <td>${completed}</td>
         <td>${remaining}</td>
         <td>${total}</td>
@@ -2143,8 +3344,57 @@ function getCheckpointSummaryRows() {
   return rows.join('');
 }
 
+function getReportExerciseContext() {
+  let selected = null;
+  try {
+    if (typeof getSelectedExercise === 'function') {
+      selected = getSelectedExercise();
+    }
+  } catch (e) {}
+
+  if (selected) {
+    return {
+      name: selected.name || 'Not set',
+      allowedMs: parseAllowedTimeToMs(selected.allowedTime || '00:00:00'),
+      elapsedMs: getCurrentExerciseElapsedMs(selected)
+    };
+  }
+
+  return { name: 'Not set', allowedMs: 0, elapsedMs: 0 };
+}
+
+function getOvertimeNavigatingEvents() {
+  const ctx = getReportExerciseContext();
+  if (!ctx.allowedMs || ctx.elapsedMs <= ctx.allowedMs) return [];
+
+  const rows = [];
+  const listedDeviceIds = getReportVisibleDeviceIds();
+  for (const deviceId of listedDeviceIds) {
+    const cps = routesCache[deviceId]?.checkpoints || {};
+    const total = Object.keys(cps).length;
+    if (!total) continue;
+
+    let completed = 0;
+    for (const cpId in cps) {
+      if (completedCheckpoints.has(`${deviceId}_${cpId}`)) completed++;
+    }
+    const remaining = total - completed;
+    if (remaining <= 0) continue;
+
+    rows.push({
+      time: new Date().toLocaleTimeString(),
+      type: 'Time Over',
+      deviceName: `Syndicate ${getSyndicateNumber(deviceId)}`,
+      message: `Still navigating: ${remaining}/${total} checkpoints remaining.`
+    });
+  }
+  return rows;
+}
+
 function getTimelineRows() {
-  return timelineEvents.slice(0, 20).map(ev => `
+  const synthetic = getOvertimeNavigatingEvents();
+  const merged = [...synthetic, ...timelineEvents].slice(0, 20);
+  return merged.map(ev => `
     <tr>
       <td>${ev.time}</td>
       <td>${ev.type}</td>
@@ -2156,24 +3406,30 @@ function getTimelineRows() {
 
 function buildReportHtml() {
   const now = new Date();
-  const deviceCount = Object.keys(devices).length;
+  const exercise = getReportExerciseContext();
+  const visibleDeviceIds = getReportVisibleDeviceIds();
+  const deviceCount = visibleDeviceIds.length;
   const geofenceCount = Object.keys(geofencesCache).length;
   let totalCheckpoints = 0;
-  for (const devId in routesCache) totalCheckpoints += Object.keys(routesCache[devId].checkpoints || {}).length;
+  for (const devId of visibleDeviceIds) {
+    totalCheckpoints += Object.keys(routesCache[devId]?.checkpoints || {}).length;
+  }
 
   return `
     <div class="report">
       <div class="report-header">
         <div>
-          <div class="report-title">MISSION SUMMARY REPORT</div>
+          <div class="report-title">NAVIGATION SUMMARY REPORT</div>
           <div class="report-subtitle">Generated ${now.toLocaleString()}</div>
+          <div class="report-subtitle">Exercise: ${exercise.name}</div>
         </div>
         <div class="report-badge">CONFIDENTIAL</div>
       </div>
 
       <div class="report-section">
-        <div class="report-section-title">Mission Overview</div>
+        <div class="report-section-title">Navigation Overview</div>
         <div class="report-grid">
+          <div><span>Exercise</span><strong>${exercise.name}</strong></div>
           <div><span>Devices</span><strong>${deviceCount}</strong></div>
           <div><span>Checkpoints</span><strong>${totalCheckpoints}</strong></div>
           <div><span>Geofences</span><strong>${geofenceCount}</strong></div>
@@ -2188,31 +3444,36 @@ function buildReportHtml() {
             <tr>
               <th>Device</th>
               <th>Fix</th>
+              <th>Activity</th>
               <th>Last Seen</th>
               <th>Speed</th>
               <th>Alt</th>
               <th>HDOP</th>
-              <th>Distance</th>
+              <th>Battery %</th>
+              <th>Distance Covered</th>
+              <th>Time Used</th>
+              <th>Navigation</th>
               <th>Lat</th>
               <th>Lng</th>
             </tr>
           </thead>
           <tbody>
-            ${getDeviceSummaryRows() || '<tr><td colspan="9">No device data</td></tr>'}
+            ${getDeviceSummaryRows() || '<tr><td colspan="13">No device data</td></tr>'}
+          </tbody>
           </tbody>
         </table>
       </div>
 
       <div class="report-section">
-        <div class="report-section-title">Checkpoint Summary</div>
+        <div class="report-section-title">Syndicate Performance Summary</div>
         <table class="report-table">
           <thead>
             <tr>
-              <th>Device</th>
+              <th>Syndicate</th>
               <th>Completed</th>
               <th>Remaining</th>
               <th>Total</th>
-              <th>Marks</th>
+              <th>Marks (%)</th>
             </tr>
           </thead>
           <tbody>
@@ -2251,7 +3512,7 @@ function downloadReportPdf() {
   const page = `
     <html>
       <head>
-        <title>Mission Summary Report</title>
+        <title>Navigation Summary Report</title>
         <style>
           ${css}
           body { background: #0b111a; color: #e6f7ff; font-family: 'Exo 2', Arial, sans-serif; padding: 24px; }
@@ -2285,3 +3546,4 @@ function downloadReportPdf() {
 
 </body>
 </html>
+
