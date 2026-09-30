@@ -1,0 +1,6001 @@
+{
+  "devices": {
+    "syndicate4": {
+      "-On_N92qu4QEkAy5URbQ": {
+        "alt": 1405,
+        "hdop": 4.6,
+        "lat": -2.238218,
+        "lng": 30.183301,
+        "spd": 4.3
+      },
+      "-On_NFSKLxB_8_1a04BX": {
+        "alt": 1402.2,
+        "hdop": 4.6,
+        "lat": -2.238226,
+        "lng": 30.183312,
+        "spd": 4.1
+      },
+      "-On_NLxBcu1PmZ6iJa43": {
+        "alt": 1426.6,
+        "hdop": 1.9,
+        "lat": -2.238205,
+        "lng": 30.183241,
+        "spd": 0.1
+      },
+      "-On_NSKEShHrm6zi5hpZ": {
+        "alt": 1421.8,
+        "hdop": 1.9,
+        "lat": -2.238246,
+        "lng": 30.183244,
+        "spd": 0.1
+      },
+      "-On_NYmbkoyePvJV33Dr": {
+        "alt": 1416.3,
+        "hdop": 1.2,
+        "lat": -2.238204,
+        "lng": 30.183249,
+        "spd": 0.2
+      },
+      "-On_NeGOexxvLsua7GmJ": {
+        "alt": 1418.3,
+        "hdop": 1,
+        "lat": -2.238202,
+        "lng": 30.183237,
+        "spd": 0.1
+      },
+      "-On_Nkeq0yUp1QFGtDvq": {
+        "alt": 1418.3,
+        "hdop": 1,
+        "lat": -2.238194,
+        "lng": 30.183251,
+        "spd": 0.2
+      },
+      "-On_Nr8G1rsATHcNx_KU": {
+        "alt": 1413.1,
+        "hdop": 1.2,
+        "lat": -2.238199,
+        "lng": 30.183229,
+        "spd": 3
+      },
+      "-On_NxYEK8jg734gzRFf": {
+        "alt": 1413.2,
+        "hdop": 1.1,
+        "lat": -2.23825,
+        "lng": 30.183147,
+        "spd": 3
+      },
+      "-On_O2ynRjcPYfXMt4_W": {
+        "alt": 1413.2,
+        "hdop": 1.1,
+        "lat": -2.238273,
+        "lng": 30.183135,
+        "spd": 0.6
+      },
+      "-On_O9Pzw3en8zzbaFGp": {
+        "alt": 1399.5,
+        "hdop": 1,
+        "lat": -2.2383,
+        "lng": 30.183124,
+        "spd": 3.1
+      },
+      "-On_OGqEpJUVZYhB7xdt": {
+        "alt": 1419.3,
+        "hdop": 1,
+        "lat": -2.238249,
+        "lng": 30.183761,
+        "spd": 4.1
+      },
+      "-On_ONIM78207WGq5yUO": {
+        "alt": 1417.7,
+        "hdop": 1,
+        "lat": -2.238254,
+        "lng": 30.183773,
+        "spd": 5.6
+      },
+      "-On_OTiW6OWQiliqdSiO": {
+        "alt": 1422.4,
+        "hdop": 1,
+        "lat": -2.238101,
+        "lng": 30.184016,
+        "spd": 5.5
+      },
+      "-On_O_BHxxcMN8j_jlHN": {
+        "alt": 1422.4,
+        "hdop": 1,
+        "lat": -2.237845,
+        "lng": 30.184229,
+        "spd": 4.2
+      },
+      "-On_Ofbt-POYpKiNVr1W": {
+        "alt": 1422.8,
+        "hdop": 1,
+        "lat": -2.237695,
+        "lng": 30.18453,
+        "spd": 4.3
+      },
+      "-On_On2-GJRPHv2WFG1Y": {
+        "alt": 1424.9,
+        "hdop": 1,
+        "lat": -2.237353,
+        "lng": 30.185124,
+        "spd": 2.8
+      },
+      "-On_OtUAqkZgbJ07tb85": {
+        "alt": 1424.6,
+        "hdop": 1,
+        "lat": -2.237343,
+        "lng": 30.185135,
+        "spd": 4.5
+      },
+      "-On_Ozv8rf965e5EtE3q": {
+        "alt": 1424.5,
+        "hdop": 1,
+        "lat": -2.237127,
+        "lng": 30.185331,
+        "spd": 0.8
+      },
+      "-On_P6LSIwaFjcmjiVDr": {
+        "alt": 1425.2,
+        "hdop": 1,
+        "lat": -2.236688,
+        "lng": 30.18572,
+        "spd": 4.7
+      },
+      "-On_PCnTnU2iKLAqdpfg": {
+        "alt": 1425.2,
+        "hdop": 1,
+        "lat": -2.236679,
+        "lng": 30.185734,
+        "spd": 4.4
+      },
+      "-On_PJGqnPyfyC8RzJ1Z": {
+        "alt": 1425.7,
+        "hdop": 0.9,
+        "lat": -2.23661,
+        "lng": 30.186136,
+        "spd": 4.4
+      },
+      "-On_PPfZAMmNzT8nSOjx": {
+        "alt": 1428.9,
+        "hdop": 0.9,
+        "lat": -2.236607,
+        "lng": 30.18656,
+        "spd": 5.9
+      },
+      "-On_PW6WTvq58WwJEg22": {
+        "alt": 1428,
+        "hdop": 0.9,
+        "lat": -2.236623,
+        "lng": 30.186949,
+        "spd": 5.4
+      },
+      "-On_PcY-s08oaA0oPzrx": {
+        "alt": 1424.6,
+        "hdop": 1,
+        "lat": -2.236611,
+        "lng": 30.187814,
+        "spd": 5.7
+      },
+      "-On_PiyjmOwRDrAtdd5c": {
+        "alt": 1424.7,
+        "hdop": 0.8,
+        "lat": -2.236613,
+        "lng": 30.18783,
+        "spd": 5.4
+      },
+      "-On_PpQPiZVtxL5-eo_W": {
+        "alt": 1424.3,
+        "hdop": 0.8,
+        "lat": -2.236636,
+        "lng": 30.188215,
+        "spd": 5.4
+      },
+      "-On_PvrzIWPhQP5LVIaa": {
+        "alt": 1424.3,
+        "hdop": 0.8,
+        "lat": -2.236724,
+        "lng": 30.188612,
+        "spd": 5.5
+      },
+      "-On_Q1IGNnKi2qS9t4le": {
+        "alt": 1425.1,
+        "hdop": 0.9,
+        "lat": -2.236825,
+        "lng": 30.188985,
+        "spd": 5.8
+      },
+      "-On_Q8jaXbzGT-gZqWkj": {
+        "alt": 1427.7,
+        "hdop": 0.8,
+        "lat": -2.237251,
+        "lng": 30.189493,
+        "spd": 5
+      },
+      "-On_QFBIO-bZoyX_0GO1": {
+        "alt": 1427.2,
+        "hdop": 1,
+        "lat": -2.237265,
+        "lng": 30.189496,
+        "spd": 5.8
+      },
+      "-On_QLbv9Up2eQ0mEi2N": {
+        "alt": 1425.5,
+        "hdop": 0.9,
+        "lat": -2.237608,
+        "lng": 30.189688,
+        "spd": 5.6
+      },
+      "-On_QT2E_JG3e_LszQ8L": {
+        "alt": 1425.2,
+        "hdop": 0.8,
+        "lat": -2.238289,
+        "lng": 30.190141,
+        "spd": 4.9
+      },
+      "-On_QZUlDWgj_U9iaz7e": {
+        "alt": 1424.3,
+        "hdop": 0.8,
+        "lat": -2.238299,
+        "lng": 30.19015,
+        "spd": 5.3
+      },
+      "-On_Qftvp9vsBdn0_b5L": {
+        "alt": 1427.6,
+        "hdop": 0.8,
+        "lat": -2.238906,
+        "lng": 30.190744,
+        "spd": 5.9
+      },
+      "-On_QmM8__iF_xgK0hb7": {
+        "alt": 1427,
+        "hdop": 0.8,
+        "lat": -2.23892,
+        "lng": 30.190754,
+        "spd": 6.2
+      },
+      "-On_Qsmk0BLnfXt0ynKt": {
+        "alt": 1426.4,
+        "hdop": 0.8,
+        "lat": -2.239239,
+        "lng": 30.190973,
+        "spd": 4.1
+      },
+      "-On_QzFHsH_EpaZ4w6Ks": {
+        "alt": 1426.4,
+        "hdop": 0.8,
+        "lat": -2.2396,
+        "lng": 30.19113,
+        "spd": 6.2
+      },
+      "-On_R4fXQHAZJwyLfesK": {
+        "alt": 1426.7,
+        "hdop": 0.8,
+        "lat": -2.239948,
+        "lng": 30.191267,
+        "spd": 5
+      },
+      "-On_RB9awZyKHjLR7x7V": {
+        "alt": 1425.4,
+        "hdop": 0.8,
+        "lat": -2.240198,
+        "lng": 30.191469,
+        "spd": 5
+      },
+      "-On_RHZ1GzM-IGmajPBC": {
+        "alt": 1435.5,
+        "hdop": 0.8,
+        "lat": -2.240555,
+        "lng": 30.191644,
+        "spd": 6.1
+      },
+      "-On_RO1MbIL5zhnbk9EM": {
+        "alt": 1434.5,
+        "hdop": 0.8,
+        "lat": -2.240915,
+        "lng": 30.191692,
+        "spd": 4.8
+      },
+      "-On_RVXa3JYNcrtye4j9": {
+        "alt": 1432.5,
+        "hdop": 0.8,
+        "lat": -2.241493,
+        "lng": 30.191513,
+        "spd": 6
+      },
+      "-On_RasPCFKLqzJ-UTnF": {
+        "alt": 1433.1,
+        "hdop": 0.8,
+        "lat": -2.241505,
+        "lng": 30.19152,
+        "spd": 5.1
+      },
+      "-On_RhLmoyVhPF6m3c5g": {
+        "alt": 1430.4,
+        "hdop": 0.8,
+        "lat": -2.241845,
+        "lng": 30.19167,
+        "spd": 5.1
+      },
+      "-On_Rnjtygg72f9DxloI": {
+        "alt": 1430.4,
+        "hdop": 0.8,
+        "lat": -2.242205,
+        "lng": 30.191832,
+        "spd": 4.8
+      },
+      "-On_RuDJeSSN0HCXWJXR": {
+        "alt": 1431.8,
+        "hdop": 0.8,
+        "lat": -2.242533,
+        "lng": 30.192021,
+        "spd": 5.1
+      },
+      "-On_WwanE2HtRnPtcK-j": {
+        "alt": 0,
+        "hdop": 99.9,
+        "lat": -2.254352,
+        "lng": 30.207065,
+        "spd": 5.1
+      },
+      "-On_X1RS_AaUcOR-QCnR": {
+        "alt": 1459.2,
+        "hdop": 0.8,
+        "lat": -2.254627,
+        "lng": 30.207245,
+        "spd": 5.1
+      },
+      "-On_X7pDrlQfX7TlOXgO": {
+        "alt": 1459.2,
+        "hdop": 0.8,
+        "lat": -2.254978,
+        "lng": 30.207459,
+        "spd": 5.7
+      },
+      "-On_XEFu9OT1hGc5FAlK": {
+        "alt": 1460.8,
+        "hdop": 0.8,
+        "lat": -2.25532,
+        "lng": 30.207668,
+        "spd": 6.6
+      },
+      "-On_XLfyc3VnL7_0GSD-": {
+        "alt": 1464.6,
+        "hdop": 0.8,
+        "lat": -2.256107,
+        "lng": 30.208108,
+        "spd": 5.3
+      },
+      "-On_XS6Fh3y82YJYjCwj": {
+        "alt": 1464.5,
+        "hdop": 0.8,
+        "lat": -2.256121,
+        "lng": 30.208115,
+        "spd": 6.1
+      },
+      "-On_XYYQc4-tNMelKVU7": {
+        "alt": 1464.1,
+        "hdop": 0.8,
+        "lat": -2.256483,
+        "lng": 30.208309,
+        "spd": 6.1
+      },
+      "-On_Xdzc_mZtFsnDIrtO": {
+        "alt": 1464.1,
+        "hdop": 0.8,
+        "lat": -2.256884,
+        "lng": 30.208515,
+        "spd": 6.2
+      },
+      "-On_XkUtxsJqL4n61Y2U": {
+        "alt": 1467.1,
+        "hdop": 0.8,
+        "lat": -2.257245,
+        "lng": 30.208719,
+        "spd": 6.3
+      },
+      "-On_XqrvSojcJSBu0md1": {
+        "alt": 1463.3,
+        "hdop": 0.8,
+        "lat": -2.257637,
+        "lng": 30.208931,
+        "spd": 6.3
+      },
+      "-On_XxJogrBB70gT8Shp": {
+        "alt": 1461.2,
+        "hdop": 0.8,
+        "lat": -2.258037,
+        "lng": 30.209127,
+        "spd": 6.4
+      },
+      "-On_Y2l2fSZxHhC0v2Ok": {
+        "alt": 1458.9,
+        "hdop": 0.8,
+        "lat": -2.258409,
+        "lng": 30.209309,
+        "spd": 6.4
+      },
+      "-On_YACjsB-NK1ewgUVu": {
+        "alt": 1458.7,
+        "hdop": 0.8,
+        "lat": -2.259223,
+        "lng": 30.209728,
+        "spd": 6.1
+      },
+      "-On_YGav3-TknxrIDYoY": {
+        "alt": 1458.9,
+        "hdop": 0.8,
+        "lat": -2.259237,
+        "lng": 30.209733,
+        "spd": 5.4
+      },
+      "-On_YN3T7Z6yp52CAC4l": {
+        "alt": 1456.6,
+        "hdop": 0.8,
+        "lat": -2.259595,
+        "lng": 30.209908,
+        "spd": 5.4
+      },
+      "-On_YTVlqBTwuM2obJjd": {
+        "alt": 1453.4,
+        "hdop": 0.8,
+        "lat": -2.259959,
+        "lng": 30.21008,
+        "spd": 6.3
+      },
+      "-On_Y_-ps12UH9FFIUsb": {
+        "alt": 1457.5,
+        "hdop": 0.8,
+        "lat": -2.260361,
+        "lng": 30.210246,
+        "spd": 5.8
+      },
+      "-On_YgMtT6gAxOJ63c_K": {
+        "alt": 1456.1,
+        "hdop": 0.8,
+        "lat": -2.261194,
+        "lng": 30.210468,
+        "spd": 5.6
+      },
+      "-On_YmoihsxohAe6prKb": {
+        "alt": 1456.3,
+        "hdop": 0.8,
+        "lat": -2.261565,
+        "lng": 30.210565,
+        "spd": 4.3
+      },
+      "-On_YuGTeJmsT73cPFNt": {
+        "alt": 1451.1,
+        "hdop": 0.8,
+        "lat": -2.26203,
+        "lng": 30.210724,
+        "spd": 6.6
+      },
+      "-On_Z-lKM6uImBW-40uI": {
+        "alt": 1451.1,
+        "hdop": 0.8,
+        "lat": -2.262046,
+        "lng": 30.210732,
+        "spd": 6.8
+      },
+      "-On_Z67lXGzERKx6CCX2": {
+        "alt": 1449.9,
+        "hdop": 0.8,
+        "lat": -2.26242,
+        "lng": 30.210853,
+        "spd": 5.9
+      },
+      "-On_ZDbw7k8-pwo4icUg": {
+        "alt": 1449.4,
+        "hdop": 0.8,
+        "lat": -2.263198,
+        "lng": 30.211127,
+        "spd": 5
+      },
+      "-On_ZK0HxJwmgAjtPdlf": {
+        "alt": 1449.7,
+        "hdop": 0.8,
+        "lat": -2.263558,
+        "lng": 30.211248,
+        "spd": 4.8
+      },
+      "-On_ZRQSwt8l0WxveTs8": {
+        "alt": 1452.2,
+        "hdop": 0.8,
+        "lat": -2.263985,
+        "lng": 30.211386,
+        "spd": 5.5
+      },
+      "-On_ZXs-BVRB7VTQjL1j": {
+        "alt": 1452.2,
+        "hdop": 0.8,
+        "lat": -2.263998,
+        "lng": 30.211393,
+        "spd": 5.4
+      },
+      "-On_ZdJF3mganwaY_i7I": {
+        "alt": 1453.3,
+        "hdop": 0.8,
+        "lat": -2.264373,
+        "lng": 30.211516,
+        "spd": 6
+      },
+      "-On_ZkjQYFJIXSndUgN4": {
+        "alt": 1454.5,
+        "hdop": 0.8,
+        "lat": -2.265152,
+        "lng": 30.211796,
+        "spd": 5.6
+      },
+      "-On_ZrDdxqUKCYA6OQ6F": {
+        "alt": 1454.6,
+        "hdop": 0.8,
+        "lat": -2.265167,
+        "lng": 30.211802,
+        "spd": 6.1
+      },
+      "-On_ZxduJHT1twMQAddQ": {
+        "alt": 1454,
+        "hdop": 0.8,
+        "lat": -2.26553,
+        "lng": 30.211918,
+        "spd": 6.1
+      },
+      "-On__33lZSXfkp4DaAG4": {
+        "alt": 1454,
+        "hdop": 0.8,
+        "lat": -2.265922,
+        "lng": 30.212039,
+        "spd": 5.5
+      },
+      "-On__9UU6evXYgjD1v7t": {
+        "alt": 1457.2,
+        "hdop": 0.8,
+        "lat": -2.266287,
+        "lng": 30.212153,
+        "spd": 6.9
+      },
+      "-On__GwDLuqSBqrRv2C-": {
+        "alt": 1456.5,
+        "hdop": 0.8,
+        "lat": -2.267084,
+        "lng": 30.212402,
+        "spd": 4.8
+      },
+      "-On__NN1Lnn0oKF7CPWK": {
+        "alt": 1456.9,
+        "hdop": 0.8,
+        "lat": -2.267097,
+        "lng": 30.212405,
+        "spd": 5.2
+      },
+      "-On__To0krB8isy-lYbN": {
+        "alt": 1457.6,
+        "hdop": 0.8,
+        "lat": -2.267451,
+        "lng": 30.212468,
+        "spd": 5.6
+      },
+      "-On___FqRblc4nZ2cMvx": {
+        "alt": 1457.6,
+        "hdop": 0.8,
+        "lat": -2.267856,
+        "lng": 30.212495,
+        "spd": 5
+      },
+      "-On__fjK6ezuDiNJg71n": {
+        "alt": 1461.4,
+        "hdop": 0.8,
+        "lat": -2.268278,
+        "lng": 30.212557,
+        "spd": 6.2
+      },
+      "-On__n7whauKsthRqGtT": {
+        "alt": 1460.3,
+        "hdop": 0.8,
+        "lat": -2.269148,
+        "lng": 30.212542,
+        "spd": 5.9
+      },
+      "-On__t_1hQ3s2LWSPT6o": {
+        "alt": 1460.4,
+        "hdop": 0.8,
+        "lat": -2.269163,
+        "lng": 30.212542,
+        "spd": 5.6
+      },
+      "-On_a-1EpwAU3PMxH-ag": {
+        "alt": 1459.8,
+        "hdop": 0.8,
+        "lat": -2.269545,
+        "lng": 30.21256,
+        "spd": 5.9
+      },
+      "-On_a5Ri8kgEM8ni0YYt": {
+        "alt": 1459.8,
+        "hdop": 0.8,
+        "lat": -2.269948,
+        "lng": 30.212494,
+        "spd": 5.8
+      },
+      "-On_aBtJCNlOJQEiBYYo": {
+        "alt": 1460.8,
+        "hdop": 0.8,
+        "lat": -2.270333,
+        "lng": 30.212459,
+        "spd": 4.4
+      },
+      "-On_aIKxWduEVojFS3FN": {
+        "alt": 1463.5,
+        "hdop": 0.8,
+        "lat": -2.270439,
+        "lng": 30.212669,
+        "spd": 4.4
+      },
+      "-On_aOopba9ZAF10TcEY": {
+        "alt": 1464.4,
+        "hdop": 0.8,
+        "lat": -2.270454,
+        "lng": 30.212932,
+        "spd": 5.5
+      },
+      "-On_aVCyNIDOkFUyMTS9": {
+        "alt": 1464.7,
+        "hdop": 0.8,
+        "lat": -2.270557,
+        "lng": 30.213336,
+        "spd": 7.1
+      },
+      "-On_abehutS1_aT6tCZE": {
+        "alt": 1464.6,
+        "hdop": 0.8,
+        "lat": -2.27065,
+        "lng": 30.214217,
+        "spd": 5.7
+      },
+      "-On_ai4lM6veLX_r6jLL": {
+        "alt": 1464.8,
+        "hdop": 0.8,
+        "lat": -2.270651,
+        "lng": 30.214233,
+        "spd": 6.2
+      },
+      "-On_aoZrBfkXVczhpl-Q": {
+        "alt": 1464.5,
+        "hdop": 0.9,
+        "lat": -2.270597,
+        "lng": 30.214648,
+        "spd": 6.2
+      },
+      "-On_auzv0wAZMWRXNp66": {
+        "alt": 1464.5,
+        "hdop": 0.9,
+        "lat": -2.27056,
+        "lng": 30.215089,
+        "spd": 6.7
+      },
+      "-On_b0Pj6LopM9Ndwxl3": {
+        "alt": 1465.4,
+        "hdop": 0.8,
+        "lat": -2.270548,
+        "lng": 30.215518,
+        "spd": 6.9
+      },
+      "-On_b7p1i6uZqYe8MOYZ": {
+        "alt": 1462.5,
+        "hdop": 0.8,
+        "lat": -2.270581,
+        "lng": 30.216432,
+        "spd": 5.2
+      },
+      "-On_bEGIQn6beSRPkXgh": {
+        "alt": 1462.7,
+        "hdop": 0.8,
+        "lat": -2.270581,
+        "lng": 30.216447,
+        "spd": 5.8
+      },
+      "-On_bKlk4O0pv-3lVgls": {
+        "alt": 1463.4,
+        "hdop": 0.8,
+        "lat": -2.270598,
+        "lng": 30.216862,
+        "spd": 5.8
+      },
+      "-On_bR90vrrRJOcPPJ4d": {
+        "alt": 1463.4,
+        "hdop": 0.8,
+        "lat": -2.270609,
+        "lng": 30.217295,
+        "spd": 6.8
+      },
+      "-On_bXaglrHH8Cbm0-hs": {
+        "alt": 1464.7,
+        "hdop": 0.8,
+        "lat": -2.270618,
+        "lng": 30.217728,
+        "spd": 6.8
+      },
+      "-On_be1XqW5m-MZYksG0": {
+        "alt": 1461.8,
+        "hdop": 0.9,
+        "lat": -2.270591,
+        "lng": 30.218668,
+        "spd": 7
+      },
+      "-On_bkSfDZB4cfEWlxlZ": {
+        "alt": 1461.6,
+        "hdop": 0.9,
+        "lat": -2.270592,
+        "lng": 30.218686,
+        "spd": 7.1
+      },
+      "-On_bqu9wnr5gkQKMV-E": {
+        "alt": 1460.5,
+        "hdop": 0.8,
+        "lat": -2.270577,
+        "lng": 30.219132,
+        "spd": 6.9
+      },
+      "-On_bxQ5-rYcdmvYEa7L": {
+        "alt": 1460.5,
+        "hdop": 0.8,
+        "lat": -2.270556,
+        "lng": 30.219541,
+        "spd": 6.2
+      },
+      "-On_c2n0Km1rA94uMjBP": {
+        "alt": 1457.5,
+        "hdop": 0.8,
+        "lat": -2.270532,
+        "lng": 30.219948,
+        "spd": 5.4
+      },
+      "-On_cADSizgYdUhHbhkz": {
+        "alt": 1457.4,
+        "hdop": 0.8,
+        "lat": -2.27045,
+        "lng": 30.220794,
+        "spd": 5.3
+      },
+      "-On_cH4pOi1RkRAb9DtV": {
+        "alt": 1457.7,
+        "hdop": 0.7,
+        "lat": -2.270447,
+        "lng": 30.220809,
+        "spd": 5.9
+      },
+      "-On_cN6d6l0K9J9Ogll6": {
+        "alt": 1457.2,
+        "hdop": 0.7,
+        "lat": -2.27039,
+        "lng": 30.221204,
+        "spd": 7.2
+      },
+      "-On_cUXSuymLgn6rEsw4": {
+        "alt": 1456.6,
+        "hdop": 0.7,
+        "lat": -2.270287,
+        "lng": 30.222074,
+        "spd": 6.1
+      },
+      "-On_c_yjaRuGXEB8Iej4": {
+        "alt": 1456.6,
+        "hdop": 0.7,
+        "lat": -2.270284,
+        "lng": 30.222088,
+        "spd": 5.6
+      },
+      "-On_chRiBvyKtUheDcTa": {
+        "alt": 1456.4,
+        "hdop": 0.7,
+        "lat": -2.270157,
+        "lng": 30.22291,
+        "spd": 6.1
+      },
+      "-On_cnqIoZjodzgj-Wik": {
+        "alt": 1456.3,
+        "hdop": 0.7,
+        "lat": -2.270151,
+        "lng": 30.222924,
+        "spd": 6.2
+      },
+      "-On_cuHEu_1WHF1QnFsO": {
+        "alt": 1455.8,
+        "hdop": 0.7,
+        "lat": -2.270017,
+        "lng": 30.223268,
+        "spd": 5.2
+      },
+      "-On_d0jufGm_fHV0mc-j": {
+        "alt": 1453.5,
+        "hdop": 0.7,
+        "lat": -2.269711,
+        "lng": 30.224007,
+        "spd": 5.9
+      },
+      "-On_d78WOaeovufC4iCy": {
+        "alt": 1453.4,
+        "hdop": 0.7,
+        "lat": -2.269705,
+        "lng": 30.224019,
+        "spd": 5
+      },
+      "-On_dE_hZg6XK-90Dg20": {
+        "alt": 1449.3,
+        "hdop": 0.7,
+        "lat": -2.269422,
+        "lng": 30.224854,
+        "spd": 5.9
+      },
+      "-On_dL0-4bgEimBLxIpc": {
+        "alt": 1449.1,
+        "hdop": 0.7,
+        "lat": -2.269418,
+        "lng": 30.224869,
+        "spd": 5.9
+      },
+      "-On_dRS72cp6XX-MWdvp": {
+        "alt": 1451.6,
+        "hdop": 0.7,
+        "lat": -2.269368,
+        "lng": 30.225284,
+        "spd": 5.2
+      },
+      "-On_dYtauo2MqfRrSKQa": {
+        "alt": 1453.8,
+        "hdop": 0.7,
+        "lat": -2.269283,
+        "lng": 30.226144,
+        "spd": 6.1
+      },
+      "-On_deLYbxX1dpkHVb52": {
+        "alt": 1453.7,
+        "hdop": 0.7,
+        "lat": -2.269283,
+        "lng": 30.226159,
+        "spd": 6
+      },
+      "-On_dlmTrFNKoc6Y3La-": {
+        "alt": 1454.9,
+        "hdop": 0.7,
+        "lat": -2.269398,
+        "lng": 30.227042,
+        "spd": 6.6
+      },
+      "-On_dsCgRCqiauzRXn_e": {
+        "alt": 1454.9,
+        "hdop": 0.7,
+        "lat": -2.269398,
+        "lng": 30.227057,
+        "spd": 5.7
+      },
+      "-On_dydR0Mbr8qXE5yuQ": {
+        "alt": 1454.8,
+        "hdop": 0.7,
+        "lat": -2.269443,
+        "lng": 30.22746,
+        "spd": 5.6
+      },
+      "-On_e53jXoOOZYId4kJn": {
+        "alt": 1453,
+        "hdop": 0.7,
+        "lat": -2.269566,
+        "lng": 30.228358,
+        "spd": 5.8
+      },
+      "-On_eBVN_dGQ7cPN-cgb": {
+        "alt": 1452.8,
+        "hdop": 0.7,
+        "lat": -2.269566,
+        "lng": 30.228372,
+        "spd": 5.8
+      },
+      "-On_eIwie5K_yCFHtS_L": {
+        "alt": 1451.1,
+        "hdop": 0.9,
+        "lat": -2.269597,
+        "lng": 30.229241,
+        "spd": 6.4
+      },
+      "-On_ePNSAdehiKcF1nuK": {
+        "alt": 1451.3,
+        "hdop": 0.9,
+        "lat": -2.269597,
+        "lng": 30.229258,
+        "spd": 6.4
+      },
+      "-On_eVoz-apMM6pTZoJn": {
+        "alt": 1449.7,
+        "hdop": 0.7,
+        "lat": -2.2696,
+        "lng": 30.229657,
+        "spd": 6.2
+      },
+      "-On_ecFC8ptdiA63-l-S": {
+        "alt": 1448.5,
+        "hdop": 1,
+        "lat": -2.26966,
+        "lng": 30.23056,
+        "spd": 7.2
+      },
+      "-On_eigSbMcJ5bpT4E4h": {
+        "alt": 1448.5,
+        "hdop": 0.8,
+        "lat": -2.269661,
+        "lng": 30.230578,
+        "spd": 7
+      },
+      "-On_ep7chTe0kFLRdm1P": {
+        "alt": 1446.7,
+        "hdop": 0.8,
+        "lat": -2.269709,
+        "lng": 30.230992,
+        "spd": 7
+      },
+      "-On_evZ_q6KrsExCPvXm": {
+        "alt": 1444.2,
+        "hdop": 0.7,
+        "lat": -2.269773,
+        "lng": 30.231411,
+        "spd": 6.5
+      },
+      "-On_f1-UVwwp1-u7ROx8": {
+        "alt": 1447.3,
+        "hdop": 0.7,
+        "lat": -2.269855,
+        "lng": 30.231825,
+        "spd": 6.6
+      },
+      "-On_f8TzKtA3lTCuJ_8X": {
+        "alt": 1445,
+        "hdop": 0.7,
+        "lat": -2.270009,
+        "lng": 30.232703,
+        "spd": 6.7
+      },
+      "-On_fEs64N-oBSJ0lwbg": {
+        "alt": 1445,
+        "hdop": 0.7,
+        "lat": -2.270015,
+        "lng": 30.232718,
+        "spd": 6.4
+      },
+      "-On_fLK6sWmHhcxckHMY": {
+        "alt": 1444.5,
+        "hdop": 0.7,
+        "lat": -2.270129,
+        "lng": 30.233095,
+        "spd": 6.4
+      },
+      "-On_fRkVHZumFK8FFEeB": {
+        "alt": 1444.5,
+        "hdop": 0.7,
+        "lat": -2.270354,
+        "lng": 30.233451,
+        "spd": 7
+      },
+      "-On_fYCgDnLDHzkqL2OT": {
+        "alt": 1444.2,
+        "hdop": 0.7,
+        "lat": -2.270641,
+        "lng": 30.23374,
+        "spd": 6.4
+      },
+      "-On_fecm8kqqKmX7vbhx": {
+        "alt": 1442.3,
+        "hdop": 0.8,
+        "lat": -2.271352,
+        "lng": 30.234328,
+        "spd": 5.7
+      },
+      "-On_fl3r5_BX4pSQXvqa": {
+        "alt": 1442.5,
+        "hdop": 0.8,
+        "lat": -2.271364,
+        "lng": 30.234337,
+        "spd": 5.8
+      },
+      "-On_frXa0Rm-moCnDI28": {
+        "alt": 1441.9,
+        "hdop": 0.7,
+        "lat": -2.271675,
+        "lng": 30.234587,
+        "spd": 5.8
+      },
+      "-On_fy-zXtCYjLnapOdB": {
+        "alt": 1441.9,
+        "hdop": 0.7,
+        "lat": -2.272003,
+        "lng": 30.234858,
+        "spd": 6.1
+      },
+      "-On_g3RFCvr5PigcqafF": {
+        "alt": 1440.8,
+        "hdop": 0.7,
+        "lat": -2.272328,
+        "lng": 30.235124,
+        "spd": 6.3
+      },
+      "-On_gArhmQXcAYCQVazi": {
+        "alt": 1434.9,
+        "hdop": 0.7,
+        "lat": -2.273,
+        "lng": 30.235711,
+        "spd": 6.4
+      },
+      "-On_gHFY3GgdQ7wbA2AU": {
+        "alt": 1434.8,
+        "hdop": 0.8,
+        "lat": -2.273012,
+        "lng": 30.235722,
+        "spd": 6.4
+      },
+      "-On_gNjiz3pSTh22SsWm": {
+        "alt": 1432.8,
+        "hdop": 0.8,
+        "lat": -2.273336,
+        "lng": 30.235982,
+        "spd": 6.1
+      },
+      "-On_gU86Xnu3rtIFm63O": {
+        "alt": 1432.8,
+        "hdop": 0.8,
+        "lat": -2.273666,
+        "lng": 30.236261,
+        "spd": 6.3
+      },
+      "-On_g_a00mAh80bOjziE": {
+        "alt": 1429.5,
+        "hdop": 0.7,
+        "lat": -2.274,
+        "lng": 30.236533,
+        "spd": 5.7
+      },
+      "-On_gh0nnof7yNZEzKhv": {
+        "alt": 1430.3,
+        "hdop": 0.7,
+        "lat": -2.274377,
+        "lng": 30.237325,
+        "spd": 7
+      },
+      "-On_gnTDG_yOcy6eMWkz": {
+        "alt": 1430.3,
+        "hdop": 0.7,
+        "lat": -2.274383,
+        "lng": 30.237342,
+        "spd": 7
+      },
+      "-On_gtujhjeOe4cCUz9f": {
+        "alt": 1430,
+        "hdop": 0.7,
+        "lat": -2.274475,
+        "lng": 30.237748,
+        "spd": 6.6
+      },
+      "-On_h-LJe8F0E7EJZshc": {
+        "alt": 1430,
+        "hdop": 0.7,
+        "lat": -2.274567,
+        "lng": 30.238169,
+        "spd": 6.7
+      },
+      "-On_h5unxCZIjxt1A-Ya": {
+        "alt": 1427.3,
+        "hdop": 0.7,
+        "lat": -2.274641,
+        "lng": 30.238562,
+        "spd": 6.6
+      },
+      "-On_hCVR4SKTGa-xeHJi": {
+        "alt": 1427.8,
+        "hdop": 0.8,
+        "lat": -2.274714,
+        "lng": 30.238948,
+        "spd": 6.6
+      },
+      "-On_hIeXQ2Cmq5jxaFMV": {
+        "alt": 1428,
+        "hdop": 0.7,
+        "lat": -2.2748,
+        "lng": 30.239354,
+        "spd": 6
+      },
+      "-On_hPk5nlb2LWMtCnpA": {
+        "alt": 1426.4,
+        "hdop": 0.7,
+        "lat": -2.274872,
+        "lng": 30.239742,
+        "spd": 6.2
+      },
+      "-On_hWX6WlIl21Q6Z4UB": {
+        "alt": 1425.6,
+        "hdop": 0.7,
+        "lat": -2.274957,
+        "lng": 30.24061,
+        "spd": 6
+      },
+      "-On_hbyWfVX5AUl1CFvv": {
+        "alt": 1425.6,
+        "hdop": 0.7,
+        "lat": -2.274957,
+        "lng": 30.240626,
+        "spd": 5.9
+      },
+      "-On_hiQKIbgb490tOZ9V": {
+        "alt": 1425.4,
+        "hdop": 0.7,
+        "lat": -2.274988,
+        "lng": 30.241037,
+        "spd": 5.9
+      },
+      "-On_horbRKQjl1p0CwYe": {
+        "alt": 1425.4,
+        "hdop": 0.7,
+        "lat": -2.275015,
+        "lng": 30.241472,
+        "spd": 6.8
+      },
+      "-On_hvIaQ3RmI_0L4esi": {
+        "alt": 1422.4,
+        "hdop": 0.7,
+        "lat": -2.275037,
+        "lng": 30.241889,
+        "spd": 6.4
+      },
+      "-On_i1jAeBoNnfCHFxgI": {
+        "alt": 1419.5,
+        "hdop": 0.7,
+        "lat": -2.275087,
+        "lng": 30.242761,
+        "spd": 6.4
+      },
+      "-On_i89W-f9z9d8FoFHs": {
+        "alt": 1419.5,
+        "hdop": 0.7,
+        "lat": -2.275104,
+        "lng": 30.243178,
+        "spd": 5.9
+      },
+      "-On_iF_qLE6Pw5cqdQPz": {
+        "alt": 1413.8,
+        "hdop": 0.7,
+        "lat": -2.275106,
+        "lng": 30.243641,
+        "spd": 6.2
+      },
+      "-On_iM1YB0thj6KG2_Nf": {
+        "alt": 1413.8,
+        "hdop": 0.7,
+        "lat": -2.275108,
+        "lng": 30.243658,
+        "spd": 6.5
+      },
+      "-On_iSTL4OrXKVt4j2iU": {
+        "alt": 1412.1,
+        "hdop": 0.7,
+        "lat": -2.275131,
+        "lng": 30.244051,
+        "spd": 6.1
+      },
+      "-On_iZutbYgTRze89axm": {
+        "alt": 1404.5,
+        "hdop": 0.7,
+        "lat": -2.275209,
+        "lng": 30.244912,
+        "spd": 5.4
+      },
+      "-On_ifLJQ7xzF-9IsIQZ": {
+        "alt": 1404.4,
+        "hdop": 0.7,
+        "lat": -2.275207,
+        "lng": 30.244926,
+        "spd": 5.7
+      },
+      "-On_ilmpOQueIjTaLHul": {
+        "alt": 1401.4,
+        "hdop": 0.8,
+        "lat": -2.275226,
+        "lng": 30.245315,
+        "spd": 5.7
+      },
+      "-On_isDAZ0y7RqAC6OQs": {
+        "alt": 1401.4,
+        "hdop": 0.8,
+        "lat": -2.275251,
+        "lng": 30.245728,
+        "spd": 6.7
+      },
+      "-On_iyg7DhLd0H-pCW8e": {
+        "alt": 1395.7,
+        "hdop": 0.7,
+        "lat": -2.275269,
+        "lng": 30.246138,
+        "spd": 6.3
+      },
+      "-On_j54wzLbeOcYGnmB0": {
+        "alt": 1392.4,
+        "hdop": 0.7,
+        "lat": -2.275173,
+        "lng": 30.246593,
+        "spd": 0.1
+      },
+      "-On_jCWhzaQnY4Ng0-i1": {
+        "alt": 1392.4,
+        "hdop": 0.7,
+        "lat": -2.275219,
+        "lng": 30.24683,
+        "spd": 6.3
+      },
+      "-On_jK0Fx9iOGZePJGQQ": {
+        "alt": 1390.9,
+        "hdop": 0.8,
+        "lat": -2.27545,
+        "lng": 30.247183,
+        "spd": 6
+      },
+      "-On_jQP3bH_YT1FJw_EH": {
+        "alt": 1390.6,
+        "hdop": 0.7,
+        "lat": -2.275461,
+        "lng": 30.247193,
+        "spd": 5.9
+      },
+      "-On_jWpbMc9f-obhVIdw": {
+        "alt": 1390.1,
+        "hdop": 0.7,
+        "lat": -2.275752,
+        "lng": 30.247409,
+        "spd": 4.8
+      },
+      "-On_jdGEB5-CEimheieK": {
+        "alt": 1389.5,
+        "hdop": 0.8,
+        "lat": -2.276459,
+        "lng": 30.247747,
+        "spd": 5.4
+      },
+      "-On_jjhVcoWkhefxwn0d": {
+        "alt": 1389.5,
+        "hdop": 0.7,
+        "lat": -2.276816,
+        "lng": 30.247914,
+        "spd": 6.1
+      },
+      "-On_jr7wBqtaZ0fWKzAh": {
+        "alt": 1392.2,
+        "hdop": 0.7,
+        "lat": -2.277205,
+        "lng": 30.248096,
+        "spd": 4.5
+      },
+      "-On_jxZRWmCv1IdxrTXl": {
+        "alt": 1392.3,
+        "hdop": 0.7,
+        "lat": -2.277218,
+        "lng": 30.248102,
+        "spd": 5.7
+      },
+      "-On_k30ppGdjOStU8yDt": {
+        "alt": 1394.4,
+        "hdop": 0.7,
+        "lat": -2.277565,
+        "lng": 30.24827,
+        "spd": 5.4
+      },
+      "-On_kAVcHMmRaFR0uefe": {
+        "alt": 1394.9,
+        "hdop": 0.7,
+        "lat": -2.277713,
+        "lng": 30.248351,
+        "spd": 0.4
+      },
+      "-On_k_eAOU6JpM4pi6l1": {
+        "alt": 1395.1,
+        "hdop": 0.7,
+        "lat": -2.277722,
+        "lng": 30.248319,
+        "spd": 3
+      },
+      "-On_kh3E8nUrYY4554yv": {
+        "alt": 1395.3,
+        "hdop": 0.7,
+        "lat": -2.277809,
+        "lng": 30.24816,
+        "spd": 5.1
+      },
+      "-On_koU8UibfP2SqqfHm": {
+        "alt": 1395.8,
+        "hdop": 0.7,
+        "lat": -2.278148,
+        "lng": 30.247954,
+        "spd": 5
+      },
+      "-On_kuvScC-tOpciZ8y9": {
+        "alt": 1395.6,
+        "hdop": 0.7,
+        "lat": -2.278162,
+        "lng": 30.247956,
+        "spd": 5.1
+      },
+      "-On_l0Mk-ivtExnX_uUJ": {
+        "alt": 1396.6,
+        "hdop": 0.8,
+        "lat": -2.278401,
+        "lng": 30.247943,
+        "spd": 5.1
+      },
+      "-On_l6pcXXjDifWNvrDf": {
+        "alt": 1395.2,
+        "hdop": 0.8,
+        "lat": -2.278763,
+        "lng": 30.248008,
+        "spd": 3.8
+      },
+      "-On_lDF_zbyQF5XDBnKR": {
+        "alt": 1397.2,
+        "hdop": 0.8,
+        "lat": -2.279149,
+        "lng": 30.248085,
+        "spd": 5.5
+      },
+      "-On_lKg9NSdSSdkFSIGr": {
+        "alt": 1395.9,
+        "hdop": 0.8,
+        "lat": -2.279941,
+        "lng": 30.248322,
+        "spd": 5.4
+      },
+      "-On_lR6igwumExfWDSlq": {
+        "alt": 1396.2,
+        "hdop": 0.8,
+        "lat": -2.279957,
+        "lng": 30.248326,
+        "spd": 5.1
+      },
+      "-On_lX_9IO4PtvlVI4rI": {
+        "alt": 1397.6,
+        "hdop": 0.8,
+        "lat": -2.280346,
+        "lng": 30.248416,
+        "spd": 5.1
+      },
+      "-On_lgZ4-jatd_ix1fXg": {
+        "alt": 1397.3,
+        "hdop": 0.8,
+        "lat": -2.281054,
+        "lng": 30.248279,
+        "spd": 6.3
+      },
+      "-On_lqg-DMomfvh1SjQv": {
+        "alt": 1391.1,
+        "hdop": 0.8,
+        "lat": -2.281624,
+        "lng": 30.248127,
+        "spd": 5.6
+      },
+      "-On_m1kjfJHJxgtnTmVB": {
+        "alt": 1378.7,
+        "hdop": 0.8,
+        "lat": -2.282634,
+        "lng": 30.248286,
+        "spd": 5.3
+      },
+      "-On_mDssY1zAFlHwDuSV": {
+        "alt": 1371.5,
+        "hdop": 0.8,
+        "lat": -2.28338,
+        "lng": 30.248314,
+        "spd": 4.5
+      },
+      "-On_mQbHxOvb3EMBogMH": {
+        "alt": 1363.3,
+        "hdop": 0.8,
+        "lat": -2.284166,
+        "lng": 30.248318,
+        "spd": 6
+      },
+      "-On_mbgV46wbuzi52I6K": {
+        "alt": 1357.1,
+        "hdop": 0.9,
+        "lat": -2.284609,
+        "lng": 30.248354,
+        "spd": 5.5
+      },
+      "-On_mlBhWH2uf-Qxvlze": {
+        "alt": 0,
+        "hdop": 99.9,
+        "lat": -2.285028,
+        "lng": 30.248678,
+        "spd": 4.6
+      },
+      "-On_n3TFOgNNVA-9Bg36": {
+        "alt": 1344.2,
+        "hdop": 0.9,
+        "lat": -2.286121,
+        "lng": 30.249057,
+        "spd": 5.5
+      },
+      "-On_n9eVajfZEUzJz7E-": {
+        "alt": 1344.2,
+        "hdop": 0.9,
+        "lat": -2.286354,
+        "lng": 30.24926,
+        "spd": 4.2
+      },
+      "-On_nG5w3ro0fvQWsUy8": {
+        "alt": 1337.1,
+        "hdop": 0.9,
+        "lat": -2.286662,
+        "lng": 30.24949,
+        "spd": 5
+      },
+      "-On_nNZF3pfJheoYtHEq": {
+        "alt": 1332.8,
+        "hdop": 0.8,
+        "lat": -2.287355,
+        "lng": 30.249984,
+        "spd": 5.8
+      },
+      "-On_nUxomU-DMoy09cFm": {
+        "alt": 1328.4,
+        "hdop": 0.9,
+        "lat": -2.287709,
+        "lng": 30.250205,
+        "spd": 4.4
+      },
+      "-On_nbOouLHemDDUNrrR": {
+        "alt": 1330.7,
+        "hdop": 0.8,
+        "lat": -2.288157,
+        "lng": 30.250395,
+        "spd": 2.3
+      },
+      "-On_nioAMftt2LMQUPA3": {
+        "alt": 1326.2,
+        "hdop": 0.8,
+        "lat": -2.288442,
+        "lng": 30.250678,
+        "spd": 4.7
+      },
+      "-On_npFB10pmxc374PdY": {
+        "alt": 1326.4,
+        "hdop": 0.8,
+        "lat": -2.28845,
+        "lng": 30.250691,
+        "spd": 4.7
+      },
+      "-On_nwk6z53aZEF07XQx": {
+        "alt": 1327,
+        "hdop": 0.8,
+        "lat": -2.289102,
+        "lng": 30.250826,
+        "spd": 5.2
+      },
+      "-On_o26oc_5O_3CBkaQl": {
+        "alt": 1326.9,
+        "hdop": 0.8,
+        "lat": -2.289115,
+        "lng": 30.250831,
+        "spd": 4.7
+      },
+      "-On_o8ZIF4Fibipjz_aA": {
+        "alt": 1327.9,
+        "hdop": 0.8,
+        "lat": -2.28947,
+        "lng": 30.251017,
+        "spd": 4.7
+      },
+      "-On_oF0cYj0UrV_dehZe": {
+        "alt": 1326.9,
+        "hdop": 0.8,
+        "lat": -2.289857,
+        "lng": 30.251189,
+        "spd": 3.8
+      },
+      "-On_oLRN2q70252mOhbn": {
+        "alt": 1327.8,
+        "hdop": 0.8,
+        "lat": -2.290223,
+        "lng": 30.251334,
+        "spd": 6.1
+      },
+      "-On_oSrlZMD6pevgNIqr": {
+        "alt": 1328.2,
+        "hdop": 0.8,
+        "lat": -2.291023,
+        "lng": 30.25165,
+        "spd": 3.8
+      },
+      "-On_oZJU5uur2-mKMvB9": {
+        "alt": 1328.2,
+        "hdop": 0.8,
+        "lat": -2.291035,
+        "lng": 30.251655,
+        "spd": 4.6
+      },
+      "-On_ofp9lfuqCCpIlOrJ": {
+        "alt": 1329.2,
+        "hdop": 0.8,
+        "lat": -2.29181,
+        "lng": 30.25196,
+        "spd": 5.3
+      },
+      "-On_omAqdg4QSHzCiMEG": {
+        "alt": 1329.2,
+        "hdop": 0.8,
+        "lat": -2.291823,
+        "lng": 30.251964,
+        "spd": 4.9
+      },
+      "-On_osgsDzRllwBsIHud": {
+        "alt": 1330.7,
+        "hdop": 0.8,
+        "lat": -2.292174,
+        "lng": 30.252114,
+        "spd": 5.4
+      },
+      "-On_p-4o5GKl3MWBeZGc": {
+        "alt": 1330.5,
+        "hdop": 0.9,
+        "lat": -2.292899,
+        "lng": 30.25258,
+        "spd": 6
+      },
+      "-On_p5YfdS9CBMucVFUn": {
+        "alt": 1330.6,
+        "hdop": 0.8,
+        "lat": -2.292912,
+        "lng": 30.252588,
+        "spd": 5.4
+      },
+      "-On_pCC6ut_E8JpPV-Sd": {
+        "alt": 1332.2,
+        "hdop": 0.8,
+        "lat": -2.293219,
+        "lng": 30.252841,
+        "spd": 5.4
+      },
+      "-On_pIQTn0K0ciW-NDUd": {
+        "alt": 1332.2,
+        "hdop": 0.8,
+        "lat": -2.293514,
+        "lng": 30.253087,
+        "spd": 4.9
+      },
+      "-On_pOsF8oAIGSGQtVkr": {
+        "alt": 1339,
+        "hdop": 0.8,
+        "lat": -2.29379,
+        "lng": 30.253316,
+        "spd": 5.3
+      },
+      "-On_pWFC1Pcs30K_JhAe": {
+        "alt": 1344.8,
+        "hdop": 0.8,
+        "lat": -2.294219,
+        "lng": 30.253673,
+        "spd": 3.7
+      },
+      "-On_pe8UihhWIebkWG0N": {
+        "alt": 1346.9,
+        "hdop": 0.8,
+        "lat": -2.294326,
+        "lng": 30.25376,
+        "spd": 0.6
+      },
+      "-On_pk62hWzGD-wzwrXi": {
+        "alt": 1348.7,
+        "hdop": 0.8,
+        "lat": -2.294356,
+        "lng": 30.253792,
+        "spd": 0.4
+      },
+      "-On_qEOcKtXtTPaeniVT": {
+        "alt": 1356.8,
+        "hdop": 0.8,
+        "lat": -2.294918,
+        "lng": 30.254244,
+        "spd": 4.6
+      },
+      "-On_qLqMHCR-GVjHtC3v": {
+        "alt": 1360.7,
+        "hdop": 0.8,
+        "lat": -2.295229,
+        "lng": 30.254497,
+        "spd": 4.8
+      },
+      "-On_qTKS5NeHix_xtuzf": {
+        "alt": 1363.6,
+        "hdop": 0.8,
+        "lat": -2.295538,
+        "lng": 30.254751,
+        "spd": 5.8
+      },
+      "-On_qZiLFKIC6vi0R1eQ": {
+        "alt": 1363.8,
+        "hdop": 0.8,
+        "lat": -2.2958,
+        "lng": 30.254963,
+        "spd": 5.5
+      },
+      "-On_qg7nlXDy4DgclrcS": {
+        "alt": 1368.1,
+        "hdop": 0.8,
+        "lat": -2.296091,
+        "lng": 30.255203,
+        "spd": 5.5
+      },
+      "-On_qmbIct6TbZ0b9WN3": {
+        "alt": 1368.1,
+        "hdop": 0.8,
+        "lat": -2.296102,
+        "lng": 30.255212,
+        "spd": 5.8
+      },
+      "-On_qt1HZDpiOZL-cNow": {
+        "alt": 1369.7,
+        "hdop": 0.8,
+        "lat": -2.296379,
+        "lng": 30.255433,
+        "spd": 5.9
+      },
+      "-On_r-SCvXrBSaIVQcvZ": {
+        "alt": 1373.8,
+        "hdop": 0.8,
+        "lat": -2.29697,
+        "lng": 30.255883,
+        "spd": 5.6
+      },
+      "-On_r5vr8c9gGDUS1utt": {
+        "alt": 1374.3,
+        "hdop": 0.8,
+        "lat": -2.297281,
+        "lng": 30.256035,
+        "spd": 4.1
+      },
+      "-On_rDM6GAfUeaRIwChs": {
+        "alt": 1377,
+        "hdop": 0.8,
+        "lat": -2.297668,
+        "lng": 30.256122,
+        "spd": 5.1
+      },
+      "-On_rJpD1LxaQoWhyoPx": {
+        "alt": 1377.1,
+        "hdop": 0.8,
+        "lat": -2.297682,
+        "lng": 30.256125,
+        "spd": 4.6
+      },
+      "-On_rQFpOB0T3o0R6Mrd": {
+        "alt": 1378.5,
+        "hdop": 0.8,
+        "lat": -2.298033,
+        "lng": 30.256186,
+        "spd": 4.8
+      },
+      "-On_rXd45tCYZxyU4wEi": {
+        "alt": 1382.9,
+        "hdop": 0.8,
+        "lat": -2.298754,
+        "lng": 30.256319,
+        "spd": 5.6
+      },
+      "-On_rd3kKXsP01ZywgoS": {
+        "alt": 1383.2,
+        "hdop": 0.8,
+        "lat": -2.298769,
+        "lng": 30.256322,
+        "spd": 5.9
+      },
+      "-On_rj_ErbCmcvkn1Xe3": {
+        "alt": 1384.4,
+        "hdop": 0.8,
+        "lat": -2.299031,
+        "lng": 30.256366,
+        "spd": 5.9
+      },
+      "-On_rpwuLrCUb2IwPHVa": {
+        "alt": 1384.4,
+        "hdop": 0.8,
+        "lat": -2.299368,
+        "lng": 30.256435,
+        "spd": 5.2
+      },
+      "-On_rwPOdmChGhOqU4eV": {
+        "alt": 1387.9,
+        "hdop": 0.9,
+        "lat": -2.299669,
+        "lng": 30.256512,
+        "spd": 4.4
+      },
+      "-On_s2pugNfXexk2VxbJ": {
+        "alt": 1391.5,
+        "hdop": 0.8,
+        "lat": -2.300349,
+        "lng": 30.256777,
+        "spd": 5.5
+      },
+      "-On_s9H6oUne1E69shdv": {
+        "alt": 1391.6,
+        "hdop": 0.8,
+        "lat": -2.300361,
+        "lng": 30.256782,
+        "spd": 4.3
+      },
+      "-On_sFj8FNvqD4BxAOna": {
+        "alt": 1392.8,
+        "hdop": 0.8,
+        "lat": -2.300653,
+        "lng": 30.256906,
+        "spd": 4.3
+      },
+      "-On_sMAnF-3Ue_791d_1": {
+        "alt": 1392.8,
+        "hdop": 0.8,
+        "lat": -2.300973,
+        "lng": 30.257047,
+        "spd": 4.5
+      },
+      "-On_sSaqFgvyanCMRY5p": {
+        "alt": 1397.1,
+        "hdop": 0.8,
+        "lat": -2.301272,
+        "lng": 30.257181,
+        "spd": 5.7
+      },
+      "-On_s_HqZ2bbknAzwD7T": {
+        "alt": 1401.2,
+        "hdop": 0.8,
+        "lat": -2.301925,
+        "lng": 30.257456,
+        "spd": 3.7
+      },
+      "-On_sfTGRWNTQFObJSJW": {
+        "alt": 1401.3,
+        "hdop": 0.8,
+        "lat": -2.301938,
+        "lng": 30.257459,
+        "spd": 5.1
+      },
+      "-On_slvgT_BvNfl10J62": {
+        "alt": 1403.2,
+        "hdop": 0.8,
+        "lat": -2.30223,
+        "lng": 30.257586,
+        "spd": 4.6
+      },
+      "-On_stLvvwg0rCYXdnGo": {
+        "alt": 1407.9,
+        "hdop": 0.8,
+        "lat": -2.302897,
+        "lng": 30.257857,
+        "spd": 5.2
+      },
+      "-On_szow-W95mQw-6ERZ": {
+        "alt": 1407.9,
+        "hdop": 0.8,
+        "lat": -2.302909,
+        "lng": 30.257863,
+        "spd": 4.8
+      },
+      "-On_t6H3BtOLvfdM9RJU": {
+        "alt": 1411.3,
+        "hdop": 0.8,
+        "lat": -2.303581,
+        "lng": 30.258139,
+        "spd": 6
+      },
+      "-On_tCdwNUa7kUxziY7t": {
+        "alt": 1411.4,
+        "hdop": 0.8,
+        "lat": -2.303595,
+        "lng": 30.258147,
+        "spd": 5.5
+      },
+      "-On_tJ3w0aHeK5PbN6hr": {
+        "alt": 1413.6,
+        "hdop": 0.8,
+        "lat": -2.303925,
+        "lng": 30.258283,
+        "spd": 5.2
+      },
+      "-On_tQ_gmjSHhbwVJcBO": {
+        "alt": 1414.7,
+        "hdop": 0.8,
+        "lat": -2.304529,
+        "lng": 30.258566,
+        "spd": 3.8
+      },
+      "-On_tWwu8Wh-R8Sclk0M": {
+        "alt": 1414.9,
+        "hdop": 0.8,
+        "lat": -2.30454,
+        "lng": 30.25857,
+        "spd": 4.1
+      },
+      "-On_tdNVT3hvd_0Liu0Q": {
+        "alt": 1419.2,
+        "hdop": 0.8,
+        "lat": -2.305075,
+        "lng": 30.258827,
+        "spd": 3.3
+      },
+      "-On_tknkVWhVYbAkw1Xq": {
+        "alt": 1420.1,
+        "hdop": 0.8,
+        "lat": -2.30528,
+        "lng": 30.258983,
+        "spd": 3.2
+      },
+      "-On_tsDSwkbzt2HbBe7P": {
+        "alt": 1419,
+        "hdop": 0.8,
+        "lat": -2.305511,
+        "lng": 30.25908,
+        "spd": 3.7
+      },
+      "-On_tzglfwon8nvCKNyn": {
+        "alt": 1421.1,
+        "hdop": 0.8,
+        "lat": -2.305797,
+        "lng": 30.259199,
+        "spd": 4.5
+      },
+      "-On_u67GnP6VijkbMdo0": {
+        "alt": 1422.5,
+        "hdop": 0.8,
+        "lat": -2.305895,
+        "lng": 30.259187,
+        "spd": 0.2
+      },
+      "-On_uDcNAEaH6Au66Ucq": {
+        "alt": 1420.1,
+        "hdop": 0.9,
+        "lat": -2.305884,
+        "lng": 30.259248,
+        "spd": 1
+      },
+      "-On_uMwOnjle1KQUCkBv": {
+        "alt": 1422.9,
+        "hdop": 0.9,
+        "lat": -2.305897,
+        "lng": 30.259247,
+        "spd": 0.8
+      },
+      "-On_uUURcJ1p--EWDq9m": {
+        "alt": 1422.3,
+        "hdop": 0.9,
+        "lat": -2.305885,
+        "lng": 30.259234,
+        "spd": 1
+      },
+      "-On_uavxa5mvoFq-BEFX": {
+        "alt": 1421.7,
+        "hdop": 0.9,
+        "lat": -2.305896,
+        "lng": 30.259229,
+        "spd": 1.9
+      },
+      "-On_uiycMNBv3R81qbUP": {
+        "alt": 1419.9,
+        "hdop": 1.3,
+        "lat": -2.305909,
+        "lng": 30.259236,
+        "spd": 0.7
+      },
+      "-On_upiD24t1ZE1EiIKX": {
+        "alt": 1435,
+        "hdop": 1.9,
+        "lat": -2.305826,
+        "lng": 30.25922,
+        "spd": 0.6
+      },
+      "-On_uxPB_Zg78GFDG_i2": {
+        "alt": 1425.6,
+        "hdop": 1.5,
+        "lat": -2.305852,
+        "lng": 30.259209,
+        "spd": 0.5
+      },
+      "-On_v3la_C1oznoFlhIT": {
+        "alt": 1427,
+        "hdop": 0.9,
+        "lat": -2.30587,
+        "lng": 30.259201,
+        "spd": 1
+      },
+      "-On_vB37Z-DV0xNS0dfs": {
+        "alt": 1426.4,
+        "hdop": 0.9,
+        "lat": -2.305887,
+        "lng": 30.259217,
+        "spd": 0.5
+      },
+      "-On_vKK-7TaJA8rPGVEI": {
+        "alt": 1427,
+        "hdop": 0.9,
+        "lat": -2.305881,
+        "lng": 30.259204,
+        "spd": 0.2
+      },
+      "-On_vSkxWy_Dtv88rUAT": {
+        "alt": 1423,
+        "hdop": 0.9,
+        "lat": -2.305876,
+        "lng": 30.259222,
+        "spd": 0.3
+      },
+      "-On_vb8Vf7idPaQ9Y_nF": {
+        "alt": 1425.5,
+        "hdop": 0.8,
+        "lat": -2.305866,
+        "lng": 30.259215,
+        "spd": 0.2
+      },
+      "-On_viZLP1n_T-QCT6E0": {
+        "alt": 1424.9,
+        "hdop": 0.8,
+        "lat": -2.305796,
+        "lng": 30.259184,
+        "spd": 3.3
+      },
+      "-On_vq5M8dqR5CjSlOZH": {
+        "alt": 1424.9,
+        "hdop": 0.9,
+        "lat": -2.305539,
+        "lng": 30.259022,
+        "spd": 5.3
+      },
+      "-On_vw_tKi9-XKaZeO4h": {
+        "alt": 1424.6,
+        "hdop": 0.8,
+        "lat": -2.305543,
+        "lng": 30.259012,
+        "spd": 4.1
+      },
+      "-On_w1t8WxgY6VxLmMDG": {
+        "alt": 1418.1,
+        "hdop": 0.8,
+        "lat": -2.305585,
+        "lng": 30.258729,
+        "spd": 3.5
+      },
+      "-On_w9Iruji_qurRKaNe": {
+        "alt": 1422.2,
+        "hdop": 0.8,
+        "lat": -2.305663,
+        "lng": 30.258009,
+        "spd": 3.5
+      },
+      "-On_wGaoCFlTGGCJPBJM": {
+        "alt": 1422.2,
+        "hdop": 0.8,
+        "lat": -2.30567,
+        "lng": 30.257998,
+        "spd": 4.8
+      },
+      "-On_wMBgDN0ip4JSJe6y": {
+        "alt": 1428.3,
+        "hdop": 0.9,
+        "lat": -2.305778,
+        "lng": 30.257655,
+        "spd": 4.8
+      },
+      "-On_wT5lT1zr72G9w3Lp": {
+        "alt": 1428.3,
+        "hdop": 0.9,
+        "lat": -2.305947,
+        "lng": 30.257269,
+        "spd": 6.8
+      },
+      "-On_wZ50M9AK4wf_g7iO": {
+        "alt": 1418.8,
+        "hdop": 0.8,
+        "lat": -2.306245,
+        "lng": 30.256532,
+        "spd": 6.8
+      },
+      "-On_wfUC037Qpgoll4z5": {
+        "alt": 1418.7,
+        "hdop": 0.9,
+        "lat": -2.306413,
+        "lng": 30.256114,
+        "spd": 4.3
+      },
+      "-On_wlvyBH6wzGW-YhqD": {
+        "alt": 1419.3,
+        "hdop": 1,
+        "lat": -2.30642,
+        "lng": 30.256103,
+        "spd": 4.9
+      },
+      "-On_wt6ikiTGNPNLT9C0": {
+        "alt": 1414,
+        "hdop": 0.8,
+        "lat": -2.306545,
+        "lng": 30.255739,
+        "spd": 4.9
+      },
+      "-On_wyocrBbjBgqHge3D": {
+        "alt": 1414,
+        "hdop": 0.8,
+        "lat": -2.306515,
+        "lng": 30.255348,
+        "spd": 4.1
+      },
+      "-On_x4FAAZ-cxZHZXnPE": {
+        "alt": 1412.5,
+        "hdop": 0.8,
+        "lat": -2.306408,
+        "lng": 30.255163,
+        "spd": 0.2
+      },
+      "-On_xCTRX43qeWibGpHD": {
+        "alt": 1409.9,
+        "hdop": 0.8,
+        "lat": -2.306284,
+        "lng": 30.255118,
+        "spd": 5.6
+      },
+      "-On_xIAymfipoOLf6Oyv": {
+        "alt": 1409.6,
+        "hdop": 0.8,
+        "lat": -2.306273,
+        "lng": 30.25511,
+        "spd": 5.1
+      },
+      "-On_xPQLPOnsFW-WULF4": {
+        "alt": 1408.4,
+        "hdop": 0.8,
+        "lat": -2.305925,
+        "lng": 30.254949,
+        "spd": 5.8
+      },
+      "-On_xYKf3aVsq77cgd-b": {
+        "alt": 1406,
+        "hdop": 0.8,
+        "lat": -2.305125,
+        "lng": 30.254609,
+        "spd": 5.1
+      },
+      "-On_xbSeN9rzwwUTBeTn": {
+        "alt": 1405.7,
+        "hdop": 0.8,
+        "lat": -2.305113,
+        "lng": 30.254602,
+        "spd": 5.6
+      },
+      "-On_xivBqGnwV7Xre2hy": {
+        "alt": 1397.4,
+        "hdop": 0.8,
+        "lat": -2.304373,
+        "lng": 30.254297,
+        "spd": 4.3
+      },
+      "-On_xqI2nArmw8klcKDe": {
+        "alt": 1399.7,
+        "hdop": 0.8,
+        "lat": -2.304136,
+        "lng": 30.254181,
+        "spd": 0.1
+      },
+      "-On_xxhkDdw7YmwzSo7d": {
+        "alt": 1398.2,
+        "hdop": 0.8,
+        "lat": -2.303978,
+        "lng": 30.254089,
+        "spd": 5.9
+      },
+      "-On_y3YMwVOFIGx0K9sJ": {
+        "alt": 1398.2,
+        "hdop": 0.8,
+        "lat": -2.303964,
+        "lng": 30.254083,
+        "spd": 5.3
+      },
+      "-On_y9aq-_O6iUl4epsC": {
+        "alt": 1398.4,
+        "hdop": 0.8,
+        "lat": -2.303615,
+        "lng": 30.253909,
+        "spd": 4.6
+      },
+      "-On_yH1rqe281dgqBSBL": {
+        "alt": 1393.1,
+        "hdop": 0.8,
+        "lat": -2.30284,
+        "lng": 30.253557,
+        "spd": 4.8
+      },
+      "-On_yNSB-P7AgdA-bwxk": {
+        "alt": 1393,
+        "hdop": 0.8,
+        "lat": -2.302829,
+        "lng": 30.253549,
+        "spd": 4.7
+      },
+      "-On_yU-TdjiKQAOlrfsD": {
+        "alt": 1390.9,
+        "hdop": 0.8,
+        "lat": -2.302522,
+        "lng": 30.253361,
+        "spd": 4.7
+      },
+      "-On_y_L1xfRyLIeHLwWt": {
+        "alt": 1390.9,
+        "hdop": 0.8,
+        "lat": -2.302205,
+        "lng": 30.253129,
+        "spd": 5.1
+      },
+      "-On_yfngURDUTT0HIlCT": {
+        "alt": 1381.9,
+        "hdop": 0.8,
+        "lat": -2.30191,
+        "lng": 30.252876,
+        "spd": 5.3
+      },
+      "-On_ynDTChGzzYuqsb0v": {
+        "alt": 1380.4,
+        "hdop": 0.8,
+        "lat": -2.301246,
+        "lng": 30.252336,
+        "spd": 4.5
+      },
+      "-On_ytk86NJqZnMrnUwm": {
+        "alt": 1380.3,
+        "hdop": 0.8,
+        "lat": -2.301235,
+        "lng": 30.252328,
+        "spd": 4.5
+      },
+      "-On_z-i_rHLGmm1yEROp": {
+        "alt": 1377.4,
+        "hdop": 0.8,
+        "lat": -2.300961,
+        "lng": 30.25216,
+        "spd": 1.9
+      },
+      "-On_z6aQRp1hsq_v9RP9": {
+        "alt": 1370.5,
+        "hdop": 0.8,
+        "lat": -2.300547,
+        "lng": 30.25155,
+        "spd": 4.4
+      },
+      "-On_zD2v5j6KroSGn-hq": {
+        "alt": 1370.7,
+        "hdop": 0.9,
+        "lat": -2.300542,
+        "lng": 30.251535,
+        "spd": 4.9
+      },
+      "-On_zJQCN3gWqFCG3U29": {
+        "alt": 1369.1,
+        "hdop": 0.8,
+        "lat": -2.300351,
+        "lng": 30.251242,
+        "spd": 4.9
+      },
+      "-OnaECl1bPJ6GEjgKYmr": {
+        "alt": 1472.1,
+        "hdop": 6.8,
+        "lat": -2.270737,
+        "lng": 30.233906,
+        "spd": 4.8
+      },
+      "-OnaEJ9MH-UbCmR4K6CC": {
+        "alt": 1472.1,
+        "hdop": 6.8,
+        "lat": -2.270369,
+        "lng": 30.233633,
+        "spd": 5.1
+      },
+      "-OnaEPbrtplTpHd9ajLJ": {
+        "alt": 1451.7,
+        "hdop": 0.9,
+        "lat": -2.270141,
+        "lng": 30.233338,
+        "spd": 5.1
+      },
+      "-OnaEX1seG0et8QahEy6": {
+        "alt": 1446.6,
+        "hdop": 0.8,
+        "lat": -2.269973,
+        "lng": 30.232616,
+        "spd": 4.9
+      },
+      "-OnaEcUDATv-haKutqDj": {
+        "alt": 1446.6,
+        "hdop": 0.8,
+        "lat": -2.269972,
+        "lng": 30.232604,
+        "spd": 4.7
+      },
+      "-OnaEiuRMX0wRWa-ThHg": {
+        "alt": 1445,
+        "hdop": 0.8,
+        "lat": -2.269923,
+        "lng": 30.232257,
+        "spd": 5.5
+      },
+      "-OnaEpSEQ_gYPuy4mMIn": {
+        "alt": 1445,
+        "hdop": 0.8,
+        "lat": -2.269873,
+        "lng": 30.231898,
+        "spd": 3.9
+      },
+      "-OnaEvnEcufN8W-9Yk0W": {
+        "alt": 1447.8,
+        "hdop": 0.8,
+        "lat": -2.269829,
+        "lng": 30.231556,
+        "spd": 5.8
+      },
+      "-OnaF1E6kMxbyxCh2_Nn": {
+        "alt": 1447.1,
+        "hdop": 0.8,
+        "lat": -2.269769,
+        "lng": 30.231226,
+        "spd": 5.8
+      },
+      "-OnaF7eznKuNKZDFhiYK": {
+        "alt": 1449.4,
+        "hdop": 0.8,
+        "lat": -2.269726,
+        "lng": 30.230869,
+        "spd": 5.4
+      },
+      "-OnaFE72hWTuTUM0mBU1": {
+        "alt": 1449.5,
+        "hdop": 0.9,
+        "lat": -2.269679,
+        "lng": 30.230518,
+        "spd": 5.6
+      },
+      "-OnaFLXzK-Dv3vvlJ1WN": {
+        "alt": 1451.7,
+        "hdop": 0.8,
+        "lat": -2.269619,
+        "lng": 30.229792,
+        "spd": 5
+      },
+      "-OnaFRzIsUYM8ORamMk2": {
+        "alt": 1451.9,
+        "hdop": 0.8,
+        "lat": -2.269619,
+        "lng": 30.229781,
+        "spd": 4.1
+      },
+      "-OnaFYQeGkNsPAnrYYia": {
+        "alt": 1451.9,
+        "hdop": 0.8,
+        "lat": -2.269604,
+        "lng": 30.229426,
+        "spd": 4.1
+      },
+      "-OnaFdrf--0SNTLjZzL1": {
+        "alt": 1451.9,
+        "hdop": 0.8,
+        "lat": -2.269605,
+        "lng": 30.229052,
+        "spd": 4.9
+      },
+      "-OnaFkJNv6TEViDsXTbJ": {
+        "alt": 1452.4,
+        "hdop": 0.8,
+        "lat": -2.269599,
+        "lng": 30.228673,
+        "spd": 5.7
+      },
+      "-OnaFrjVvlcfzqSG4nGN": {
+        "alt": 1452.1,
+        "hdop": 0.7,
+        "lat": -2.269531,
+        "lng": 30.227943,
+        "spd": 5.2
+      },
+      "-OnaFyAc8laHPjQXxqKq": {
+        "alt": 1453.2,
+        "hdop": 0.7,
+        "lat": -2.269532,
+        "lng": 30.227929,
+        "spd": 5.2
+      },
+      "-OnaG3bwhLS9SVYhUl7Q": {
+        "alt": 1453.6,
+        "hdop": 0.8,
+        "lat": -2.269489,
+        "lng": 30.227589,
+        "spd": 5.2
+      },
+      "-OnaGA2pYkDkp2aUfw4J": {
+        "alt": 1453.6,
+        "hdop": 0.8,
+        "lat": -2.269441,
+        "lng": 30.227222,
+        "spd": 4.6
+      },
+      "-OnaGGY9eu6h3PlYh3Ds": {
+        "alt": 1454,
+        "hdop": 0.7,
+        "lat": -2.269381,
+        "lng": 30.226827,
+        "spd": 5.8
+      },
+      "-OnaGNvVQwc20V29vrGE": {
+        "alt": 1453.4,
+        "hdop": 0.7,
+        "lat": -2.269289,
+        "lng": 30.22603,
+        "spd": 5.1
+      },
+      "-OnaGUMXVpAo3n1tSB9J": {
+        "alt": 1453.4,
+        "hdop": 0.7,
+        "lat": -2.269289,
+        "lng": 30.226018,
+        "spd": 4.5
+      },
+      "-OnaG_oarwsz103jOLEu": {
+        "alt": 1453.7,
+        "hdop": 0.8,
+        "lat": -2.269318,
+        "lng": 30.225687,
+        "spd": 4.5
+      },
+      "-OnaGhDairM_wT6mpH6X": {
+        "alt": 1449.5,
+        "hdop": 1,
+        "lat": -2.269413,
+        "lng": 30.224927,
+        "spd": 2.8
+      },
+      "-OnaGnf3IRMyqgRuleC7": {
+        "alt": 1451.1,
+        "hdop": 0.7,
+        "lat": -2.269531,
+        "lng": 30.22457,
+        "spd": 2.9
+      },
+      "-OnaGv6MVRPnzPPeoI6G": {
+        "alt": 1454.2,
+        "hdop": 0.7,
+        "lat": -2.269662,
+        "lng": 30.224172,
+        "spd": 5.6
+      },
+      "-OnaH0X_lTAl8JCORak0": {
+        "alt": 1454.3,
+        "hdop": 0.7,
+        "lat": -2.269667,
+        "lng": 30.224158,
+        "spd": 5.9
+      },
+      "-OnaH7-N0qIinHTuS7Tt": {
+        "alt": 1454.9,
+        "hdop": 0.7,
+        "lat": -2.269795,
+        "lng": 30.223837,
+        "spd": 5.8
+      },
+      "-OnaHDQcw4BETQtYiDTt": {
+        "alt": 1454.9,
+        "hdop": 0.7,
+        "lat": -2.269943,
+        "lng": 30.223491,
+        "spd": 5.6
+      },
+      "-OnaHJqzXsqnAvOj-a5w": {
+        "alt": 1456,
+        "hdop": 0.7,
+        "lat": -2.270083,
+        "lng": 30.223154,
+        "spd": 6.1
+      },
+      "-OnaHQK61jXMp1IYjKFi": {
+        "alt": 1456.5,
+        "hdop": 0.7,
+        "lat": -2.270194,
+        "lng": 30.222815,
+        "spd": 6.1
+      },
+      "-OnaHWjtqdRNUI4goKfq": {
+        "alt": 1457,
+        "hdop": 0.7,
+        "lat": -2.270264,
+        "lng": 30.222445,
+        "spd": 5.7
+      },
+      "-OnaHcCEUoPedU8K4oQv": {
+        "alt": 1457.7,
+        "hdop": 0.8,
+        "lat": -2.270305,
+        "lng": 30.222086,
+        "spd": 5.8
+      },
+      "-OnaHjbC0OTUJfSAmoz8": {
+        "alt": 1454.8,
+        "hdop": 0.7,
+        "lat": -2.270385,
+        "lng": 30.221343,
+        "spd": 4.7
+      },
+      "-OnaHq2HF_9pZMbskoYa": {
+        "alt": 1455.3,
+        "hdop": 0.8,
+        "lat": -2.270387,
+        "lng": 30.221331,
+        "spd": 4.8
+      },
+      "-OnaHwV3vcl0NcVlQ8bo": {
+        "alt": 1458.9,
+        "hdop": 0.7,
+        "lat": -2.270437,
+        "lng": 30.220982,
+        "spd": 4.8
+      },
+      "-OnaI1viVvqjZJVKXTO3": {
+        "alt": 1458.9,
+        "hdop": 0.7,
+        "lat": -2.270487,
+        "lng": 30.220616,
+        "spd": 4.6
+      },
+      "-OnaI8PQcPFwGxGLTaFk": {
+        "alt": 1457.3,
+        "hdop": 0.7,
+        "lat": -2.270516,
+        "lng": 30.220259,
+        "spd": 5.4
+      },
+      "-OnaIFnOLMiX0JudJCBv": {
+        "alt": 1459,
+        "hdop": 0.7,
+        "lat": -2.270561,
+        "lng": 30.219468,
+        "spd": 5.1
+      },
+      "-OnaIMHZGgM5aLGTqv6l": {
+        "alt": 1459.1,
+        "hdop": 0.7,
+        "lat": -2.270587,
+        "lng": 30.219107,
+        "spd": 5.6
+      },
+      "-OnaITgDd7oZ-XOqDuJz": {
+        "alt": 1462.1,
+        "hdop": 0.8,
+        "lat": -2.270611,
+        "lng": 30.218719,
+        "spd": 5.3
+      },
+      "-OnaI_727r4QIVos7d2F": {
+        "alt": 1462.1,
+        "hdop": 0.8,
+        "lat": -2.270612,
+        "lng": 30.218707,
+        "spd": 4.8
+      },
+      "-OnaIfYioBpjAoAMdz0r": {
+        "alt": 1464.6,
+        "hdop": 0.8,
+        "lat": -2.270629,
+        "lng": 30.218354,
+        "spd": 5.3
+      },
+      "-OnaImzvfwCqOoBMsrCZ": {
+        "alt": 1468,
+        "hdop": 0.7,
+        "lat": -2.27063,
+        "lng": 30.217589,
+        "spd": 3.9
+      },
+      "-OnaItQeFfp-Y6U9jREx": {
+        "alt": 1467.8,
+        "hdop": 0.7,
+        "lat": -2.270629,
+        "lng": 30.217577,
+        "spd": 4.4
+      },
+      "-OnaIztLKZW6Vg5vIK9y": {
+        "alt": 1465.5,
+        "hdop": 0.7,
+        "lat": -2.270623,
+        "lng": 30.217233,
+        "spd": 4.4
+      },
+      "-OnaJ5KavEKmNtN1q5YE": {
+        "alt": 1465.5,
+        "hdop": 0.7,
+        "lat": -2.270623,
+        "lng": 30.216853,
+        "spd": 4.4
+      },
+      "-OnaJBkaawMeGCi69LvS": {
+        "alt": 1465.9,
+        "hdop": 0.7,
+        "lat": -2.270608,
+        "lng": 30.216474,
+        "spd": 5.6
+      },
+      "-OnaJJAbvAiWwx2zF9kk": {
+        "alt": 1464.6,
+        "hdop": 0.7,
+        "lat": -2.270587,
+        "lng": 30.215717,
+        "spd": 5.5
+      },
+      "-OnaJPbeNgrLULqHHDuq": {
+        "alt": 1464.5,
+        "hdop": 0.7,
+        "lat": -2.270588,
+        "lng": 30.215702,
+        "spd": 5.7
+      },
+      "-OnaJW34G5ZjRne74oY3": {
+        "alt": 1464.2,
+        "hdop": 0.7,
+        "lat": -2.270585,
+        "lng": 30.215339,
+        "spd": 5.6
+      },
+      "-OnaJbVYsXxnb7gLLloO": {
+        "alt": 1464.2,
+        "hdop": 0.7,
+        "lat": -2.270587,
+        "lng": 30.214969,
+        "spd": 5.7
+      },
+      "-OnaJhyTkJjLzlJW2T3m": {
+        "alt": 1463.5,
+        "hdop": 0.7,
+        "lat": -2.270621,
+        "lng": 30.214606,
+        "spd": 6.1
+      },
+      "-OnaJpNblffkhd54Ynx7": {
+        "alt": 1465.5,
+        "hdop": 0.7,
+        "lat": -2.270665,
+        "lng": 30.213837,
+        "spd": 4.6
+      },
+      "-OnaJvoo2TC6OKvylpah": {
+        "alt": 1465.5,
+        "hdop": 0.7,
+        "lat": -2.270663,
+        "lng": 30.213823,
+        "spd": 5.5
+      },
+      "-OnaK1FkJXzuon6SpTT0": {
+        "alt": 1466.1,
+        "hdop": 0.7,
+        "lat": -2.27061,
+        "lng": 30.213501,
+        "spd": 4.7
+      },
+      "-OnaK8iQi4ohOK0TOdQd": {
+        "alt": 1464.3,
+        "hdop": 0.7,
+        "lat": -2.270439,
+        "lng": 30.212788,
+        "spd": 4.4
+      },
+      "-OnaKF6qYTVvHhgilpq3": {
+        "alt": 1464.7,
+        "hdop": 0.9,
+        "lat": -2.270359,
+        "lng": 30.212607,
+        "spd": 5.4
+      },
+      "-OnaKMYLgwN46wDwWXhr": {
+        "alt": 1461.5,
+        "hdop": 0.7,
+        "lat": -2.270024,
+        "lng": 30.212622,
+        "spd": 4.8
+      },
+      "-OnaKT18GEsg9IxRea59": {
+        "alt": 1461.1,
+        "hdop": 0.7,
+        "lat": -2.270011,
+        "lng": 30.212621,
+        "spd": 5
+      },
+      "-OnaKZREBqZBYhKRDQyW": {
+        "alt": 1460.1,
+        "hdop": 0.7,
+        "lat": -2.269693,
+        "lng": 30.212637,
+        "spd": 4.3
+      },
+      "-OnaKfrDxL1s98OWm98X": {
+        "alt": 1460.4,
+        "hdop": 0.7,
+        "lat": -2.269373,
+        "lng": 30.212649,
+        "spd": 1.8
+      },
+      "-OnaKnI3CaPQLGY3Ddqf": {
+        "alt": 1457.3,
+        "hdop": 0.7,
+        "lat": -2.269045,
+        "lng": 30.212648,
+        "spd": 3.3
+      },
+      "-OnaKukuvrusBNtcpAsu": {
+        "alt": 1451.5,
+        "hdop": 0.7,
+        "lat": -2.268707,
+        "lng": 30.212628,
+        "spd": 4.3
+      },
+      "-OnaL08zBML0YuxDV4IT": {
+        "alt": 1451.7,
+        "hdop": 0.8,
+        "lat": -2.268692,
+        "lng": 30.212628,
+        "spd": 4.6
+      },
+      "-OnaL6c4Sf9xVZK9i1xy": {
+        "alt": 1452,
+        "hdop": 0.7,
+        "lat": -2.268335,
+        "lng": 30.212604,
+        "spd": 5.4
+      },
+      "-OnaLD1jxVOItYV_VpRy": {
+        "alt": 1452,
+        "hdop": 0.7,
+        "lat": -2.267887,
+        "lng": 30.212547,
+        "spd": 6.4
+      },
+      "-OnaLK-ps02N7cjL_GTC": {
+        "alt": 1451.3,
+        "hdop": 0.9,
+        "lat": -2.267485,
+        "lng": 30.212493,
+        "spd": 7.1
+      },
+      "-OnaLQtnHKOlGT5y5RkR": {
+        "alt": 1450.5,
+        "hdop": 0.9,
+        "lat": -2.266707,
+        "lng": 30.212263,
+        "spd": 6.1
+      },
+      "-OnaLXL2s_fGDDomwn0h": {
+        "alt": 1450.4,
+        "hdop": 0.9,
+        "lat": -2.266691,
+        "lng": 30.212259,
+        "spd": 5.4
+      },
+      "-OnaLcn-1EoZiocUrnDa": {
+        "alt": 1446.7,
+        "hdop": 0.7,
+        "lat": -2.266284,
+        "lng": 30.212121,
+        "spd": 4.7
+      },
+      "-OnaLkDpW7z5HLJSWecd": {
+        "alt": 1447.1,
+        "hdop": 0.9,
+        "lat": -2.265522,
+        "lng": 30.211875,
+        "spd": 4.6
+      },
+      "-OnaLqfN_TQ_wMuMQSWL": {
+        "alt": 1442.5,
+        "hdop": 1.1,
+        "lat": -2.265166,
+        "lng": 30.211758,
+        "spd": 5.5
+      },
+      "-OnaLy5pkFOi5nL0xVDr": {
+        "alt": 1444.7,
+        "hdop": 0.7,
+        "lat": -2.264763,
+        "lng": 30.211631,
+        "spd": 3.7
+      },
+      "-OnaM3XfrcbzxkLmYJXu": {
+        "alt": 1445.4,
+        "hdop": 0.7,
+        "lat": -2.264748,
+        "lng": 30.211628,
+        "spd": 4.2
+      },
+      "-OnaM9xzZ7fm193GU3R4": {
+        "alt": 1444.1,
+        "hdop": 0.7,
+        "lat": -2.264423,
+        "lng": 30.211506,
+        "spd": 5
+      },
+      "-OnaMGPIcQBYjMwG0up0": {
+        "alt": 1444.1,
+        "hdop": 0.7,
+        "lat": -2.264075,
+        "lng": 30.211385,
+        "spd": 4.5
+      },
+      "-OnaMMsLIoNtxwzbWzNC": {
+        "alt": 1442.6,
+        "hdop": 0.8,
+        "lat": -2.263734,
+        "lng": 30.211263,
+        "spd": 4.4
+      },
+      "-OnaMTI_DszjgSbsQQyG": {
+        "alt": 1439,
+        "hdop": 0.8,
+        "lat": -2.263417,
+        "lng": 30.21115,
+        "spd": 4.4
+      },
+      "-OnaMZobQm56g0YtVXcl": {
+        "alt": 1441.9,
+        "hdop": 0.8,
+        "lat": -2.263047,
+        "lng": 30.211054,
+        "spd": 4.9
+      },
+      "-OnaMfE8SxqnMHjgE6ov": {
+        "alt": 1443.1,
+        "hdop": 0.8,
+        "lat": -2.262713,
+        "lng": 30.210934,
+        "spd": 4.4
+      },
+      "-OnaMmbElr4kb9cpo4n1": {
+        "alt": 1447.5,
+        "hdop": 0.7,
+        "lat": -2.262019,
+        "lng": 30.210704,
+        "spd": 3.6
+      },
+      "-OnaMt4H2VvbqkSScxSQ": {
+        "alt": 1447.7,
+        "hdop": 0.7,
+        "lat": -2.262008,
+        "lng": 30.210704,
+        "spd": 3
+      },
+      "-OnaN8K7I6GpRSic4B2F": {
+        "alt": 1450.9,
+        "hdop": 0.6,
+        "lat": -2.261152,
+        "lng": 30.210435,
+        "spd": 3.6
+      },
+      "-OnaNEh81_FAV8DQkmDh": {
+        "alt": 1452.6,
+        "hdop": 0.7,
+        "lat": -2.26078,
+        "lng": 30.210344,
+        "spd": 4.1
+      },
+      "-OnaNLAp-mB2HDl8_77R": {
+        "alt": 1454.5,
+        "hdop": 0.6,
+        "lat": -2.260397,
+        "lng": 30.21025,
+        "spd": 4.1
+      },
+      "-OnaNS_ciKDBsyukeAjn": {
+        "alt": 1446.5,
+        "hdop": 0.8,
+        "lat": -2.259696,
+        "lng": 30.209954,
+        "spd": 4.1
+      },
+      "-OnaNZ0FEr9fNzN2coHo": {
+        "alt": 1446.5,
+        "hdop": 0.8,
+        "lat": -2.259681,
+        "lng": 30.209946,
+        "spd": 7
+      },
+      "-OnaNeSv1PyEF4ASZIee": {
+        "alt": 1454.5,
+        "hdop": 0.7,
+        "lat": -2.25936,
+        "lng": 30.20981,
+        "spd": 7
+      },
+      "-OnaNkvKncUqSaNYwzAS": {
+        "alt": 1454.5,
+        "hdop": 0.7,
+        "lat": -2.259069,
+        "lng": 30.209629,
+        "spd": 3.9
+      },
+      "-OnaNrPP49VvtRRnQOnj": {
+        "alt": 1456,
+        "hdop": 0.7,
+        "lat": -2.258955,
+        "lng": 30.209572,
+        "spd": 4.8
+      },
+      "-OnaNyrEKzBB1-3mt-sc": {
+        "alt": 1457.2,
+        "hdop": 0.8,
+        "lat": -2.258294,
+        "lng": 30.209227,
+        "spd": 4.1
+      },
+      "-OnaO4G6-8DblQAyRDI8": {
+        "alt": 1456.9,
+        "hdop": 0.8,
+        "lat": -2.258283,
+        "lng": 30.20922,
+        "spd": 4.8
+      },
+      "-OnaOApivekA0xI8oEv3": {
+        "alt": 1458.5,
+        "hdop": 0.8,
+        "lat": -2.257978,
+        "lng": 30.209067,
+        "spd": 4.8
+      },
+      "-OnaOHFKzmlPmT-MTFFn": {
+        "alt": 1458.5,
+        "hdop": 0.8,
+        "lat": -2.257646,
+        "lng": 30.208899,
+        "spd": 5.3
+      },
+      "-OnaOOM090sHK4Du1D-N": {
+        "alt": 1459.3,
+        "hdop": 0.7,
+        "lat": -2.257047,
+        "lng": 30.208572,
+        "spd": 5
+      },
+      "-OnaOVmB0vrDFWpMlf-0": {
+        "alt": 1455.7,
+        "hdop": 0.7,
+        "lat": -2.256673,
+        "lng": 30.208368,
+        "spd": 4.1
+      },
+      "-OnaOdbE4sW4-wcHawts": {
+        "alt": 1458,
+        "hdop": 0.7,
+        "lat": -2.256326,
+        "lng": 30.208184,
+        "spd": 5.2
+      },
+      "-OnaOiGMoyyXUHvFGtrW": {
+        "alt": 1458.3,
+        "hdop": 0.7,
+        "lat": -2.25631,
+        "lng": 30.208178,
+        "spd": 6.1
+      },
+      "-OnaPTti5gP8GvGsXtGf": {
+        "alt": 1451.8,
+        "hdop": 1.3,
+        "lat": -2.253684,
+        "lng": 30.206369,
+        "spd": 4.8
+      },
+      "-OnaPi7U-UJ1BeHU-OY6": {
+        "alt": 1445.1,
+        "hdop": 0.7,
+        "lat": -2.253203,
+        "lng": 30.205673,
+        "spd": 5.2
+      },
+      "-OnaPxO87lr3DHpBarEx": {
+        "alt": 1444.7,
+        "hdop": 0.8,
+        "lat": -2.252909,
+        "lng": 30.205193,
+        "spd": 0
+      },
+      "-OnaQ1k615QqOcThgJbi": {
+        "alt": 1442,
+        "hdop": 0.7,
+        "lat": -2.252738,
+        "lng": 30.204956,
+        "spd": 4.5
+      },
+      "-OnaQ88d49tejamlEI0G": {
+        "alt": 1439.7,
+        "hdop": 0.9,
+        "lat": -2.252562,
+        "lng": 30.204662,
+        "spd": 5.2
+      },
+      "-OnaQFY8eZKA_G_D3UDc": {
+        "alt": 1433.7,
+        "hdop": 0.7,
+        "lat": -2.252188,
+        "lng": 30.203943,
+        "spd": 3.9
+      },
+      "-OnaQM2-trHwWPTUDb1G": {
+        "alt": 1433.9,
+        "hdop": 0.7,
+        "lat": -2.25218,
+        "lng": 30.203931,
+        "spd": 5.1
+      },
+      "-OnaQSQO0BU5DKUaepcs": {
+        "alt": 1425.6,
+        "hdop": 0.9,
+        "lat": -2.252027,
+        "lng": 30.20362,
+        "spd": 5.1
+      },
+      "-OnaQYrpznPA8dMAbYlk": {
+        "alt": 1428.7,
+        "hdop": 0.7,
+        "lat": -2.251843,
+        "lng": 30.203245,
+        "spd": 4.2
+      },
+      "-OnaQnqN3DTHHa_-6UVr": {
+        "alt": 1433.8,
+        "hdop": 0.8,
+        "lat": -2.251406,
+        "lng": 30.202178,
+        "spd": 3.9
+      },
+      "-OnaQuET1hhDt4sj14N9": {
+        "alt": 1433.8,
+        "hdop": 0.8,
+        "lat": -2.251403,
+        "lng": 30.202165,
+        "spd": 4.7
+      },
+      "-OnaR-dSKkKIEMOLZ3Vq": {
+        "alt": 1433.8,
+        "hdop": 0.8,
+        "lat": -2.251298,
+        "lng": 30.201796,
+        "spd": 5.6
+      },
+      "-OnaR64UrHE68JKsLjZB": {
+        "alt": 1434.8,
+        "hdop": 0.7,
+        "lat": -2.251106,
+        "lng": 30.20149,
+        "spd": 5.9
+      },
+      "-OnaRarrObiMH5InrWZT": {
+        "alt": 1433.7,
+        "hdop": 0.7,
+        "lat": -2.25036,
+        "lng": 30.200451,
+        "spd": 5.4
+      },
+      "-OnaRhBlXO0QjYJTllW4": {
+        "alt": 1434.3,
+        "hdop": 0.7,
+        "lat": -2.249754,
+        "lng": 30.199787,
+        "spd": 6
+      },
+      "-OnaRnfolLNOrJ4Km3gR": {
+        "alt": 1433.6,
+        "hdop": 0.7,
+        "lat": -2.24954,
+        "lng": 30.199484,
+        "spd": 6
+      },
+      "-OnaRuDq3-rliPyzHCSM": {
+        "alt": 1431.7,
+        "hdop": 0.7,
+        "lat": -2.249363,
+        "lng": 30.199162,
+        "spd": 4.5
+      },
+      "-OnaS-j2EuHb062oXEr9": {
+        "alt": 1431.9,
+        "hdop": 0.7,
+        "lat": -2.249173,
+        "lng": 30.198867,
+        "spd": 4.2
+      },
+      "-OnaS7PYPTG7siurjzLb": {
+        "alt": 1431.2,
+        "hdop": 0.7,
+        "lat": -2.24871,
+        "lng": 30.198258,
+        "spd": 4.9
+      },
+      "-OnaSJ5QFeGM5Xknwjuz": {
+        "alt": 1430.8,
+        "hdop": 0.7,
+        "lat": -2.248701,
+        "lng": 30.198245,
+        "spd": 5.7
+      },
+      "-OnaSUxKGcewMD4nEjjp": {
+        "alt": 1434.2,
+        "hdop": 0.7,
+        "lat": -2.247991,
+        "lng": 30.197138,
+        "spd": 5.1
+      },
+      "-OnaTSJu2kz6PdjajVOY": {
+        "alt": 0,
+        "hdop": 99.9,
+        "lat": -2.24581,
+        "lng": 30.194838,
+        "spd": 3.6
+      },
+      "-OnaTr79vB3wTEZT9Fn-": {
+        "alt": 1430.1,
+        "hdop": 0.9,
+        "lat": -2.244608,
+        "lng": 30.193866,
+        "spd": 4
+      },
+      "-OnaVFUTPH0xJ9kEr72E": {
+        "alt": 1427.9,
+        "hdop": 0.8,
+        "lat": -2.242337,
+        "lng": 30.19111,
+        "spd": 0.3
+      },
+      "-OnaVlVcnMSJLmDCwWMT": {
+        "alt": 1435,
+        "hdop": 0.8,
+        "lat": -2.24233,
+        "lng": 30.191097,
+        "spd": 0.5
+      },
+      "-OnaVswPlVF9DhOBXjhd": {
+        "alt": 1421.7,
+        "hdop": 0.8,
+        "lat": -2.242306,
+        "lng": 30.191113,
+        "spd": 0.3
+      },
+      "-OnaW1Ka4IcsnelyzX3n": {
+        "alt": 1425.1,
+        "hdop": 0.9,
+        "lat": -2.24233,
+        "lng": 30.191125,
+        "spd": 2.4
+      },
+      "-OnaW8ltPA0gCE7vieTB": {
+        "alt": 1433.2,
+        "hdop": 0.9,
+        "lat": -2.242091,
+        "lng": 30.191104,
+        "spd": 5.6
+      },
+      "-OnaWFCNQ-ePpQAJkZK3": {
+        "alt": 1433.4,
+        "hdop": 0.9,
+        "lat": -2.242077,
+        "lng": 30.191099,
+        "spd": 5.2
+      },
+      "-OnaWMdIc5qSpRQn08UE": {
+        "alt": 1435,
+        "hdop": 0.8,
+        "lat": -2.241513,
+        "lng": 30.191249,
+        "spd": 5.1
+      },
+      "-OnaWT48_xVr-pnfXqEL": {
+        "alt": 1434.8,
+        "hdop": 0.8,
+        "lat": -2.241509,
+        "lng": 30.191261,
+        "spd": 4.5
+      },
+      "-OnaWZW6rzuzSKljS9_K": {
+        "alt": 1438.5,
+        "hdop": 0.8,
+        "lat": -2.241311,
+        "lng": 30.191397,
+        "spd": 2.9
+      },
+      "-OnaWeyT9OCrUatnt1eV": {
+        "alt": 1438.5,
+        "hdop": 0.8,
+        "lat": -2.24105,
+        "lng": 30.191418,
+        "spd": 4.4
+      },
+      "-OnaWlP0wuVF_15ScmK1": {
+        "alt": 1433.1,
+        "hdop": 0.8,
+        "lat": -2.240404,
+        "lng": 30.191222,
+        "spd": 4.2
+      },
+      "-OnaWspO3G_cpVO709sP": {
+        "alt": 1432.2,
+        "hdop": 0.7,
+        "lat": -2.240022,
+        "lng": 30.191236,
+        "spd": 3.5
+      },
+      "-OnaWzGovc4fAH1SISrU": {
+        "alt": 1430.9,
+        "hdop": 0.7,
+        "lat": -2.240008,
+        "lng": 30.191238,
+        "spd": 4.7
+      },
+      "-OnaX4hS3FJHoDXsGKYH": {
+        "alt": 1425.6,
+        "hdop": 0.7,
+        "lat": -2.239698,
+        "lng": 30.191151,
+        "spd": 5.1
+      },
+      "-OnaXB8tBROixDmCagTe": {
+        "alt": 1425.6,
+        "hdop": 0.7,
+        "lat": -2.239393,
+        "lng": 30.191041,
+        "spd": 4.5
+      },
+      "-OnaXHauaWvx9QM6JDOu": {
+        "alt": 1431.8,
+        "hdop": 0.7,
+        "lat": -2.239103,
+        "lng": 30.190851,
+        "spd": 4.7
+      },
+      "-OnaXO1kg1Hw0kA-2GAO": {
+        "alt": 1428.2,
+        "hdop": 0.8,
+        "lat": -2.238832,
+        "lng": 30.190663,
+        "spd": 4.7
+      },
+      "-OnaXUU-tcGYjhdpAfoD": {
+        "alt": 1427.5,
+        "hdop": 0.7,
+        "lat": -2.238581,
+        "lng": 30.190405,
+        "spd": 4.5
+      },
+      "-OnaX_ycdWempb0F7hoE": {
+        "alt": 1426.3,
+        "hdop": 0.8,
+        "lat": -2.238315,
+        "lng": 30.190151,
+        "spd": 4.7
+      },
+      "-OnaXhLVXB69Sgnebhv-": {
+        "alt": 1424.9,
+        "hdop": 0.9,
+        "lat": -2.237751,
+        "lng": 30.189823,
+        "spd": 3.3
+      },
+      "-OnaXnpBNZ8Y9ZnqTQFY": {
+        "alt": 1424.8,
+        "hdop": 0.8,
+        "lat": -2.237506,
+        "lng": 30.189528,
+        "spd": 5.4
+      },
+      "-OnaXvCn1_6pqe4fw2s-": {
+        "alt": 1427.4,
+        "hdop": 0.7,
+        "lat": -2.23725,
+        "lng": 30.189234,
+        "spd": 4.9
+      },
+      "-OnaY1fBj_Sj1rZUWeah": {
+        "alt": 1424.3,
+        "hdop": 0.7,
+        "lat": -2.237075,
+        "lng": 30.189037,
+        "spd": 2.3
+      },
+      "-OnaY83ZlF9tVorxP_gw": {
+        "alt": 1424.7,
+        "hdop": 0.7,
+        "lat": -2.237075,
+        "lng": 30.189026,
+        "spd": 3
+      },
+      "-OnaYEWOv6iHqw7EoT6Z": {
+        "alt": 1424.7,
+        "hdop": 0.7,
+        "lat": -2.236887,
+        "lng": 30.188753,
+        "spd": 4.8
+      },
+      "-OnaYKyHO_5A9QtUbPVB": {
+        "alt": 1422.1,
+        "hdop": 0.7,
+        "lat": -2.236698,
+        "lng": 30.188436,
+        "spd": 4.4
+      },
+      "-OnaYRPMYEsw3J7hUOoy": {
+        "alt": 1423.5,
+        "hdop": 0.7,
+        "lat": -2.236641,
+        "lng": 30.18812,
+        "spd": 4.4
+      },
+      "-OnaYXq2u13GBJlk4n-Z": {
+        "alt": 1424.3,
+        "hdop": 0.7,
+        "lat": -2.236634,
+        "lng": 30.187727,
+        "spd": 3.3
+      },
+      "-OnaYdHYpB_ufNoRGKAp": {
+        "alt": 1427.3,
+        "hdop": 0.8,
+        "lat": -2.236633,
+        "lng": 30.187348,
+        "spd": 3.6
+      },
+      "-OnaYkhfXiWM4NA6pIQR": {
+        "alt": 1430.5,
+        "hdop": 0.7,
+        "lat": -2.236623,
+        "lng": 30.186564,
+        "spd": 6
+      },
+      "-OnaYrBo_ttTuX9I1n6s": {
+        "alt": 1430.6,
+        "hdop": 0.7,
+        "lat": -2.236623,
+        "lng": 30.186549,
+        "spd": 5
+      },
+      "-OnaYxaeeD_P1wR4_x5S": {
+        "alt": 1430.6,
+        "hdop": 0.7,
+        "lat": -2.236615,
+        "lng": 30.186199,
+        "spd": 5.2
+      },
+      "-OnaZ31kDROra9kwGo9V": {
+        "alt": 1430.6,
+        "hdop": 0.7,
+        "lat": -2.236631,
+        "lng": 30.185873,
+        "spd": 4.5
+      },
+      "-OnaZ9TZ5gxGg8r3CT3z": {
+        "alt": 1429,
+        "hdop": 0.7,
+        "lat": -2.236613,
+        "lng": 30.18553,
+        "spd": 4.2
+      },
+      "-OnaZGtn7-5-FEb7pHDp": {
+        "alt": 1430.8,
+        "hdop": 0.7,
+        "lat": -2.236415,
+        "lng": 30.184877,
+        "spd": 3.9
+      },
+      "-OnaZNLU_f7HruXVTUYC": {
+        "alt": 1431.4,
+        "hdop": 0.7,
+        "lat": -2.23641,
+        "lng": 30.184862,
+        "spd": 4.1
+      },
+      "-OnaZTmIBfaXkO-kqJ6O": {
+        "alt": 1428.8,
+        "hdop": 0.8,
+        "lat": -2.236334,
+        "lng": 30.184617,
+        "spd": 0.6
+      },
+      "-OnaZ_Cw4bR0csdE7KSi": {
+        "alt": 1428.8,
+        "hdop": 0.8,
+        "lat": -2.236189,
+        "lng": 30.184367,
+        "spd": 2.6
+      },
+      "-OnaZffWe7iMOce8JmXP": {
+        "alt": 1431.6,
+        "hdop": 0.7,
+        "lat": -2.236044,
+        "lng": 30.184125,
+        "spd": 2.2
+      },
+      "-OnaZmAiZ2m3ImDui1DG": {
+        "alt": 1434.6,
+        "hdop": 0.7,
+        "lat": -2.235924,
+        "lng": 30.183841,
+        "spd": 2.2
+      },
+      "-OnaZtJlpVA8U47frpxo": {
+        "alt": 1432.7,
+        "hdop": 0.8,
+        "lat": -2.235814,
+        "lng": 30.183577,
+        "spd": 1.5
+      },
+      "-OnaZz5kONGLMKWhZIj7": {
+        "alt": 1431.5,
+        "hdop": 0.8,
+        "lat": -2.235684,
+        "lng": 30.183281,
+        "spd": 3
+      },
+      "-Ona_5chUi-OfGq64o6r": {
+        "alt": 1430.2,
+        "hdop": 0.8,
+        "lat": -2.235069,
+        "lng": 30.182988,
+        "spd": 3.7
+      },
+      "-Ona_BsBHfrvMjYYUzk4": {
+        "alt": 1431.1,
+        "hdop": 0.8,
+        "lat": -2.235053,
+        "lng": 30.182982,
+        "spd": 3.7
+      },
+      "-Ona_IIZe0VrcU4WB9c1": {
+        "alt": 1437,
+        "hdop": 0.9,
+        "lat": -2.234828,
+        "lng": 30.182899,
+        "spd": 3.7
+      },
+      "-Ona_OjuJgdWknygAjO1": {
+        "alt": 1443.1,
+        "hdop": 0.8,
+        "lat": -2.234561,
+        "lng": 30.182778,
+        "spd": 3.5
+      },
+      "-Ona_VBXVmSyZwuIhNhC": {
+        "alt": 1444.2,
+        "hdop": 0.8,
+        "lat": -2.234288,
+        "lng": 30.182699,
+        "spd": 2.9
+      },
+      "-Ona_bbvWkRQ_pAaxxby": {
+        "alt": 1441.4,
+        "hdop": 0.8,
+        "lat": -2.233792,
+        "lng": 30.182314,
+        "spd": 3.3
+      },
+      "-Ona_j1eOvsmPaNjrtJT": {
+        "alt": 1444.9,
+        "hdop": 0.9,
+        "lat": -2.233497,
+        "lng": 30.182071,
+        "spd": 5.4
+      },
+      "-Ona_qTIRmRQVlL1wdMs": {
+        "alt": 1449.6,
+        "hdop": 0.8,
+        "lat": -2.23327,
+        "lng": 30.181798,
+        "spd": 4
+      },
+      "-Ona_wuDAly0ij1AnqtY": {
+        "alt": 1449.7,
+        "hdop": 0.8,
+        "lat": -2.23326,
+        "lng": 30.181797,
+        "spd": 3.7
+      },
+      "-Onaa2L8lQgB5e3eV7zr": {
+        "alt": 1447.5,
+        "hdop": 0.8,
+        "lat": -2.233134,
+        "lng": 30.181716,
+        "spd": 4.3
+      },
+      "-Onaa9mvJ4VUB-_YaZEx": {
+        "alt": 1445.9,
+        "hdop": 0.8,
+        "lat": -2.232995,
+        "lng": 30.181219,
+        "spd": 3.4
+      },
+      "-OnaaHGl7Wh6MmCXpZ-6": {
+        "alt": 1445.6,
+        "hdop": 0.8,
+        "lat": -2.232897,
+        "lng": 30.180882,
+        "spd": 1.9
+      },
+      "-OnaaOie1jWFuolSt33m": {
+        "alt": 1443.9,
+        "hdop": 0.8,
+        "lat": -2.2328,
+        "lng": 30.180576,
+        "spd": 4.4
+      },
+      "-OnaaV4Uq9h1u8AcnWvM": {
+        "alt": 1443.8,
+        "hdop": 0.8,
+        "lat": -2.232796,
+        "lng": 30.180562,
+        "spd": 4.8
+      },
+      "-OnaaaV_xdYOW1Irlb1F": {
+        "alt": 1442,
+        "hdop": 0.8,
+        "lat": -2.232719,
+        "lng": 30.180277,
+        "spd": 4.1
+      },
+      "-OnaahwlrydWRB-LVgoH": {
+        "alt": 1443.9,
+        "hdop": 0.8,
+        "lat": -2.232531,
+        "lng": 30.179678,
+        "spd": 3
+      },
+      "-OnaapRqZYqxwy5STM6M": {
+        "alt": 1442.6,
+        "hdop": 0.8,
+        "lat": -2.232575,
+        "lng": 30.179398,
+        "spd": 2.8
+      },
+      "-Onaawns29ZyEqFyAXHo": {
+        "alt": 1440.3,
+        "hdop": 0.8,
+        "lat": -2.232566,
+        "lng": 30.17907,
+        "spd": 2.3
+      },
+      "-Onab3K-2dI4iO8TxZRe": {
+        "alt": 1443.3,
+        "hdop": 0.8,
+        "lat": -2.23251,
+        "lng": 30.178895,
+        "spd": 2.5
+      },
+      "-Onab9enQCZQkfWZIWo6": {
+        "alt": 1443.6,
+        "hdop": 0.8,
+        "lat": -2.232505,
+        "lng": 30.178884,
+        "spd": 3.3
+      },
+      "-OnabG6YZ3GNtQJBdkTm": {
+        "alt": 1443.6,
+        "hdop": 0.8,
+        "lat": -2.232582,
+        "lng": 30.178639,
+        "spd": 3.7
+      },
+      "-OnabMZkNNI2nPB3tpxn": {
+        "alt": 1442.3,
+        "hdop": 0.8,
+        "lat": -2.23257,
+        "lng": 30.178372,
+        "spd": 4.3
+      },
+      "-OnabTykv1yvmgXBgzti": {
+        "alt": 1444.6,
+        "hdop": 0.8,
+        "lat": -2.232289,
+        "lng": 30.177763,
+        "spd": 5.6
+      },
+      "-Onab_QOUwN903rroG-k": {
+        "alt": 1444.6,
+        "hdop": 0.8,
+        "lat": -2.232283,
+        "lng": 30.177752,
+        "spd": 4.4
+      },
+      "-OnabftMUc0-kEdVnKpg": {
+        "alt": 1443.8,
+        "hdop": 0.8,
+        "lat": -2.232157,
+        "lng": 30.177471,
+        "spd": 4.3
+      },
+      "-OnabmHlhYZPPJBTsJJv": {
+        "alt": 1443.8,
+        "hdop": 0.8,
+        "lat": -2.231975,
+        "lng": 30.177282,
+        "spd": 3.7
+      },
+      "-OnabsjaweDdN6R0doq0": {
+        "alt": 1442.2,
+        "hdop": 0.8,
+        "lat": -2.231835,
+        "lng": 30.177011,
+        "spd": 3.1
+      },
+      "-OnabzBkL6ejYf571vnn": {
+        "alt": 1439.7,
+        "hdop": 0.8,
+        "lat": -2.231692,
+        "lng": 30.176761,
+        "spd": 3.1
+      },
+      "-Onac4bdrObNAJk5GbTB": {
+        "alt": 1441.6,
+        "hdop": 0.9,
+        "lat": -2.231498,
+        "lng": 30.176492,
+        "spd": 4.3
+      },
+      "-OnacB3RoNew05DNM4MN": {
+        "alt": 1444.7,
+        "hdop": 0.8,
+        "lat": -2.23122,
+        "lng": 30.176332,
+        "spd": 3.5
+      },
+      "-OnacJ07J8K7VfE3XGqO": {
+        "alt": 1446.8,
+        "hdop": 0.8,
+        "lat": -2.230976,
+        "lng": 30.176218,
+        "spd": 0.4
+      },
+      "-OnacSwrZgp67eAgpJkQ": {
+        "alt": 1447.9,
+        "hdop": 0.8,
+        "lat": -2.230965,
+        "lng": 30.176211,
+        "spd": 1.1
+      },
+      "-OnacZMY7xgAZ96eTb-F": {
+        "alt": 1445.8,
+        "hdop": 0.8,
+        "lat": -2.230963,
+        "lng": 30.176223,
+        "spd": 0.2
+      },
+      "-OnacendzQz4UJbTxjhl": {
+        "alt": 1446.7,
+        "hdop": 0.8,
+        "lat": -2.23098,
+        "lng": 30.176224,
+        "spd": 2.7
+      },
+      "-OnacmGG5a6Aah4NwN6U": {
+        "alt": 1450.1,
+        "hdop": 1.5,
+        "lat": -2.230916,
+        "lng": 30.176226,
+        "spd": 1.1
+      },
+      "-OnactfmA4sQmwlk3C7S": {
+        "alt": 1449.9,
+        "hdop": 1,
+        "lat": -2.230955,
+        "lng": 30.176187,
+        "spd": 0.1
+      },
+      "-Onad09hXvlfL6J4kzLq": {
+        "alt": 1438.6,
+        "hdop": 0.9,
+        "lat": -2.230952,
+        "lng": 30.176206,
+        "spd": 0.9
+      },
+      "-Onad7YfKU2l5ojfedfS": {
+        "alt": 1442.8,
+        "hdop": 1,
+        "lat": -2.230964,
+        "lng": 30.176208,
+        "spd": 1.2
+      },
+      "-OnadFT4lM3QSpX7yXzH": {
+        "alt": 1446.4,
+        "hdop": 1.1,
+        "lat": -2.23092,
+        "lng": 30.176188,
+        "spd": 1.7
+      },
+      "-OnadMQDhTeYszhpAyRA": {
+        "alt": 1444.8,
+        "hdop": 0.8,
+        "lat": -2.230988,
+        "lng": 30.176212,
+        "spd": 0.6
+      },
+      "-OnadXjcF2YczSnTbSjz": {
+        "alt": 1442.5,
+        "hdop": 0.8,
+        "lat": -2.230971,
+        "lng": 30.176198,
+        "spd": 1.4
+      },
+      "-Onade9nVbWou4LQbfU_": {
+        "alt": 1439.1,
+        "hdop": 1,
+        "lat": -2.230939,
+        "lng": 30.176169,
+        "spd": 0.1
+      },
+      "-OnadlbWopHPTPXlFKmO": {
+        "alt": 1440.7,
+        "hdop": 0.8,
+        "lat": -2.230927,
+        "lng": 30.176183,
+        "spd": 0.5
+      },
+      "-Onadt2AukKRUjo-yrcK": {
+        "alt": 1442.3,
+        "hdop": 0.9,
+        "lat": -2.230972,
+        "lng": 30.176213,
+        "spd": 1.1
+      },
+      "-Onae-SMyBhWD6Pg82Nj": {
+        "alt": 1441.8,
+        "hdop": 0.9,
+        "lat": -2.230978,
+        "lng": 30.17623,
+        "spd": 0.3
+      },
+      "-OnaeKDlhqTMKRXEj2q4": {
+        "alt": 1444.1,
+        "hdop": 0.7,
+        "lat": -2.230955,
+        "lng": 30.176221,
+        "spd": 1
+      },
+      "-OnaeWaJ5_2vB8B0i1li": {
+        "alt": 1445.3,
+        "hdop": 0.7,
+        "lat": -2.230967,
+        "lng": 30.17622,
+        "spd": 0.3
+      },
+      "-Onaed0buUR_8IhPqpSx": {
+        "alt": 1444.1,
+        "hdop": 0.7,
+        "lat": -2.230958,
+        "lng": 30.176205,
+        "spd": 1.6
+      },
+      "-OnaekR3Swl8nk9Iv1Cw": {
+        "alt": 1446.4,
+        "hdop": 0.7,
+        "lat": -2.230955,
+        "lng": 30.176187,
+        "spd": 0.2
+      },
+      "-OnaerrpvRFW0z0DLU_T": {
+        "alt": 1444,
+        "hdop": 0.8,
+        "lat": -2.231115,
+        "lng": 30.176219,
+        "spd": 5.3
+      },
+      "-OnaeyYLbVCPLcUwE6uV": {
+        "alt": 1444.3,
+        "hdop": 0.7,
+        "lat": -2.231128,
+        "lng": 30.176227,
+        "spd": 5.1
+      },
+      "-Onaf3lcBI-AsHDSFfTl": {
+        "alt": 1444.3,
+        "hdop": 0.7,
+        "lat": -2.231413,
+        "lng": 30.176455,
+        "spd": 3.4
+      },
+      "-OnafABoPviOzRt-PWpU": {
+        "alt": 1431.7,
+        "hdop": 0.7,
+        "lat": -2.231643,
+        "lng": 30.17671,
+        "spd": 3.1
+      },
+      "-OnafGbya-geTjw1Hsp3": {
+        "alt": 1436.8,
+        "hdop": 0.7,
+        "lat": -2.231856,
+        "lng": 30.177026,
+        "spd": 3.1
+      },
+      "-OnafN3kcRptXql49gLD": {
+        "alt": 1440,
+        "hdop": 0.7,
+        "lat": -2.232003,
+        "lng": 30.177305,
+        "spd": 2.6
+      },
+      "-OnafTZQIB2uLgYDMc_r": {
+        "alt": 1441,
+        "hdop": 0.7,
+        "lat": -2.232213,
+        "lng": 30.177567,
+        "spd": 5.2
+      },
+      "-OnafaC-9e3u_dVLYw2x": {
+        "alt": 1444,
+        "hdop": 0.7,
+        "lat": -2.232554,
+        "lng": 30.178219,
+        "spd": 4.4
+      },
+      "-OnafgSrmBPkkrNp2C18": {
+        "alt": 1443.9,
+        "hdop": 0.7,
+        "lat": -2.232558,
+        "lng": 30.178231,
+        "spd": 4.8
+      },
+      "-OnafmqfJuWwjf5crZNP": {
+        "alt": 1443.8,
+        "hdop": 0.7,
+        "lat": -2.232606,
+        "lng": 30.178497,
+        "spd": 4.8
+      },
+      "-OnaftGa5tvNxkl0b7nN": {
+        "alt": 1443.9,
+        "hdop": 0.7,
+        "lat": -2.232512,
+        "lng": 30.178718,
+        "spd": 3.5
+      },
+      "-Onafzmj7QIL_aYLAlLR": {
+        "alt": 1436.9,
+        "hdop": 0.9,
+        "lat": -2.232539,
+        "lng": 30.178963,
+        "spd": 3.3
+      },
+      "-Onag68bg6zBQuO7EEwT": {
+        "alt": 1446.6,
+        "hdop": 0.8,
+        "lat": -2.232538,
+        "lng": 30.17958,
+        "spd": 1.6
+      },
+      "-OnagCYoZoZtAfPD7gp2": {
+        "alt": 1446.8,
+        "hdop": 0.7,
+        "lat": -2.23254,
+        "lng": 30.179594,
+        "spd": 3
+      },
+      "-OnagJ0km3HEAZe3bIcY": {
+        "alt": 1445,
+        "hdop": 0.8,
+        "lat": -2.232581,
+        "lng": 30.179806,
+        "spd": 3.6
+      },
+      "-OnagPRGDQDovX_dESvO": {
+        "alt": 1445,
+        "hdop": 0.8,
+        "lat": -2.232646,
+        "lng": 30.180072,
+        "spd": 3.7
+      },
+      "-OnagVx1D4Sr5fzeaXme": {
+        "alt": 1436.7,
+        "hdop": 0.8,
+        "lat": -2.232743,
+        "lng": 30.180382,
+        "spd": 3.8
+      },
+      "-OnagcKE0KNXN2eKDMBb": {
+        "alt": 1448.4,
+        "hdop": 0.7,
+        "lat": -2.232631,
+        "lng": 30.181111,
+        "spd": 5.4
+      },
+      "-Onagjl6n_GTAhUEzGb_": {
+        "alt": 1446.5,
+        "hdop": 0.8,
+        "lat": -2.232546,
+        "lng": 30.181462,
+        "spd": 4.1
+      },
+      "-OnagrAn7KdbNRSq14YK": {
+        "alt": 1445.8,
+        "hdop": 0.7,
+        "lat": -2.232898,
+        "lng": 30.181635,
+        "spd": 4.7
+      },
+      "-OnagxcKUlDCoDnNezEF": {
+        "alt": 1446.3,
+        "hdop": 0.7,
+        "lat": -2.232911,
+        "lng": 30.181639,
+        "spd": 4.4
+      },
+      "-Onah33JGGDrqXSYnn33": {
+        "alt": 1445,
+        "hdop": 0.7,
+        "lat": -2.233203,
+        "lng": 30.181969,
+        "spd": 2.4
+      },
+      "-OnahAUNW5So8cnqbVcS": {
+        "alt": 1447.6,
+        "hdop": 0.8,
+        "lat": -2.233295,
+        "lng": 30.18229,
+        "spd": 2.3
+      },
+      "-OnahHudrJAopB5VA5rW": {
+        "alt": 1447.1,
+        "hdop": 0.8,
+        "lat": -2.233408,
+        "lng": 30.182545,
+        "spd": 2.4
+      },
+      "-OnahPKjmYmUFLHt_BwL": {
+        "alt": 1445.9,
+        "hdop": 0.8,
+        "lat": -2.233459,
+        "lng": 30.182638,
+        "spd": 1.1
+      },
+      "-OnahWkeOsz6QOZVk5-A": {
+        "alt": 1447,
+        "hdop": 0.8,
+        "lat": -2.233425,
+        "lng": 30.182661,
+        "spd": 0
+      },
+      "-Onahf9sERksCBan8wvv": {
+        "alt": 1448.4,
+        "hdop": 0.8,
+        "lat": -2.23342,
+        "lng": 30.182675,
+        "spd": 0.1
+      },
+      "-Onahm_nQttUg-9FhBxM": {
+        "alt": 1448.2,
+        "hdop": 0.7,
+        "lat": -2.233445,
+        "lng": 30.182761,
+        "spd": 3.1
+      },
+      "-OnahuWdThJ9TGTPVE1r": {
+        "alt": 1447.7,
+        "hdop": 0.7,
+        "lat": -2.233685,
+        "lng": 30.183005,
+        "spd": 4.1
+      },
+      "-Onai0RFlMQyF3q2N00V": {
+        "alt": 1444,
+        "hdop": 0.7,
+        "lat": -2.233901,
+        "lng": 30.183207,
+        "spd": 3.5
+      },
+      "-Onai7wsYN4M0qkBI35G": {
+        "alt": 1445.6,
+        "hdop": 0.8,
+        "lat": -2.234167,
+        "lng": 30.183443,
+        "spd": 3.5
+      },
+      "-OnaiFIgz8c2AGDI-Ojo": {
+        "alt": 1439.2,
+        "hdop": 0.8,
+        "lat": -2.23437,
+        "lng": 30.183692,
+        "spd": 4.6
+      },
+      "-OnaiMiy0LwYu5su0-cG": {
+        "alt": 1437.9,
+        "hdop": 1,
+        "lat": -2.234634,
+        "lng": 30.183988,
+        "spd": 4.3
+      },
+      "-OnaiTFAz0H1Ay4BX2wo": {
+        "alt": 1438.3,
+        "hdop": 0.9,
+        "lat": -2.234642,
+        "lng": 30.183999,
+        "spd": 4.8
+      },
+      "-Onai_aSr2oUe4-Pl90n": {
+        "alt": 1438.5,
+        "hdop": 0.8,
+        "lat": -2.234894,
+        "lng": 30.184659,
+        "spd": 4.6
+      },
+      "-Onaig1LABk0M5lWwRpp": {
+        "alt": 1438.2,
+        "hdop": 0.8,
+        "lat": -2.234898,
+        "lng": 30.184673,
+        "spd": 4.2
+      },
+      "-OnaimUzV81ewVnzBkoS": {
+        "alt": 1439.2,
+        "hdop": 0.7,
+        "lat": -2.234987,
+        "lng": 30.185002,
+        "spd": 4.2
+      },
+      "-OnaisvKLi-y9eKeYFxx": {
+        "alt": 1439.4,
+        "hdop": 0.7,
+        "lat": -2.235055,
+        "lng": 30.18534,
+        "spd": 3.1
+      },
+      "-OnaizLo-QAjWQTMIbK3": {
+        "alt": 1437.4,
+        "hdop": 0.7,
+        "lat": -2.235144,
+        "lng": 30.185663,
+        "spd": 4.5
+      },
+      "-Onaj5lws97aVDPGGPLh": {
+        "alt": 1433.4,
+        "hdop": 0.7,
+        "lat": -2.235415,
+        "lng": 30.18631,
+        "spd": 5
+      },
+      "-OnajCEHfQZHHHrc32XL": {
+        "alt": 1433.6,
+        "hdop": 0.7,
+        "lat": -2.235417,
+        "lng": 30.186323,
+        "spd": 3.3
+      },
+      "-OnajIhEfog60asJVUsV": {
+        "alt": 1437.1,
+        "hdop": 0.7,
+        "lat": -2.23545,
+        "lng": 30.186659,
+        "spd": 3.9
+      },
+      "-OnajP6ENsDTtD0ijYqs": {
+        "alt": 1437.1,
+        "hdop": 0.7,
+        "lat": -2.235421,
+        "lng": 30.186971,
+        "spd": 3.9
+      },
+      "-OnajVYSGa9Esn-YxIR2": {
+        "alt": 1433.1,
+        "hdop": 0.7,
+        "lat": -2.235235,
+        "lng": 30.187254,
+        "spd": 5.1
+      },
+      "-OnajbyKJtfflLnQhOPQ": {
+        "alt": 1429.2,
+        "hdop": 0.7,
+        "lat": -2.235062,
+        "lng": 30.18793,
+        "spd": 4.7
+      },
+      "-OnajiQ9ilTNsgF8vqJ3": {
+        "alt": 1429.2,
+        "hdop": 0.7,
+        "lat": -2.235063,
+        "lng": 30.187944,
+        "spd": 5.2
+      },
+      "-OnajovN56stFJ3NVAGO": {
+        "alt": 1427.9,
+        "hdop": 0.7,
+        "lat": -2.235117,
+        "lng": 30.188281,
+        "spd": 4.9
+      },
+      "-OnajvIaarsNeZt3szZg": {
+        "alt": 1427.9,
+        "hdop": 0.7,
+        "lat": -2.235187,
+        "lng": 30.188627,
+        "spd": 5.1
+      },
+      "-Onak0n3gb_LIIGgr4Wn": {
+        "alt": 1427,
+        "hdop": 0.7,
+        "lat": -2.235239,
+        "lng": 30.188952,
+        "spd": 4.7
+      },
+      "-Onak8ATvhqdSc0k0IHh": {
+        "alt": 1429.1,
+        "hdop": 0.7,
+        "lat": -2.235387,
+        "lng": 30.189636,
+        "spd": 4.9
+      },
+      "-OnakEbXAzNTHVoLmJeT": {
+        "alt": 1428.6,
+        "hdop": 0.7,
+        "lat": -2.23539,
+        "lng": 30.189649,
+        "spd": 5.1
+      },
+      "-OnakL2atPPpYTpukL8Z": {
+        "alt": 1428.5,
+        "hdop": 0.7,
+        "lat": -2.235482,
+        "lng": 30.189968,
+        "spd": 4.4
+      },
+      "-OnakRVMKO7j3HUbUhIA": {
+        "alt": 1428.5,
+        "hdop": 0.7,
+        "lat": -2.235616,
+        "lng": 30.190255,
+        "spd": 4.7
+      },
+      "-OnakXwO72SsKcd-6RmE": {
+        "alt": 1429.7,
+        "hdop": 0.7,
+        "lat": -2.235727,
+        "lng": 30.190515,
+        "spd": 4.4
+      },
+      "-OnakdNEhSIkD4T_tPYN": {
+        "alt": 1429.8,
+        "hdop": 0.7,
+        "lat": -2.235911,
+        "lng": 30.190694,
+        "spd": 4.4
+      },
+      "-Onakjns0qvH9syId8Ur": {
+        "alt": 1428.8,
+        "hdop": 0.7,
+        "lat": -2.236102,
+        "lng": 30.190685,
+        "spd": 2.5
+      },
+      "-OnakqGWegSaF49aCsWJ": {
+        "alt": 1430.6,
+        "hdop": 0.7,
+        "lat": -2.23626,
+        "lng": 30.19069,
+        "spd": 4.6
+      },
+      "-Onakxg7sdF4ogwYNPjM": {
+        "alt": 1429.5,
+        "hdop": 0.7,
+        "lat": -2.236839,
+        "lng": 30.190951,
+        "spd": 0.2
+      },
+      "-Onal38LKtFsesKFB-DU": {
+        "alt": 1429.7,
+        "hdop": 0.7,
+        "lat": -2.237013,
+        "lng": 30.191077,
+        "spd": 5.2
+      },
+      "-OnalA_8_6rgRSvWneUn": {
+        "alt": 1431.2,
+        "hdop": 0.7,
+        "lat": -2.237338,
+        "lng": 30.191296,
+        "spd": 4.4
+      },
+      "-OnalH0IxZF6o5W4DDtG": {
+        "alt": 1431.2,
+        "hdop": 0.7,
+        "lat": -2.237349,
+        "lng": 30.191303,
+        "spd": 5.3
+      },
+      "-OnalNRvCNA5SnryIsDT": {
+        "alt": 1429.9,
+        "hdop": 0.7,
+        "lat": -2.237544,
+        "lng": 30.191527,
+        "spd": 4.1
+      },
+      "-OnalUsG0t4HeMsRzaL0": {
+        "alt": 1431.1,
+        "hdop": 0.7,
+        "lat": -2.237855,
+        "lng": 30.192107,
+        "spd": 3.7
+      },
+      "-OnalaJclyOKdJX_d78S": {
+        "alt": 1431.1,
+        "hdop": 0.7,
+        "lat": -2.237858,
+        "lng": 30.192118,
+        "spd": 4.6
+      },
+      "-OnalgmbX9PHW9ZPp0Iz": {
+        "alt": 1430,
+        "hdop": 0.7,
+        "lat": -2.237917,
+        "lng": 30.192391,
+        "spd": 5.2
+      },
+      "-OnalnBCCsL6xMkpj4tI": {
+        "alt": 1430,
+        "hdop": 0.7,
+        "lat": -2.237726,
+        "lng": 30.192629,
+        "spd": 4.4
+      },
+      "-Onaltd-flWd4WjzQT-q": {
+        "alt": 1435.5,
+        "hdop": 0.7,
+        "lat": -2.237251,
+        "lng": 30.192784,
+        "spd": 3.8
+      },
+      "-Onam03ScLPsZf56b4eE": {
+        "alt": 1435.2,
+        "hdop": 0.7,
+        "lat": -2.236979,
+        "lng": 30.192899,
+        "spd": 2.3
+      },
+      "-Onam7i_6rloqtmq0Lrl": {
+        "alt": 1437.8,
+        "hdop": 0.8,
+        "lat": -2.236927,
+        "lng": 30.192923,
+        "spd": 0.9
+      },
+      "-OnamEvjLQcgdjGleTxf": {
+        "alt": 1435.4,
+        "hdop": 0.7,
+        "lat": -2.236922,
+        "lng": 30.192936,
+        "spd": 0
+      },
+      "-OnamPIX4o4lKtIQzuIp": {
+        "alt": 1434.8,
+        "hdop": 0.8,
+        "lat": -2.236912,
+        "lng": 30.192924,
+        "spd": 0.1
+      },
+      "-Onam_f5iMwF9TR9EEWt": {
+        "alt": 1429.4,
+        "hdop": 0.8,
+        "lat": -2.236912,
+        "lng": 30.192945,
+        "spd": 0.7
+      },
+      "-Onamh6OhWX9YEL8P9wo": {
+        "alt": 1430.3,
+        "hdop": 0.9,
+        "lat": -2.236949,
+        "lng": 30.19293,
+        "spd": 1.1
+      },
+      "-OnamoWJ8A3URZlUH1UE": {
+        "alt": 1430.2,
+        "hdop": 0.9,
+        "lat": -2.236901,
+        "lng": 30.192902,
+        "spd": 0.4
+      },
+      "-OnamwwimDDb1WJaLu0a": {
+        "alt": 1431.6,
+        "hdop": 0.7,
+        "lat": -2.236908,
+        "lng": 30.192918,
+        "spd": 0.6
+      },
+      "-Onan7JUXwjArox8g4yu": {
+        "alt": 1431.2,
+        "hdop": 0.7,
+        "lat": -2.236918,
+        "lng": 30.192932,
+        "spd": 0.6
+      },
+      "-OnanEjy5cVZD7qDWZYJ": {
+        "alt": 1432.3,
+        "hdop": 0.9,
+        "lat": -2.236881,
+        "lng": 30.192936,
+        "spd": 0.7
+      },
+      "-OnanMAHvHqvguAHEbuG": {
+        "alt": 1431.8,
+        "hdop": 0.7,
+        "lat": -2.236908,
+        "lng": 30.192952,
+        "spd": 0.1
+      },
+      "-OnanTck6mOtvY7nXby9": {
+        "alt": 1436.8,
+        "hdop": 0.7,
+        "lat": -2.236901,
+        "lng": 30.192939,
+        "spd": 0.1
+      },
+      "-OnannpSnG2TNMQW2HDk": {
+        "alt": 1434.8,
+        "hdop": 0.7,
+        "lat": -2.236907,
+        "lng": 30.192927,
+        "spd": 0.7
+      },
+      "-Onao28wGwIhXa8nl7Fr": {
+        "alt": 1434.6,
+        "hdop": 0.7,
+        "lat": -2.236915,
+        "lng": 30.192937,
+        "spd": 0.7
+      },
+      "-Onao9Zy-6opnVMRE7XW": {
+        "alt": 1433.9,
+        "hdop": 0.7,
+        "lat": -2.236875,
+        "lng": 30.192759,
+        "spd": 4.6
+      },
+      "-OnaoG0D_x8rbLMfATg7": {
+        "alt": 1434,
+        "hdop": 0.7,
+        "lat": -2.236872,
+        "lng": 30.192746,
+        "spd": 4.7
+      },
+      "-OnaoNRAYfvdIMup0qNR": {
+        "alt": 1434.6,
+        "hdop": 0.7,
+        "lat": -2.236495,
+        "lng": 30.192205,
+        "spd": 4.6
+      },
+      "-OnaoTzN7Nq1jfn_bm96": {
+        "alt": 1435.2,
+        "hdop": 0.7,
+        "lat": -2.236491,
+        "lng": 30.192194,
+        "spd": 3.6
+      },
+      "-Onao_Js0kPyhKn2Pv--": {
+        "alt": 1431.5,
+        "hdop": 0.7,
+        "lat": -2.236413,
+        "lng": 30.191864,
+        "spd": 3.6
+      },
+      "-OnaoflM5dezJxDxqMx4": {
+        "alt": 1431.5,
+        "hdop": 0.7,
+        "lat": -2.236188,
+        "lng": 30.191626,
+        "spd": 4.8
+      },
+      "-OnaomCUqQ76Vz0pCAK5": {
+        "alt": 1432.9,
+        "hdop": 0.7,
+        "lat": -2.236072,
+        "lng": 30.191273,
+        "spd": 3.8
+      },
+      "-OnaotftoUxlcrVWuD2D": {
+        "alt": 1428.7,
+        "hdop": 0.7,
+        "lat": -2.235742,
+        "lng": 30.190563,
+        "spd": 5.8
+      },
+      "-Onap-3hYSApk9fvgAyj": {
+        "alt": 1428.7,
+        "hdop": 0.7,
+        "lat": -2.235736,
+        "lng": 30.190551,
+        "spd": 5.9
+      },
+      "-Onap5W8UfCtEHsYN3U2": {
+        "alt": 1428.1,
+        "hdop": 0.7,
+        "lat": -2.235605,
+        "lng": 30.190223,
+        "spd": 5.9
+      },
+      "-OnapBx2clgNw8VF_9U-": {
+        "alt": 1428.1,
+        "hdop": 0.7,
+        "lat": -2.235566,
+        "lng": 30.189884,
+        "spd": 4.2
+      },
+      "-OnapIO4AXXMKnTMQX_m": {
+        "alt": 1429.2,
+        "hdop": 0.7,
+        "lat": -2.235851,
+        "lng": 30.189697,
+        "spd": 4.4
+      },
+      "-OnapOqLczu1M3oZ70d1": {
+        "alt": 1428.7,
+        "hdop": 0.7,
+        "lat": -2.236188,
+        "lng": 30.189658,
+        "spd": 4.4
+      },
+      "-OnapVHQHSfe3BNZQEFG": {
+        "alt": 1428.6,
+        "hdop": 0.7,
+        "lat": -2.236544,
+        "lng": 30.189644,
+        "spd": 5.4
+      },
+      "-Onapahw-P2gjLGkuG5t": {
+        "alt": 1427.4,
+        "hdop": 0.7,
+        "lat": -2.236874,
+        "lng": 30.189576,
+        "spd": 4.3
+      },
+      "-Onapi93XBbeA7tJsNi2": {
+        "alt": 1431.3,
+        "hdop": 0.7,
+        "lat": -2.237165,
+        "lng": 30.189303,
+        "spd": 0.1
+      },
+      "-Onapp_LKHBCTa1cS-TX": {
+        "alt": 1429.1,
+        "hdop": 0.7,
+        "lat": -2.237171,
+        "lng": 30.189293,
+        "spd": 0.9
+      },
+      "-Onapx0BsRyRdcTbghLS": {
+        "alt": 1427.3,
+        "hdop": 0.7,
+        "lat": -2.237282,
+        "lng": 30.18923,
+        "spd": 4.1
+      },
+      "-Onaq3PowHbbJCXKp3iQ": {
+        "alt": 1426.1,
+        "hdop": 0.7,
+        "lat": -2.23747,
+        "lng": 30.188969,
+        "spd": 1.7
+      },
+      "-Onaq9ruvDsR4Li5q39t": {
+        "alt": 1426,
+        "hdop": 0.7,
+        "lat": -2.237481,
+        "lng": 30.188959,
+        "spd": 6.4
+      },
+      "-OnaqGJ-cfR2K_8cia7K": {
+        "alt": 1426,
+        "hdop": 0.7,
+        "lat": -2.237554,
+        "lng": 30.188884,
+        "spd": 0.3
+      },
+      "-OnaqMjzzMA_y1LvLieo": {
+        "alt": 1433.9,
+        "hdop": 0.7,
+        "lat": -2.237587,
+        "lng": 30.188877,
+        "spd": 0.6
+      },
+      "-OnaqUACnnF_-vVmXeXu": {
+        "alt": 1430.6,
+        "hdop": 0.7,
+        "lat": -2.237422,
+        "lng": 30.188974,
+        "spd": 3.5
+      },
+      "-OnaqaaT2e1ZVTPsdbEM": {
+        "alt": 1430,
+        "hdop": 0.7,
+        "lat": -2.237396,
+        "lng": 30.189016,
+        "spd": 1
+      },
+      "-Onaqi0scKjAxhm0MXWU": {
+        "alt": 1418.4,
+        "hdop": 0.8,
+        "lat": -2.237375,
+        "lng": 30.189076,
+        "spd": 0.5
+      },
+      "-OnaqpSq3zYnL3fAaD_u": {
+        "alt": 1423.3,
+        "hdop": 0.7,
+        "lat": -2.237403,
+        "lng": 30.189062,
+        "spd": 0.4
+      },
+      "-Onaqwtmahjuc5c7yu-u": {
+        "alt": 1440.6,
+        "hdop": 0.7,
+        "lat": -2.237417,
+        "lng": 30.189,
+        "spd": 0.4
+      },
+      "-OnarAoMvhScl3SHEkur": {
+        "alt": 1439.4,
+        "hdop": 1.1,
+        "lat": -2.237333,
+        "lng": 30.189093,
+        "spd": 0.5
+      },
+      "-OnarLs38ngGnYsBdb-x": {
+        "alt": 1425.8,
+        "hdop": 0.8,
+        "lat": -2.237442,
+        "lng": 30.189063,
+        "spd": 1.5
+      },
+      "-OnarTJ5jjWZTg9mn-NC": {
+        "alt": 1417.4,
+        "hdop": 0.8,
+        "lat": -2.237432,
+        "lng": 30.189047,
+        "spd": 0.4
+      },
+      "-OnarhOGK0roxrhw_DTy": {
+        "alt": 1428.7,
+        "hdop": 1.4,
+        "lat": -2.237399,
+        "lng": 30.189078,
+        "spd": 1.1
+      },
+      "-OnaroZoUsq5m8BtH3xX": {
+        "alt": 1426.8,
+        "hdop": 0.9,
+        "lat": -2.237395,
+        "lng": 30.189102,
+        "spd": 1.7
+      },
+      "-Onarw0BUl84fwHgv5kr": {
+        "alt": 1425.1,
+        "hdop": 0.8,
+        "lat": -2.23743,
+        "lng": 30.189066,
+        "spd": 0.6
+      },
+      "-Onas1SZa7ZHdd-WNnUs": {
+        "alt": 1420.9,
+        "hdop": 1.1,
+        "lat": -2.237397,
+        "lng": 30.18909,
+        "spd": 0.5
+      },
+      "-Onas8smWzYrEnyqzugu": {
+        "alt": 1438.3,
+        "hdop": 0.7,
+        "lat": -2.237471,
+        "lng": 30.189198,
+        "spd": 2.8
+      },
+      "-OnasGIyd13Rj6D49Nss": {
+        "alt": 1454.8,
+        "hdop": 0.7,
+        "lat": -2.237462,
+        "lng": 30.189229,
+        "spd": 0.8
+      },
+      "-OnasNjYY-lMrUgjE63h": {
+        "alt": 1451,
+        "hdop": 0.9,
+        "lat": -2.237445,
+        "lng": 30.189159,
+        "spd": 0.1
+      },
+      "-OnasVARZwdw2zXFMyda": {
+        "alt": 1435.7,
+        "hdop": 0.8,
+        "lat": -2.237414,
+        "lng": 30.189104,
+        "spd": 0.5
+      },
+      "-OnascZeaH7H9otPtPJ2": {
+        "alt": 1422.7,
+        "hdop": 0.8,
+        "lat": -2.237433,
+        "lng": 30.189102,
+        "spd": 0.6
+      },
+      "-Onask-Hy9jsRSzkpKVC": {
+        "alt": 1409.9,
+        "hdop": 1.1,
+        "lat": -2.237416,
+        "lng": 30.189113,
+        "spd": 0.9
+      },
+      "-OnasrQcVWCOusEJxrBa": {
+        "alt": 1406.8,
+        "hdop": 0.8,
+        "lat": -2.237395,
+        "lng": 30.189101,
+        "spd": 0.3
+      },
+      "-Onasyqlc355kQRiLebx": {
+        "alt": 1406.9,
+        "hdop": 0.7,
+        "lat": -2.237359,
+        "lng": 30.189079,
+        "spd": 0.5
+      },
+      "-Onat5HvT89HebyIQmUO": {
+        "alt": 1403.6,
+        "hdop": 0.8,
+        "lat": -2.237381,
+        "lng": 30.18903,
+        "spd": 0.9
+      },
+      "-OnatCht1QKT3Pm-e0HT": {
+        "alt": 1412,
+        "hdop": 0.8,
+        "lat": -2.237458,
+        "lng": 30.18917,
+        "spd": 0.8
+      },
+      "-OnatK7aaKdtfJsN51RY": {
+        "alt": 1422.8,
+        "hdop": 0.8,
+        "lat": -2.237432,
+        "lng": 30.189202,
+        "spd": 0.5
+      },
+      "-OnatRZB3KkyfnBPldyI": {
+        "alt": 1425,
+        "hdop": 0.7,
+        "lat": -2.23743,
+        "lng": 30.189189,
+        "spd": 0.5
+      },
+      "-OnatZ-_w2niwPulUASI": {
+        "alt": 1425.4,
+        "hdop": 0.8,
+        "lat": -2.237343,
+        "lng": 30.18912,
+        "spd": 1.1
+      },
+      "-OnathOgeW1XriZ_T-A0": {
+        "alt": 1421.8,
+        "hdop": 0.7,
+        "lat": -2.237365,
+        "lng": 30.189101,
+        "spd": 1.7
+      },
+      "-Onatp59Mig0mA6ZvpxZ": {
+        "alt": 1429.2,
+        "hdop": 0.7,
+        "lat": -2.237472,
+        "lng": 30.188977,
+        "spd": 3.8
+      },
+      "-OnatvFxxZR3ArsdkN4m": {
+        "alt": 1430.3,
+        "hdop": 0.7,
+        "lat": -2.237482,
+        "lng": 30.188971,
+        "spd": 3.7
+      },
+      "-Onau0gPYXtJjfS0AC0j": {
+        "alt": 1428.3,
+        "hdop": 0.8,
+        "lat": -2.237524,
+        "lng": 30.188773,
+        "spd": 4.8
+      },
+      "-Onau77udeWFjuZ-wj2y": {
+        "alt": 1428.3,
+        "hdop": 0.8,
+        "lat": -2.237476,
+        "lng": 30.188708,
+        "spd": 1.1
+      },
+      "-OnauDaVhQsMsAx-veIh": {
+        "alt": 1431.4,
+        "hdop": 0.8,
+        "lat": -2.237484,
+        "lng": 30.188738,
+        "spd": 0
+      },
+      "-OnauL-o-bXBx8eh-KyG": {
+        "alt": 1435.3,
+        "hdop": 0.8,
+        "lat": -2.237504,
+        "lng": 30.188727,
+        "spd": 2.1
+      },
+      "-OnauSQGwNqDZ6YmetQU": {
+        "alt": 1432.2,
+        "hdop": 0.9,
+        "lat": -2.23752,
+        "lng": 30.188785,
+        "spd": 1.8
+      },
+      "-OnauZrmmDOHGYnlSXwn": {
+        "alt": 1433.8,
+        "hdop": 0.8,
+        "lat": -2.237578,
+        "lng": 30.188838,
+        "spd": 5.9
+      },
+      "-OnaugIFCQJiw8RERcEA": {
+        "alt": 1432.4,
+        "hdop": 0.8,
+        "lat": -2.237453,
+        "lng": 30.188942,
+        "spd": 0.9
+      },
+      "-Onaunhz3Ja8pklUudK6": {
+        "alt": 1429.4,
+        "hdop": 0.8,
+        "lat": -2.237395,
+        "lng": 30.188995,
+        "spd": 0.9
+      },
+      "-Onav6U2-_Zb-Lvx1L2C": {
+        "alt": 1433,
+        "hdop": 0.8,
+        "lat": -2.237173,
+        "lng": 30.18929,
+        "spd": 0.5
+      },
+      "-OnavDfpjTJZSxnzpOA4": {
+        "alt": 1431.7,
+        "hdop": 0.8,
+        "lat": -2.237155,
+        "lng": 30.189296,
+        "spd": 0.4
+      },
+      "-OnavK5soJEsJ8Dx9k1p": {
+        "alt": 1431.7,
+        "hdop": 0.8,
+        "lat": -2.237165,
+        "lng": 30.189302,
+        "spd": 0.1
+      },
+      "-OnavYRsm88boZcG1mpm": {
+        "alt": 1434.5,
+        "hdop": 0.8,
+        "lat": -2.237166,
+        "lng": 30.18929,
+        "spd": 1.9
+      },
+      "-OnavesLIo4Nr6bsRtJA": {
+        "alt": 1433.1,
+        "hdop": 0.8,
+        "lat": -2.237141,
+        "lng": 30.18931,
+        "spd": 0.5
+      },
+      "-OnavmI49x0DRUzVOx2Y": {
+        "alt": 1430.8,
+        "hdop": 0.8,
+        "lat": -2.237166,
+        "lng": 30.189317,
+        "spd": 2
+      },
+      "-OnavtifQw9iV-9LrHkg": {
+        "alt": 1430.3,
+        "hdop": 0.8,
+        "lat": -2.23717,
+        "lng": 30.189289,
+        "spd": 1
+      },
+      "-Onaw09GxcgOP3gsmBo5": {
+        "alt": 1433.1,
+        "hdop": 0.9,
+        "lat": -2.237151,
+        "lng": 30.189311,
+        "spd": 0.3
+      },
+      "-Onaw7aZaeiuC6hquFlL": {
+        "alt": 1433,
+        "hdop": 0.8,
+        "lat": -2.237163,
+        "lng": 30.189313,
+        "spd": 0.4
+      },
+      "-OnawF-cHKDprn9uH3Hu": {
+        "alt": 1433.2,
+        "hdop": 0.8,
+        "lat": -2.237157,
+        "lng": 30.189299,
+        "spd": 0.5
+      },
+      "-OnawMQKFB0fech1fGn5": {
+        "alt": 1432.2,
+        "hdop": 0.9,
+        "lat": -2.237176,
+        "lng": 30.189293,
+        "spd": 0.3
+      },
+      "-Onawjc8WAFcd7h6Zojy": {
+        "alt": 1428.5,
+        "hdop": 0.7,
+        "lat": -2.23716,
+        "lng": 30.189304,
+        "spd": 2.4
+      },
+      "-Onawr3v2QdoiK9EnNh3": {
+        "alt": 1429.4,
+        "hdop": 0.7,
+        "lat": -2.237353,
+        "lng": 30.189454,
+        "spd": 4.2
+      },
+      "-OnawyV1nv857NqRvqN6": {
+        "alt": 1427.2,
+        "hdop": 0.7,
+        "lat": -2.23761,
+        "lng": 30.189686,
+        "spd": 4.2
+      },
+      "-Onax4uY9E7CmAtDNXl6": {
+        "alt": 1426.3,
+        "hdop": 0.7,
+        "lat": -2.237838,
+        "lng": 30.189877,
+        "spd": 2.5
+      },
+      "-OnaxCMBDUxgVChboPlo": {
+        "alt": 1429.5,
+        "hdop": 0.9,
+        "lat": -2.238178,
+        "lng": 30.190051,
+        "spd": 4.2
+      },
+      "-OnaxIonuK4jYoU5Axho": {
+        "alt": 1429.5,
+        "hdop": 0.8,
+        "lat": -2.238189,
+        "lng": 30.190057,
+        "spd": 3.7
+      },
+      "-OnaxPObbpbWS7HXGc8G": {
+        "alt": 1427.2,
+        "hdop": 0.7,
+        "lat": -2.238411,
+        "lng": 30.190235,
+        "spd": 3.4
+      },
+      "-OnaxWekCbD3_q3oCLjd": {
+        "alt": 1426.2,
+        "hdop": 0.7,
+        "lat": -2.238897,
+        "lng": 30.19073,
+        "spd": 2.7
+      },
+      "-Onaxc5BPHk3f1GPsCCA": {
+        "alt": 1426.3,
+        "hdop": 0.7,
+        "lat": -2.238911,
+        "lng": 30.190737,
+        "spd": 3.8
+      },
+      "-Onaxj0VE8azUh8XqZly": {
+        "alt": 1429.3,
+        "hdop": 0.8,
+        "lat": -2.239195,
+        "lng": 30.19092,
+        "spd": 3.8
+      },
+      "-OnaxoyepmBOgIvg89WI": {
+        "alt": 1429.3,
+        "hdop": 0.8,
+        "lat": -2.239442,
+        "lng": 30.19107,
+        "spd": 4.6
+      },
+      "-OnaxvTkvcOJ79UAhr0P": {
+        "alt": 1431.6,
+        "hdop": 0.7,
+        "lat": -2.239762,
+        "lng": 30.191166,
+        "spd": 4.2
+      },
+      "-Onay1pv9BKBpb1IwRYw": {
+        "alt": 1429.3,
+        "hdop": 0.7,
+        "lat": -2.24042,
+        "lng": 30.191249,
+        "spd": 3.9
+      },
+      "-Onay8I6WfoGqEOsrChq": {
+        "alt": 1429.8,
+        "hdop": 0.7,
+        "lat": -2.240433,
+        "lng": 30.191251,
+        "spd": 4.2
+      },
+      "-OnayEj0it3zYcK5uvFz": {
+        "alt": 1431.8,
+        "hdop": 0.8,
+        "lat": -2.240743,
+        "lng": 30.191325,
+        "spd": 4.2
+      },
+      "-OnayLBew0zcvRUn1fCv": {
+        "alt": 1431.8,
+        "hdop": 0.8,
+        "lat": -2.241025,
+        "lng": 30.191317,
+        "spd": 4.8
+      },
+      "-OnayRbl3oafF_O-WV0X": {
+        "alt": 1432.3,
+        "hdop": 0.7,
+        "lat": -2.241328,
+        "lng": 30.191397,
+        "spd": 4.9
+      },
+      "-OnayY2DPk7fN8UTvQ7d": {
+        "alt": 1430.5,
+        "hdop": 0.8,
+        "lat": -2.241528,
+        "lng": 30.191236,
+        "spd": 4.9
+      },
+      "-OnaydTbXjKtgnjvdoPx": {
+        "alt": 1430.7,
+        "hdop": 0.8,
+        "lat": -2.241711,
+        "lng": 30.191036,
+        "spd": 4.9
+      },
+      "-Onayk4Vtz3MZBPOm1Az": {
+        "alt": 1428.3,
+        "hdop": 0.9,
+        "lat": -2.242007,
+        "lng": 30.191104,
+        "spd": 3.2
+      },
+      "-OnayrMenSzTrn-mkJ8L": {
+        "alt": 1428.5,
+        "hdop": 0.8,
+        "lat": -2.242325,
+        "lng": 30.191094,
+        "spd": 0
+      },
+      "-OnayzlKWnckG1aCC_4t": {
+        "alt": 1429.9,
+        "hdop": 0.8,
+        "lat": -2.242335,
+        "lng": 30.191099,
+        "spd": 0.4
+      },
+      "-OnazF2eRaCHkUHvr1_6": {
+        "alt": 1429,
+        "hdop": 0.8,
+        "lat": -2.242328,
+        "lng": 30.19111,
+        "spd": 0.8
+      },
+      "-OnazNVj0PQqmv2hiCdh": {
+        "alt": 1430.9,
+        "hdop": 0.8,
+        "lat": -2.242338,
+        "lng": 30.191107,
+        "spd": 0.2
+      },
+      "-OnazVt0bHQUMkvm2zk8": {
+        "alt": 1432,
+        "hdop": 0.8,
+        "lat": -2.242332,
+        "lng": 30.19112,
+        "spd": 0.1
+      },
+      "-OnazcJno6GSIaQdFMxw": {
+        "alt": 1429,
+        "hdop": 0.8,
+        "lat": -2.242343,
+        "lng": 30.191108,
+        "spd": 0.3
+      },
+      "-Onazjm-HRH22x73ThQI": {
+        "alt": 1430.6,
+        "hdop": 0.8,
+        "lat": -2.242397,
+        "lng": 30.19121,
+        "spd": 4.8
+      },
+      "-Onb-Ga9uHGFCYVHtBmz": {
+        "alt": 1436.8,
+        "hdop": 0.8,
+        "lat": -2.242542,
+        "lng": 30.19249,
+        "spd": 4.7
+      },
+      "-OnffZ7hvfJxJPi1Ccgu": {
+        "alt": 1442.7,
+        "hdop": 3.1,
+        "lat": -2.234777,
+        "lng": 30.181113,
+        "spd": 1.7
+      },
+      "-OnfffWSDBFDWXtmwmbC": {
+        "alt": 1446.1,
+        "hdop": 3,
+        "lat": -2.234749,
+        "lng": 30.181116,
+        "spd": 0.2
+      },
+      "-OnffmxDzyvzHzBPya-B": {
+        "alt": 1453.6,
+        "hdop": 3,
+        "lat": -2.234809,
+        "lng": 30.181067,
+        "spd": 0.2
+      },
+      "-OnffuN4z8ruNMJO_FCU": {
+        "alt": 1460.4,
+        "hdop": 3,
+        "lat": -2.234854,
+        "lng": 30.18105,
+        "spd": 0.2
+      },
+      "-Onfg0mHhRp9KHNwqQvp": {
+        "alt": 1459.1,
+        "hdop": 3,
+        "lat": -2.234836,
+        "lng": 30.181074,
+        "spd": 0.3
+      },
+      "-Onfg8E-ia09Q_HFzgeo": {
+        "alt": 1459.5,
+        "hdop": 3,
+        "lat": -2.234865,
+        "lng": 30.18107,
+        "spd": 0.2
+      },
+      "-OnfgFdSBbo2prNxw76u": {
+        "alt": 1456,
+        "hdop": 3,
+        "lat": -2.234842,
+        "lng": 30.181062,
+        "spd": 0
+      },
+      "-OnfgRzokLizgypoq5Ua": {
+        "alt": 1457,
+        "hdop": 3,
+        "lat": -2.234835,
+        "lng": 30.181074,
+        "spd": 0.1
+      },
+      "-OnfgZQR6kKg8hIzpzz2": {
+        "alt": 1456.4,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.181094,
+        "spd": 0.3
+      },
+      "-OnfginvofZzqyoie4UA": {
+        "alt": 1456.7,
+        "hdop": 3,
+        "lat": -2.234823,
+        "lng": 30.181084,
+        "spd": 0.4
+      },
+      "-OnfgtBzdW3oT_tx1Gjg": {
+        "alt": 1458.2,
+        "hdop": 3,
+        "lat": -2.234836,
+        "lng": 30.18107,
+        "spd": 0.1
+      },
+      "-Onfh0aOojMvRSGP6JOZ": {
+        "alt": 1458.2,
+        "hdop": 3,
+        "lat": -2.234824,
+        "lng": 30.181069,
+        "spd": 0
+      },
+      "-OnfhB-VR5q7M0qgBos_": {
+        "alt": 1457.2,
+        "hdop": 3,
+        "lat": -2.234823,
+        "lng": 30.181081,
+        "spd": 0.7
+      },
+      "-OnfhQII7vLd7huCQC32": {
+        "alt": 1457.2,
+        "hdop": 3,
+        "lat": -2.234829,
+        "lng": 30.18107,
+        "spd": 0.4
+      },
+      "-OnfhXjdJWKY1bXiglAq": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "spd": 0.6
+      },
+      "-OomueG1xX4V1-fHyNKU": {
+        "alt": 1421.7,
+        "hdop": 18.8,
+        "lat": -2.234549,
+        "lng": 30.181113,
+        "spd": 0.2
+      },
+      "-Oomulhxi81lGonjcBha": {
+        "alt": 1432.7,
+        "hdop": 19,
+        "lat": -2.234618,
+        "lng": 30.18108,
+        "spd": 3.2
+      },
+      "-Oomut7jf7qvOyp3tBRu": {
+        "alt": 1432,
+        "hdop": 19.1,
+        "lat": -2.234638,
+        "lng": 30.181074,
+        "spd": 0.4
+      },
+      "-Oomv-ZwBPJGLgQS580l": {
+        "alt": 1435.8,
+        "hdop": 19.3,
+        "lat": -2.234672,
+        "lng": 30.181061,
+        "spd": 0.1
+      },
+      "-Oomv70ZbhbLWe1ycIMX": {
+        "alt": 1447.8,
+        "hdop": 19.7,
+        "lat": -2.234814,
+        "lng": 30.181026,
+        "spd": 3.6
+      },
+      "-OomvDQ9nGNA-n17ntly": {
+        "alt": 1448.8,
+        "hdop": 20,
+        "lat": -2.23477,
+        "lng": 30.181041,
+        "spd": 2.9
+      },
+      "-OomvKqlep7I205y8TdM": {
+        "alt": 1451.2,
+        "hdop": 19.8,
+        "lat": -2.234793,
+        "lng": 30.18103,
+        "spd": 6.5
+      }
+    },
+    "syndicate_001": {
+      "-OnfhPc00jJTwkK7NvfU": {
+        "alt": 1442.5,
+        "bat": 3.84,
+        "hdop": 3,
+        "lat": -2.234966,
+        "lng": 30.18112,
+        "spd": 0.4
+      },
+      "-Onfic9-mpIewgdVYm7J": {
+        "alt": 1447.3,
+        "bat": 3.84,
+        "hdop": 2.9,
+        "lat": -2.234763,
+        "lng": 30.1811,
+        "spd": 1.1
+      },
+      "-Onfio4M6CjFDZdGRjxB": {
+        "alt": 1447.3,
+        "bat": 3.84,
+        "hdop": 2.9,
+        "lat": -2.234758,
+        "lng": 30.181111,
+        "spd": 0
+      },
+      "-Onfivfaj28uzn27GeiP": {
+        "alt": 1451.1,
+        "bat": 3.84,
+        "hdop": 2.9,
+        "lat": -2.23479,
+        "lng": 30.18113,
+        "spd": 1.1
+      },
+      "-Onfj2EYFC81DhqrSSNS": {
+        "alt": 1446.6,
+        "bat": 3.84,
+        "hdop": 2.9,
+        "lat": -2.234785,
+        "lng": 30.181106,
+        "spd": 0.1
+      },
+      "-Onfj9qrW1bMEygc2CFj": {
+        "alt": 1445.5,
+        "bat": 3.84,
+        "hdop": 2.9,
+        "lat": -2.234796,
+        "lng": 30.181088,
+        "spd": 0.4
+      },
+      "-OnfjHOvhEmwe45bcTeg": {
+        "alt": 1446.7,
+        "bat": 3.84,
+        "hdop": 6.3,
+        "lat": -2.234705,
+        "lng": 30.181154,
+        "spd": 1.4
+      },
+      "-OnfjP-3mWKP7V55AgBA": {
+        "alt": 1450.4,
+        "bat": 3.84,
+        "hdop": 2.9,
+        "lat": -2.234845,
+        "lng": 30.181085,
+        "spd": 0.2
+      },
+      "-OnfjW_ED879RStiic0b": {
+        "alt": 1450,
+        "bat": 3.84,
+        "hdop": 2.8,
+        "lat": -2.234798,
+        "lng": 30.181117,
+        "spd": 0.2
+      },
+      "-OnfjdA1lP7NsRfcIA1Z": {
+        "alt": 1448.6,
+        "bat": 3.84,
+        "hdop": 2.8,
+        "lat": -2.234793,
+        "lng": 30.181103,
+        "spd": 0.1
+      },
+      "-OnfjlT3PDw4CohyaNAU": {
+        "alt": 1448.6,
+        "bat": 3.84,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "spd": 0.4
+      }
+    },
+    "syndicate_003": {
+      "-On_ShM-x5vGaAnOy0pw": {
+        "alt": 1453.1,
+        "bat": 3.84,
+        "hdop": 1.3,
+        "lat": -2.232234,
+        "lng": 30.181445,
+        "spd": 0
+      },
+      "-On_So9yykooWdscS3rz": {
+        "alt": 1451.5,
+        "bat": 3.84,
+        "hdop": 1,
+        "lat": -2.232063,
+        "lng": 30.181215,
+        "spd": 7.3
+      },
+      "-On_Sv0rD3DiMHsO-03-": {
+        "alt": 1452.2,
+        "bat": 3.84,
+        "hdop": 1,
+        "lat": -2.231508,
+        "lng": 30.180625,
+        "spd": 6
+      },
+      "-On_T1b8_Ni7sSfe3FXT": {
+        "alt": 1448.9,
+        "bat": 3.84,
+        "hdop": 1.3,
+        "lat": -2.231186,
+        "lng": 30.18032,
+        "spd": 8.4
+      },
+      "-On_T9BWOjos1KceWj-e": {
+        "alt": 1448.9,
+        "bat": 3.84,
+        "hdop": 1,
+        "lat": -2.230828,
+        "lng": 30.180001,
+        "spd": 6.6
+      },
+      "-On_TGkimscFX6HqK7Eu": {
+        "alt": 1448.7,
+        "bat": 3.84,
+        "hdop": 1,
+        "lat": -2.230498,
+        "lng": 30.179702,
+        "spd": 4.4
+      },
+      "-On_TOMH7-2vJ_ZkyJeo": {
+        "alt": 1449.3,
+        "bat": 3.84,
+        "hdop": 1,
+        "lat": -2.230189,
+        "lng": 30.179373,
+        "spd": 5.5
+      },
+      "-On_TcaJ9Ya_DkaC1LZE": {
+        "alt": 1447.9,
+        "bat": 3.84,
+        "hdop": 1,
+        "lat": -2.229626,
+        "lng": 30.178743,
+        "spd": 5.1
+      },
+      "-OnfedOyKRoeci0Ajw3h": {
+        "alt": 1454.7,
+        "bat": 3.84,
+        "hdop": 5.8,
+        "lat": -2.234787,
+        "lng": 30.181084,
+        "spd": 4.4
+      },
+      "-OnfemO9aRjIMWMyf8XY": {
+        "alt": 1456.5,
+        "bat": 3.84,
+        "hdop": 3,
+        "lat": -2.234771,
+        "lng": 30.181086,
+        "spd": 0.4
+      },
+      "-OnfetzbZZBBsacbdV45": {
+        "alt": 1452.2,
+        "bat": 3.84,
+        "hdop": 3,
+        "lat": -2.234783,
+        "lng": 30.18106,
+        "spd": 0.6
+      },
+      "-Onff0__sCKa0b3ZzN78": {
+        "alt": 1451,
+        "bat": 3.84,
+        "hdop": 3,
+        "lat": -2.234844,
+        "lng": 30.181096,
+        "spd": 1.5
+      },
+      "-Onff8866IA_UgbbShWv": {
+        "alt": 1451.4,
+        "bat": 3.84,
+        "hdop": 3,
+        "lat": -2.23489,
+        "lng": 30.181083,
+        "spd": 0.7
+      },
+      "-OnffFjTHuDhNdYxbxw1": {
+        "alt": 1451.5,
+        "bat": 3.84,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "spd": 0.6
+      },
+      "-OomuVNs1RZDreYGpLrB": {
+        "alt": 1447.7,
+        "bat": 3.84,
+        "hdop": 19,
+        "lat": -2.234828,
+        "lng": 30.181049,
+        "spd": 0.7
+      },
+      "-OomubuUZgT-MOvw0hGs": {
+        "alt": 1437.6,
+        "bat": 3.84,
+        "hdop": 18.7,
+        "lat": -2.23465,
+        "lng": 30.181087,
+        "spd": 0.8
+      },
+      "-OomujX_uYhon2QFuYsM": {
+        "alt": 1435.5,
+        "bat": 3.84,
+        "hdop": 4.9,
+        "lat": -2.234641,
+        "lng": 30.181102,
+        "spd": 0.1
+      },
+      "-Oomur3lZYVB5CpWXHli": {
+        "alt": 1437.8,
+        "bat": 3.84,
+        "hdop": 4.9,
+        "lat": -2.234667,
+        "lng": 30.181105,
+        "spd": 0.5
+      },
+      "-OomuyecDiDh0eRzK0J9": {
+        "alt": 1443.7,
+        "bat": 3.84,
+        "hdop": 4.9,
+        "lat": -2.234732,
+        "lng": 30.181079,
+        "spd": 0.3
+      },
+      "-Oomv5EMD-r4s1_0NAkD": {
+        "alt": 1444.2,
+        "bat": 3.84,
+        "hdop": 4.9,
+        "lat": -2.234737,
+        "lng": 30.181044,
+        "spd": 0.2
+      },
+      "-OomvCoZO4LJ-hMDp23d": {
+        "alt": 1445,
+        "bat": 3.84,
+        "hdop": 4.9,
+        "lat": -2.23471,
+        "lng": 30.181082,
+        "spd": 3.3
+      }
+    }
+  },
+  "exercises": {
+    "ex_1773328098654": {
+      "allowedTime": "20:00:00",
+      "assignedDevices": [
+        "syndicate_001",
+        "syndicate_003",
+        "syndicate4"
+      ],
+      "date": "2026-03-13",
+      "elapsedBeforeMs": 32679729,
+      "id": "ex_1773328098654",
+      "name": "DAY-NAVIGATION-TEST_1",
+      "running": false,
+      "startTime": "06:02"
+    }
+  },
+  "geofences": {
+    "boundary_alpha": {
+      "coords": [
+        [
+          -2.22,
+          30.17
+        ],
+        [
+          -2.22,
+          30.2
+        ],
+        [
+          -2.25,
+          30.2
+        ],
+        [
+          -2.25,
+          30.17
+        ]
+      ],
+      "name": "Training Area Alpha",
+      "timestamp": 1771966350633
+    }
+  },
+  "gpsHistory": {
+    "syndicate4": {
+      "1773479230852": {
+        "alt": 1436.8,
+        "hdop": 0.8,
+        "lat": -2.242542,
+        "lng": 30.19249,
+        "speed": 4.7,
+        "timestamp": 1773479230852
+      },
+      "1773479377414": {
+        "alt": 1436.8,
+        "hdop": 0.8,
+        "lat": -2.242542,
+        "lng": 30.19249,
+        "speed": 4.7,
+        "timestamp": 1773479377414
+      },
+      "1773479403452": {
+        "alt": 1436.8,
+        "hdop": 0.8,
+        "lat": -2.242542,
+        "lng": 30.19249,
+        "speed": 4.7,
+        "timestamp": 1773479403452
+      },
+      "1773479480197": {
+        "alt": 1436.8,
+        "hdop": 0.8,
+        "lat": -2.242542,
+        "lng": 30.19249,
+        "speed": 4.7,
+        "timestamp": 1773479480197
+      },
+      "1773479690234": {
+        "alt": 1436.8,
+        "hdop": 0.8,
+        "lat": -2.242542,
+        "lng": 30.19249,
+        "speed": 4.7,
+        "timestamp": 1773479690234
+      },
+      "1773479749459": {
+        "alt": 1436.8,
+        "hdop": 0.8,
+        "lat": -2.242542,
+        "lng": 30.19249,
+        "speed": 4.7,
+        "timestamp": 1773479749459
+      },
+      "1773510891186": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773510891186
+      },
+      "1773511147043": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773511147043
+      },
+      "1773511446252": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773511446252
+      },
+      "1773511560856": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773511560856
+      },
+      "1773511910898": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773511910898
+      },
+      "1773531252926": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773531252926
+      },
+      "1773531291795": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773531291795
+      },
+      "1773531512442": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773531512442
+      },
+      "1773531721808": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773531721808
+      },
+      "1773531736730": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773531736730
+      },
+      "1773531747711": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773531747711
+      },
+      "1773531761750": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773531761750
+      },
+      "1773531781847": {
+        "alt": 1456.3,
+        "hdop": 3,
+        "lat": -2.234806,
+        "lng": 30.18108,
+        "speed": 0.6,
+        "timestamp": 1773531781847
+      }
+    },
+    "syndicate_001": {
+      "1773510891186": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773510891186
+      },
+      "1773511147043": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773511147043
+      },
+      "1773511446252": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773511446252
+      },
+      "1773511560856": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773511560856
+      },
+      "1773511910898": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773511910898
+      },
+      "1773531252926": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773531252926
+      },
+      "1773531291795": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773531291795
+      },
+      "1773531512442": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773531512442
+      },
+      "1773531721808": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773531721808
+      },
+      "1773531736730": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773531736730
+      },
+      "1773531747711": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773531747711
+      },
+      "1773531761750": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773531761750
+      },
+      "1773531781847": {
+        "alt": 1448.6,
+        "battery": 59,
+        "hdop": 5.7,
+        "lat": -2.234773,
+        "lng": 30.181105,
+        "speed": 0.4,
+        "timestamp": 1773531781847
+      }
+    },
+    "syndicate_003": {
+      "1773479230852": {
+        "alt": 1447.9,
+        "battery": 59,
+        "hdop": 1,
+        "lat": -2.229626,
+        "lng": 30.178743,
+        "speed": 5.1,
+        "timestamp": 1773479230852
+      },
+      "1773479377414": {
+        "alt": 1447.9,
+        "battery": 59,
+        "hdop": 1,
+        "lat": -2.229626,
+        "lng": 30.178743,
+        "speed": 5.1,
+        "timestamp": 1773479377414
+      },
+      "1773479403452": {
+        "alt": 1447.9,
+        "battery": 59,
+        "hdop": 1,
+        "lat": -2.229626,
+        "lng": 30.178743,
+        "speed": 5.1,
+        "timestamp": 1773479403452
+      },
+      "1773479480197": {
+        "alt": 1447.9,
+        "battery": 59,
+        "hdop": 1,
+        "lat": -2.229626,
+        "lng": 30.178743,
+        "speed": 5.1,
+        "timestamp": 1773479480197
+      },
+      "1773479690234": {
+        "alt": 1447.9,
+        "battery": 59,
+        "hdop": 1,
+        "lat": -2.229626,
+        "lng": 30.178743,
+        "speed": 5.1,
+        "timestamp": 1773479690234
+      },
+      "1773479749459": {
+        "alt": 1447.9,
+        "battery": 59,
+        "hdop": 1,
+        "lat": -2.229626,
+        "lng": 30.178743,
+        "speed": 5.1,
+        "timestamp": 1773479749459
+      },
+      "1773510891186": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773510891186
+      },
+      "1773511147043": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773511147043
+      },
+      "1773511446252": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773511446252
+      },
+      "1773511560856": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773511560856
+      },
+      "1773511910898": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773511910898
+      },
+      "1773531252926": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773531252926
+      },
+      "1773531291795": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773531291795
+      },
+      "1773531512442": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773531512442
+      },
+      "1773531721808": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773531721808
+      },
+      "1773531736730": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773531736730
+      },
+      "1773531747711": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773531747711
+      },
+      "1773531761750": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773531761750
+      },
+      "1773531781847": {
+        "alt": 1451.5,
+        "battery": 59,
+        "hdop": 3,
+        "lat": -2.23484,
+        "lng": 30.181088,
+        "speed": 0.6,
+        "timestamp": 1773531781847
+      }
+    }
+  },
+  "routes": {
+    "syndicate1": {
+      "default": {
+        "checkpoints": {
+          "-OmzioSXMWBWPmDDcUrD": {
+            "completed": false,
+            "label": "BIRYOGO",
+            "lat": -2.1952477777777775,
+            "lng": 30.12043472222222,
+            "seq": 1772743247927,
+            "timestamp": "2026-03-05T20:40:47.927Z"
+          },
+          "-OmziwQ0gDICfUtRMgj_": {
+            "completed": true,
+            "completedAt": "2026-03-06T05:27:58.244Z",
+            "label": "NYAMATA",
+            "lat": -2.142446111111111,
+            "lng": 30.089467777777777,
+            "seq": 1772743280533,
+            "timestamp": "2026-03-05T20:41:20.533Z"
+          },
+          "-Omzj4TRWl9DlK5JwT4s": {
+            "completed": false,
+            "label": "KANZENZE",
+            "lat": -2.0906469444444444,
+            "lng": 30.08765111111111,
+            "seq": 1772743317616,
+            "timestamp": "2026-03-05T20:41:57.616Z"
+          },
+          "-OmzjBSf3OaVihtE19mn": {
+            "completed": false,
+            "label": "KARUMUNA",
+            "lat": -2.0691247222222224,
+            "lng": 30.090175833333333,
+            "seq": 1772743346240,
+            "timestamp": "2026-03-05T20:42:26.240Z"
+          },
+          "-OmzjHjlG9o_FiRdKEJL": {
+            "completed": false,
+            "label": "BRIDGE",
+            "lat": -2.062452222222222,
+            "lng": 30.086831944444445,
+            "seq": 1772743371973,
+            "timestamp": "2026-03-05T20:42:51.973Z"
+          },
+          "-OmzjPl-8utrAFjjsWgR": {
+            "completed": false,
+            "label": "GAHANGA",
+            "lat": -2.0236741666666664,
+            "lng": 30.106483611111113,
+            "seq": 1772743404820,
+            "timestamp": "2026-03-05T20:43:24.820Z"
+          },
+          "-OmzjWAePzfpE2C-ZLKv": {
+            "completed": false,
+            "label": "NYANZA",
+            "lat": -2.0012933333333334,
+            "lng": 30.091853055555553,
+            "seq": 1772743431103,
+            "timestamp": "2026-03-05T20:43:51.103Z"
+          },
+          "-On0_zTXbmqHNenGQw7M": {
+            "completed": false,
+            "label": "JUNCTION",
+            "lat": -2.168423611111111,
+            "lng": 30.103215000000002,
+            "seq": 1772774489516,
+            "timestamp": "2026-03-06T05:21:29.516Z"
+          },
+          "-On0bvr6GMdz7lSnswRT": {
+            "completed": true,
+            "completedAt": "2026-03-06T05:34:18.047Z",
+            "label": "kariyeri",
+            "lat": -2.122815277777778,
+            "lng": 30.067326944444446,
+            "seq": 1772774998993,
+            "timestamp": "2026-03-06T05:29:58.993Z"
+          },
+          "-On0c0mFr3pSUKCau66a": {
+            "completed": false,
+            "label": "arrete",
+            "lat": -2.112243888888889,
+            "lng": 30.070245277777776,
+            "seq": 1772775023259,
+            "timestamp": "2026-03-06T05:30:23.259Z"
+          },
+          "-On0c5Jk9h_pxqOrmcnZ": {
+            "completed": false,
+            "label": "ntarama",
+            "lat": -2.1026372222222225,
+            "lng": 30.076768333333334,
+            "seq": 1772775041851,
+            "timestamp": "2026-03-06T05:30:41.851Z"
+          },
+          "-On0cBsplZVBpOOu-Zte": {
+            "completed": true,
+            "completedAt": "2026-03-06T05:40:55.626Z",
+            "label": "corner",
+            "lat": -2.081751388888889,
+            "lng": 30.08983611111111,
+            "seq": 1772775068736,
+            "timestamp": "2026-03-06T05:31:08.736Z",
+            "verified": true,
+            "verifiedAt": "2026-03-06T05:40:55.626Z",
+            "verifiedRadiusM": 100
+          }
+        }
+      }
+    },
+    "syndicate4": {
+      "default": {
+        "checkpoints": {
+          "-On_OOlIwYrg6XYPqKOb": {
+            "completed": true,
+            "completedAt": "2026-03-13T04:12:48.756Z",
+            "label": "sp",
+            "lat": -2.238131111111111,
+            "lng": 30.184206944444444,
+            "seq": 1773375168152,
+            "timestamp": "2026-03-13T04:12:48.152Z"
+          },
+          "-On_qiXbrFeSrG0KnQfB": {
+            "completed": false,
+            "label": "Gashora",
+            "lat": -2.2263333333333333,
+            "lng": 30.2405,
+            "seq": 1773382855170,
+            "timestamp": "2026-03-13T06:20:55.170Z"
+          },
+          "-On_t7V3rCTvFtWYWZt-": {
+            "completed": true,
+            "completedAt": "2026-03-13T06:33:44.034Z",
+            "label": "check 2",
+            "lat": -2.3057980555555555,
+            "lng": 30.25918,
+            "seq": 1773383485774,
+            "timestamp": "2026-03-13T06:31:25.774Z",
+            "verified": true,
+            "verifiedAt": "2026-03-13T06:33:44.035Z",
+            "verifiedRadiusM": 100
+          },
+          "-On_vakymF-dsGH15OTh": {
+            "completed": false,
+            "label": "Kamabuye",
+            "lat": -2.2268333333333334,
+            "lng": 30.176694444444447,
+            "seq": 1773384134039,
+            "timestamp": "2026-03-13T06:42:14.039Z"
+          },
+          "-On_vkT3WoxJ_QJmJIVl": {
+            "completed": false,
+            "label": "NewCamp",
+            "lat": -2.2368055555555557,
+            "lng": 30.194,
+            "seq": 1773384173789,
+            "timestamp": "2026-03-13T06:42:53.789Z"
+          },
+          "-On_vvUSVGRUEvpTRs78": {
+            "completed": false,
+            "label": "Reserve",
+            "lat": -2.292333333333333,
+            "lng": 30.193,
+            "seq": 1773384218934,
+            "timestamp": "2026-03-13T06:43:38.934Z"
+          }
+        }
+      }
+    }
+  },
+  "security": {
+    "pass": "Navigate01@RMA"
+  }
+}

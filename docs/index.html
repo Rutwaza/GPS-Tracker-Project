@@ -47,50 +47,6 @@
     display: none!important;
   }
   
-  /* Exercise selection overlay */
-  #exerciseOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
-  }
-  
-  .overlay-message {
-    text-align: center;
-    background: rgba(15, 23, 42, 0.95);
-    border: 2px solid #4ade80;
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 0 30px rgba(74, 222, 128, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.05);
-    font-family: 'Orbitron', monospace;
-  }
-  
-  .overlay-icon {
-    font-size: 64px;
-    margin-bottom: 20px;
-    animation: pulse 2s infinite;
-  }
-  
-  .overlay-text {
-    font-size: 24px;
-    color: #4ade80;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    line-height: 1.6;
-  }
-  
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-  }
 </style>
 
 </head>
@@ -154,13 +110,6 @@
 
 <!-- ============ FULL SCREEN MAP ============ -->
 <div id="map"></div>
-<div id="exerciseOverlay" class="exercise-overlay">
-  <div class="overlay-message">
-    <div class="overlay-icon"><img src="image.png" alt="Target" style="width: 64px; height: 64px;"></div>
-    <div class="overlay-text">SELECT AN EXERCISE<br/>TO MONITOR</div>
-  </div>
-</div>
-
 <!-- ============ TIME DISPLAY ============ -->
 <div class="time-display">
   <div class="time-label">LOCAL TIME</div>
@@ -423,20 +372,6 @@
   </div>
 </div>
 
-<!-- ============ LEFT SIDEBAR - PLACES ============ -->
-<div class="left-sidebar collapsed places-panel" id="placesSidebar">
-  <div class="sidebar-header" onclick="toggleSidebar('placesSidebar')">
-    <div class="sidebar-title">📌 PLACES</div>
-    <button class="toggle-btn">▶</button>
-  </div>
-  <div class="sidebar-content">
-    <div class="search-box">
-      <input type="text" class="search-input" id="placeSearch" placeholder="Search places...">
-    </div>
-    <div class="places-list" id="placesList"></div>
-  </div>
-</div>
-
 <!-- ============ REPORT MODAL ============ -->
 <div class="report-modal" id="reportModal" style="display:none;">
   <div class="report-modal-content">
@@ -529,6 +464,28 @@ function getExerciseStore() {
   } catch (e) {
     return [];
   }
+}
+
+function getExerciseCreatedAt(item) {
+  const stored = item?.createdAtMs ?? item?.createdAt ?? item?.timestamp;
+  const parsedStored = typeof stored === 'number' ? stored : Date.parse(stored || '');
+  if (Number.isFinite(parsedStored)) return parsedStored;
+  const idTimestamp = String(item?.id || '').match(/(?:^|_)(\d{10,})$/);
+  if (idTimestamp) return Number(idTimestamp[1]);
+  const dateTime = Date.parse(`${item?.date || ''}T${item?.startTime || '00:00'}`);
+  return Number.isFinite(dateTime) ? dateTime : 0;
+}
+
+function selectLatestExercise() {
+  const latest = getExerciseStore().sort((a, b) => getExerciseCreatedAt(b) - getExerciseCreatedAt(a))[0];
+  if (!latest) return;
+  const select = document.getElementById('exerciseSelect');
+  if (select) select.value = latest.id;
+  populateExerciseSelect(latest.id);
+  setExerciseForm(latest);
+  renderExerciseDisplay(latest);
+  updateExerciseElapsedDisplay();
+  applyMapFocusMode();
 }
 
 function setExerciseStore(items) {
@@ -636,12 +593,6 @@ function renderExerciseDisplay(item) {
   document.getElementById('exerciseAllowedDisplay').textContent = item?.allowedTime || '00:00:00';
   const titleEl = document.getElementById('exerciseTopTitle');
   if (titleEl) titleEl.textContent = item?.name || 'Not set';
-  
-  // Show/hide overlay based on exercise selection
-  const overlay = document.getElementById('exerciseOverlay');
-  if (overlay) {
-    overlay.style.display = item ? 'none' : 'flex';
-  }
 }
 
 function getSelectedExerciseId() {
@@ -722,6 +673,7 @@ function saveExercise() {
   const nextItem = {
     id,
     name,
+    createdAtMs: existing ? getExerciseCreatedAt(existing) : Date.now(),
     date,
     startTime,
     allowedTime,
@@ -789,7 +741,8 @@ function stopExerciseTimer() {
 
 function initExerciseTopBar() {
   populateExerciseSelect('');
-  newExercise();
+  if (getExerciseStore().length > 0) selectLatestExercise();
+  else newExercise();
 
   const select = document.getElementById('exerciseSelect');
   if (select) {
@@ -1911,6 +1864,37 @@ function getSyndicateNumber(deviceId) {
   return syndicateNumbers[deviceId];
 }
 
+function animateMarkerTo(device, target, duration) {
+  if (device.markerAnimationFrame) cancelAnimationFrame(device.markerAnimationFrame);
+  const start = device.marker.getLatLng();
+  const startedAt = performance.now();
+  const durationMs = Math.max(250, duration);
+
+  const step = (now) => {
+    const progress = Math.min((now - startedAt) / durationMs, 1);
+    const eased = progress * (2 - progress);
+    device.marker.setLatLng([
+      start.lat + (target[0] - start.lat) * eased,
+      start.lng + (target[1] - start.lng) * eased
+    ]);
+    if (progress < 1) {
+      device.markerAnimationFrame = requestAnimationFrame(step);
+    } else {
+      device.markerAnimationFrame = null;
+    }
+  };
+
+  device.markerAnimationFrame = requestAnimationFrame(step);
+}
+
+function getUploadIntervalMs(previous, latest) {
+  if (!previous || !latest) return null;
+  const difference = latest._sort - previous._sort;
+  if (!Number.isFinite(difference) || difference <= 0) return null;
+  const intervalMs = difference <= 120 ? difference * 1000 : difference;
+  return Math.max(250, Math.min(intervalMs, 15000));
+}
+
 function createSyndicateIcon(deviceId) {
   const color = getColorForDevice(deviceId);
   const syndicateNo = getSyndicateNumber(deviceId);
@@ -1921,6 +1905,54 @@ function createSyndicateIcon(deviceId) {
     iconAnchor: [16, 16],
     popupAnchor: [0, -18]
   });
+}
+
+// ============ SMOOTH POLYLINE ANIMATION ============
+function animatePolylineToPoints(deviceName, targetPoints) {
+  const device = devices[deviceName];
+  if (!device) return;
+  
+  const currentPoints = device.drawnPoints || [];
+  const newPoints = targetPoints.slice(currentPoints.length); // Points to add
+  
+  if (newPoints.length === 0) {
+    // No new points to add, but ensure we have all target points in case of data reset
+    if (currentPoints.length !== targetPoints.length) {
+      device.drawnPoints = targetPoints.slice();
+      device.polyline.setLatLngs(device.drawnPoints);
+    }
+    return;
+  }
+  
+  // Calculate animation duration based on distance and speed
+  const lastPoint = currentPoints[currentPoints.length - 1];
+  const nextPoint = newPoints[0];
+  let animationDuration = 1000; // Default 1 second
+  
+  if (lastPoint && nextPoint && device.data && device.data.speed) {
+    // Calculate distance between last drawn point and next point
+    const distance = map.distance([lastPoint[0], lastPoint[1]], [nextPoint[0], nextPoint[1]]);
+    const speedMps = (device.data.speed || 0) * 1000 / 3600; // Convert km/h to m/s
+    if (speedMps > 0) {
+      animationDuration = Math.min(distance / speedMps * 1000, 5000); // Max 5 seconds
+    }
+  }
+  
+  // Animate adding points
+  let pointsAdded = 0;
+  const totalPoints = newPoints.length;
+  const interval = Math.max(animationDuration / totalPoints, 50); // Min 50ms per point
+  
+  const animate = () => {
+    if (pointsAdded < totalPoints) {
+      device.drawnPoints.push(newPoints[pointsAdded]);
+      device.polyline.setLatLngs(device.drawnPoints);
+      pointsAdded++;
+      setTimeout(animate, interval);
+    }
+  };
+  
+  animate();
 }
 
 // ============ FIREBASE LISTENERS ============
@@ -1940,7 +1972,7 @@ db.ref('devices').on('value', snapshot => {
     // Case A: legacy flat object { lat, lng, speed, ... }
     const flat = coerceCoord(node);
     if (flat) {
-      normalized[name] = { latest: flat, points: [[flat.lat, flat.lng]] };
+      normalized[name] = { latest: flat, points: [[flat.lat, flat.lng]], uploadIntervalMs: null };
       continue;
     }
 
@@ -1957,14 +1989,14 @@ db.ref('devices').on('value', snapshot => {
 
     const latest = children[children.length - 1];
     const points = children.map(p => [p.lat, p.lng]);
-    normalized[name] = { latest, points };
+    normalized[name] = { latest, points, uploadIntervalMs: getUploadIntervalMs(children[children.length - 2], latest) };
   }
 
   console.log('📍 Normalized device payload:', normalized);
 
   // Update/create markers from normalized data
   for (const name in normalized) {
-    const { latest, points } = normalized[name];
+    const { latest, points, uploadIntervalMs } = normalized[name];
     if (!latest || typeof latest.lat !== 'number' || typeof latest.lng !== 'number') continue;
 
     if (!devices[name]) {
@@ -1986,10 +2018,14 @@ db.ref('devices').on('value', snapshot => {
         polyline,
         lastSeen: now,
         data: latest,
+        targetLocation: [latest.lat, latest.lng],
+        lastMarkerUpdateAt: now,
+        markerAnimationFrame: null,
         buffer: [],
         distanceCovered: 0,
         lastCalculatedPoint: null,
         hasFit: false,
+        drawnPoints: points.slice(), // Track currently drawn points for smooth animation
         geofence: ['Zone A', 'Zone B', 'Zone C', 'Zone D'][Math.floor(Math.random() * 4)]
       };
 
@@ -2005,11 +2041,22 @@ db.ref('devices').on('value', snapshot => {
       });
     } else {
       // update
-      devices[name].marker.setLatLng([latest.lat, latest.lng]);
+      const target = [latest.lat, latest.lng];
+      const previousTarget = devices[name].targetLocation;
+      if (!previousTarget || previousTarget[0] !== target[0] || previousTarget[1] !== target[1]) {
+        const observedInterval = now - (devices[name].lastMarkerUpdateAt || now);
+        const duration = uploadIntervalMs || Math.max(500, Math.min(observedInterval, 15000));
+        animateMarkerTo(devices[name], target, duration);
+        devices[name].targetLocation = target;
+        devices[name].lastMarkerUpdateAt = now;
+      }
       devices[name].marker.setIcon(createSyndicateIcon(name));
       devices[name].lastSeen = now;
       devices[name].data = latest;
-      devices[name].polyline.setLatLngs(points);
+      
+      // Smooth polyline animation: animate drawing from current drawn points to new points
+      animatePolylineToPoints(name, points);
+      
       devices[name].buffer.push({ time: now, lat: latest.lat, lng: latest.lng, alt: latest.alt, speed: latest.spd ?? latest.speed });
       if (devices[name].buffer.length > 100) devices[name].buffer.shift();
     }
@@ -2545,6 +2592,7 @@ function clearDeviceData(deviceName, keepLatest) {
     if (devices[deviceName]) {
       const ll = latestCoord ? [latestCoord.lat, latestCoord.lng] : [];
       devices[deviceName].polyline.setLatLngs(ll.length ? [ll] : []);
+      devices[deviceName].drawnPoints = ll.length ? [ll] : []; // Reset drawn points for smooth animation
       if (devices[deviceName].trackLayer) {
         devices[deviceName].trackLayer.clearLayers();
         if (ll.length) {
@@ -2898,7 +2946,7 @@ db.ref('exercises').on('child_added', snap => {
   if (exercise && exercise.id) {
     exercisesCache[exercise.id] = exercise;
     console.log('Exercise added/loaded:', exercise.id);
-    populateExerciseSelect('');
+    selectLatestExercise();
   }
 });
 
@@ -2913,7 +2961,7 @@ db.ref('exercises').on('child_changed', snap => {
       populateExerciseSelect(current);
       renderExerciseDisplay(exercise);
     }
-    populateExerciseSelect('');
+    populateExerciseSelect(current);
   }
 });
 
@@ -2922,20 +2970,21 @@ db.ref('exercises').on('child_removed', snap => {
   if (exercise && exercise.id) {
     delete exercisesCache[exercise.id];
     console.log('Exercise removed:', exercise.id);
-    populateExerciseSelect('');
+    if (Object.keys(exercisesCache).length > 0) {
+      selectLatestExercise();
+    } else {
+      populateExerciseSelect('');
+      setExerciseForm(null);
+      renderExerciseDisplay(null);
+      updateExerciseElapsedDisplay();
+      applyMapFocusMode();
+    }
   }
 });
 
 // Track completed checkpoints visually
 const completedCheckpoints = new Set(); // { "deviceId_cpId" }
 
-// Initialize exercise overlay visibility
-setTimeout(() => {
-  const overlay = document.getElementById('exerciseOverlay');
-  if (overlay && !getSelectedExercise()) {
-    overlay.style.display = 'flex';
-  }
-}, 100);
 function markCheckpointCompleted(deviceId, cpId, marker) {
   const key = `${deviceId}_${cpId}`;
   if (completedCheckpoints.has(key)) return;
