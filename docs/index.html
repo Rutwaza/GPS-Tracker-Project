@@ -393,6 +393,7 @@
 <script>
 // ============ INITIALIZATION ============
 const OFFLINE_MS = 60000;
+const DEFAULT_MARKER_TRAVEL_MS = 25000;
 let selectedDevice = null;
 let focusedDeviceOnly = null;
 const devices = {};
@@ -1872,10 +1873,9 @@ function animateMarkerTo(device, target, duration) {
 
   const step = (now) => {
     const progress = Math.min((now - startedAt) / durationMs, 1);
-    const eased = progress * (2 - progress);
     device.marker.setLatLng([
-      start.lat + (target[0] - start.lat) * eased,
-      start.lng + (target[1] - start.lng) * eased
+      start.lat + (target[0] - start.lat) * progress,
+      start.lng + (target[1] - start.lng) * progress
     ]);
     if (progress < 1) {
       device.markerAnimationFrame = requestAnimationFrame(step);
@@ -1889,10 +1889,26 @@ function animateMarkerTo(device, target, duration) {
 
 function getUploadIntervalMs(previous, latest) {
   if (!previous || !latest) return null;
+  const hasTimestamp = point => point.t !== null ||
+    (point.timestamp != null && Number.isFinite(Date.parse(String(point.timestamp))));
+  if (!hasTimestamp(previous) || !hasTimestamp(latest)) return null;
   const difference = latest._sort - previous._sort;
   if (!Number.isFinite(difference) || difference <= 0) return null;
   const intervalMs = difference <= 120 ? difference * 1000 : difference;
-  return Math.max(250, Math.min(intervalMs, 15000));
+  return Math.max(1000, Math.min(intervalMs, 30000));
+}
+
+function getMarkerTravelDuration(device, observedInterval, sampleInterval) {
+  if (sampleInterval) {
+    device.averageUploadIntervalMs = sampleInterval;
+    return sampleInterval;
+  }
+
+  if (observedInterval >= 10000 && observedInterval <= 30000) {
+    const previousEstimate = device.averageUploadIntervalMs || DEFAULT_MARKER_TRAVEL_MS;
+    device.averageUploadIntervalMs = previousEstimate * 0.65 + observedInterval * 0.35;
+  }
+  return device.averageUploadIntervalMs || DEFAULT_MARKER_TRAVEL_MS;
 }
 
 function createSyndicateIcon(deviceId) {
@@ -2021,6 +2037,7 @@ db.ref('devices').on('value', snapshot => {
         targetLocation: [latest.lat, latest.lng],
         lastMarkerUpdateAt: now,
         markerAnimationFrame: null,
+        averageUploadIntervalMs: DEFAULT_MARKER_TRAVEL_MS,
         buffer: [],
         distanceCovered: 0,
         lastCalculatedPoint: null,
@@ -2045,7 +2062,7 @@ db.ref('devices').on('value', snapshot => {
       const previousTarget = devices[name].targetLocation;
       if (!previousTarget || previousTarget[0] !== target[0] || previousTarget[1] !== target[1]) {
         const observedInterval = now - (devices[name].lastMarkerUpdateAt || now);
-        const duration = uploadIntervalMs || Math.max(500, Math.min(observedInterval, 15000));
+        const duration = getMarkerTravelDuration(devices[name], observedInterval, uploadIntervalMs);
         animateMarkerTo(devices[name], target, duration);
         devices[name].targetLocation = target;
         devices[name].lastMarkerUpdateAt = now;
